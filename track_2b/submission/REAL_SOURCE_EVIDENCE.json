@@ -1,0 +1,1688 @@
+{
+  "project": "TenderProof",
+  "team": "SwissChivers",
+  "status": "real_execution_fixed_deployment_and_final_captures_verified",
+  "application_dummy_data_allowed": false,
+  "ready_for_artifact_render": true,
+  "sources": [
+    {
+      "id": "gpa-op34276",
+      "title": "Awarded purchase order OP34276",
+      "publisher": "Guam Power Authority",
+      "owner": "Guam Power Authority / Open GovGuam",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_OP%2034276.pdf",
+      "sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "page_count": 9,
+      "retrieval_date": "2026-10-15",
+      "source_verified_at": "2026-10-15T08:50:37.352844+00:00",
+      "repository_relative_path": ".runtime/sources/gpa-op34276.pdf",
+      "licensing_status": "Redistribution permission not established; original retained in ignored local runtime storage",
+      "verified_real_document": true,
+      "expert_validated": false,
+      "strict_parsing": {
+        "status": "success",
+        "verification_context": "Isolated offline strict reparse; completed before the batch OOM",
+        "page_count": 9,
+        "spans": 329,
+        "characters": 36349,
+        "max_span_length": 1783,
+        "parsed_output_sha256": "43ce41a81f40bcd016b10189db00908f4f5bceb2cb59240215a8d96bd4a00cdf",
+        "repository_relative_output_path": ".runtime/quality/revalidated/gpa-op34276.parsed.json",
+        "docling_status": "success",
+        "conversion_errors": [],
+        "all_expected_pages_converted": true,
+        "all_expected_pages_have_source_spans": true,
+        "source_spans_match_saved_api_project": true
+      }
+    },
+    {
+      "id": "gpa-e004-rev10",
+      "title": "Engineering specification E-004 Revision 10",
+      "publisher": "Guam Power Authority",
+      "owner": "Guam Power Authority / Open GovGuam",
+      "url": "https://go.opengovguam.com/app/webroot/userfiles/files/Spec%20E-004%20Revision%2010%20-%20Three%20Phase%20Pad%20Mounted%20Distribution%20Transformer%282%29.pdf",
+      "sha256": "d21a10dd0d4b31ad85c1bfa1fa07d577b0beeccd24774d109cef94129a05c414",
+      "page_count": 20,
+      "retrieval_date": "2026-10-15",
+      "source_verified_at": "2026-10-15T08:50:37.358821+00:00",
+      "repository_relative_path": ".runtime/sources/gpa-e004-rev10.pdf",
+      "licensing_status": "Redistribution permission not established; original retained in ignored local runtime storage",
+      "verified_real_document": true,
+      "expert_validated": false,
+      "strict_parsing": {
+        "status": "success",
+        "verification_context": "Isolated offline strict reparse; completed before the batch OOM",
+        "page_count": 20,
+        "spans": 384,
+        "characters": 42555,
+        "max_span_length": 7539,
+        "parsed_output_sha256": "53114913f6871267c7dcfad5fd29f54b983455057fba5e2ffb62bc1254105af4",
+        "repository_relative_output_path": ".runtime/quality/revalidated/gpa-e004-rev10.parsed.json",
+        "docling_status": "success",
+        "conversion_errors": [],
+        "all_expected_pages_converted": true,
+        "all_expected_pages_have_source_spans": true,
+        "source_spans_match_saved_api_project": true
+      }
+    },
+    {
+      "id": "gpa-07025-bid-abstract",
+      "title": "GPA-070-25 original bid abstract",
+      "publisher": "Guam Power Authority",
+      "owner": "Guam Power Authority / Open GovGuam",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20Bid%20Abstract.pdf",
+      "sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "page_count": 5,
+      "retrieval_date": "2026-10-15",
+      "source_verified_at": "2026-10-15T08:50:43.869322+00:00",
+      "repository_relative_path": ".runtime/sources/gpa-07025-bid-abstract.pdf",
+      "licensing_status": "Redistribution permission not established; original retained in ignored local runtime storage",
+      "verified_real_document": true,
+      "expert_validated": false,
+      "strict_parsing": {
+        "status": "success",
+        "verification_context": "Isolated offline strict reparse; completed before the batch OOM",
+        "page_count": 5,
+        "spans": 104,
+        "characters": 22477,
+        "max_span_length": 4754,
+        "parsed_output_sha256": "a0cfc90b0379e173dd0216412f6916d2c8eed1bab78571599a5a96f14b3f2eb2",
+        "repository_relative_output_path": ".runtime/quality/revalidated/gpa-07025-bid-abstract.parsed.json",
+        "docling_status": "success",
+        "conversion_errors": [],
+        "all_expected_pages_converted": true,
+        "all_expected_pages_have_source_spans": true,
+        "source_spans_match_saved_api_project": true
+      }
+    },
+    {
+      "id": "gpa-07025-amendments",
+      "title": "Portal issuance attachment: amendments and invitation, not the full original IFB",
+      "publisher": "Guam Power Authority",
+      "owner": "Guam Power Authority / Open GovGuam",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20IFB%20Issuance.pdf",
+      "sha256": "32b395fcaa2ea49d054f63b38f6f53508a4dba32be5f0559f51e94b530ece22b",
+      "page_count": 4,
+      "retrieval_date": "2026-10-15",
+      "source_verified_at": "2026-10-15T08:50:42.402826+00:00",
+      "repository_relative_path": ".runtime/sources/gpa-07025-amendments.pdf",
+      "licensing_status": "Redistribution permission not established; original retained in ignored local runtime storage",
+      "verified_real_document": true,
+      "expert_validated": false,
+      "strict_parsing": {
+        "status": "success",
+        "verification_context": "Isolated offline strict reparse; completed before the batch OOM",
+        "page_count": 4,
+        "spans": 105,
+        "characters": 7744,
+        "max_span_length": 550,
+        "parsed_output_sha256": "a026aa80bf5b53438bd4b9014d4b8a9dec97021180cc175059c2960d3c72da8b",
+        "repository_relative_output_path": ".runtime/quality/revalidated/gpa-07025-amendments.parsed.json",
+        "docling_status": "success",
+        "conversion_errors": [],
+        "all_expected_pages_converted": true,
+        "all_expected_pages_have_source_spans": true,
+        "source_spans_match_saved_api_project": true
+      }
+    },
+    {
+      "id": "gpa-07025-full-ifb-amendment-i",
+      "title": "Original 55-page GPA-070-25 IFB with Amendment I (57 PDF pages)",
+      "publisher": "Guam Power Authority",
+      "owner": "Guam Power Authority",
+      "hosting_organization": "Pacific Power Association (mirror)",
+      "url": "https://www.ppa.org.fj/wp-content/uploads/2025/08/220825GPA-GPA-070-25-with-Amendment-I.pdf",
+      "sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+      "bytes": 1668269,
+      "page_count": 57,
+      "retrieval_date": "2026-10-15",
+      "repository_relative_path": ".runtime/sources/gpa-07025-full-ifb-amendment-i.pdf",
+      "licensing_status": "Redistribution permission not established; mirror original retained in ignored local runtime storage",
+      "verified_real_document": true,
+      "file_integrity_verified": true,
+      "content_review_status": "Assistant reviewed all 57 rendered pages via full overview and detailed identity/item/revision/end-page checks; not expert validation",
+      "page_count_note": "55 numbered IFB pages plus Amendment I and replacement invitation; overlaps standalone specification and issuance attachments. Not unique-content count.",
+      "expert_validated": false,
+      "review_date": "2026-10-15",
+      "pagination": {
+        "amendment_i_pdf_pages": [
+          1,
+          2
+        ],
+        "original_ifb_pdf_pages": [
+          3,
+          57
+        ],
+        "original_printed_pages": [
+          1,
+          55
+        ],
+        "selected_item_2_pdf_pages": [
+          8,
+          9
+        ],
+        "embedded_e004_pdf_pages": [
+          10,
+          29
+        ],
+        "appendix_a_pdf_page": 29
+      },
+      "review_findings": [
+        "GPA original envelope identity matches government invitation; visible content comparison is not cryptographic signature validation.",
+        "Embedded E-004 is Revision 10 dated 2022-07-29.",
+        "All 20 embedded specification scan image sets match the standalone E-004 file; outer pagination/envelope differs.",
+        "Selected item 2 and manufacturer/model/delivery response fields are uncompleted forms, not supplier submissions.",
+        "This file contains Amendment I only; later official Amendments II and III remain necessary.",
+        "No completed FAT, actual manufactured-unit serial/nameplate or approved final unit drawing found."
+      ],
+      "strict_parsing": {
+        "status": "success",
+        "verification_context": "Actual integrated API upload; NOT the terminated isolated batch",
+        "page_count": 57,
+        "spans": 1214,
+        "characters": 233182,
+        "max_span_length": 14783,
+        "parsed_output_sha256": "a32212d603ac4f94478849989de92790ecdf1e7ce8c2ccc396f3ecfb9ce9cff7",
+        "repository_relative_output_path": ".runtime/quality/revalidated/gpa-07025-full-ifb-amendment-i.parsed.json",
+        "docling_status": "success",
+        "conversion_errors": [],
+        "all_expected_pages_converted": true,
+        "all_expected_pages_have_source_spans": true,
+        "source_spans_match_saved_api_project": true
+      }
+    }
+  ],
+  "inference_runs": [
+    {
+      "directory": "20261015T124212Z-gpa-07025-bid-abstract-supplier",
+      "document": "gpa-07025-bid-abstract.pdf",
+      "kind": "supplier",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 35.134,
+      "source_spans": 104,
+      "api_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "failure_detail": "Durable extraction extract-ad352fdf9268d2b0d3dca04bc02b550088fab1f8e8cb1cf655353ceab7334b87 did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "snapshot_after": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 0,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T124212Z-gpa-07025-bid-abstract-supplier",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "run_response_path": ".runtime/actual-inference/20261015T124212Z-gpa-07025-bid-abstract-supplier/api-response.json",
+      "run_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T124841Z-gpa-07025-bid-abstract-supplier",
+      "document": "gpa-07025-bid-abstract.pdf",
+      "kind": "supplier",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 36.882,
+      "source_spans": 104,
+      "api_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "failure_detail": "Durable extraction extract-ad352fdf9268d2b0d3dca04bc02b550088fab1f8e8cb1cf655353ceab7334b87 did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "snapshot_after": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 0,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T124841Z-gpa-07025-bid-abstract-supplier",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "run_response_path": ".runtime/actual-inference/20261015T124841Z-gpa-07025-bid-abstract-supplier/api-response.json",
+      "run_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T125500Z-gpa-07025-bid-abstract-supplier",
+      "document": "gpa-07025-bid-abstract.pdf",
+      "kind": "supplier",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 62.854,
+      "source_spans": 104,
+      "api_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "failure_detail": "Durable extraction extract-ad352fdf9268d2b0d3dca04bc02b550088fab1f8e8cb1cf655353ceab7334b87 did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "snapshot_after": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 0,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T125500Z-gpa-07025-bid-abstract-supplier",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "run_response_path": ".runtime/actual-inference/20261015T125500Z-gpa-07025-bid-abstract-supplier/api-response.json",
+      "run_response_sha256": "4079ca26b4d98a7c4ff4166dff89dcc6e36ebc5eff269f29f9032ab9c21cbac8",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+      "document": "gpa-07025-bid-abstract.pdf",
+      "kind": "supplier",
+      "status": "succeeded",
+      "http_status": 200,
+      "latency_seconds": 33.871,
+      "source_spans": 104,
+      "api_response_sha256": "bf297ffe3caa072860a565325182a59b6d599f0fa483ac523921c61c4c2a5fd3",
+      "failure_detail": null,
+      "snapshot_before": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "snapshot_after": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 3,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+      "outcome_meaning": "Pipeline persisted pending proposals; not quality acceptance",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "run_response_path": ".runtime/actual-inference/20261015T130000Z-gpa-07025-bid-abstract-supplier/api-response.json",
+      "run_response_sha256": "bf297ffe3caa072860a565325182a59b6d599f0fa483ac523921c61c4c2a5fd3",
+      "call_trace_ids": [
+        "03169ab0c9274cccb2aa9bf48841d90b",
+        "ad0a13c296994f9d8bb6d7cf008525cd",
+        "7c14029da9e84d9e9cec16bb5f2ac411",
+        "d162dc4b8c1a41318eb3146467b4369f"
+      ],
+      "trace_calls_linked": 4,
+      "request_path": ".runtime/actual-model-traces/ad0a13c296994f9d8bb6d7cf008525cd/request.json",
+      "raw_response_path": ".runtime/actual-model-traces/ad0a13c296994f9d8bb6d7cf008525cd/response.json",
+      "input_sha256": "6bc9c124fb00fb2e0a05e506fb16eea3fffc1fd79c540e1ee4d6df6379e777fc",
+      "raw_response_sha256": "3125d3aa0e049c21644d8ee1371e4627f3b06e5eafadc9585d62cb8b288aa6eb",
+      "request_scope": "Representative mapper call; complete run source coverage and all role calls recorded separately",
+      "coverage": {
+        "all_original_spans_present": true,
+        "source_character_count": 22477,
+        "source_sha256": "dd52ba47630e3f82aea5896da68595fc147927ecbf470168fcadb5ee13db8fd8",
+        "source_span_count": 104
+      },
+      "window_count": 1,
+      "planned_call_count": 4,
+      "audit_failures": [],
+      "rejected_row_count": 0,
+      "issues": [
+        "RDMaRKeting Bound Paper: price_cents, currency, delivery_weeks missing (span s4)",
+        "RDMaRKeting Bound Paper: facts missing (span s5)",
+        "RDMaRKeting Bound Paper: facts missing (span s6)",
+        "Benson Gwam EnteRpRises Jnc.: price_cents, currency, delivery_weeks missing (span s34)",
+        "Benson Gwam EnteRpRises Jnc.: facts missing (span s35)",
+        "Polyphase System Inc.: price_cents, currency, delivery_weeks missing (span s58)",
+        "Price for RDMaRKeting Bound Paper not specified in source spans (span s4-s6); price_cents null",
+        "Price for Benson Gwam EnteRpRises Jnc. not derived from any line item column; value 1719006 appears inconsistent with context (span s34-s35)",
+        "Price for Polyphase System Inc. not derived from any line item column; value 2536800 appears inconsistent with context (span s58)"
+      ]
+    },
+    {
+      "directory": "20261015T130138Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "document": "gpa-07025-full-ifb-amendment-i.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 188.964,
+      "source_spans": 1214,
+      "api_response_sha256": "7911885a694b42d9652bfb0355ea43066fb0c360429666c389125882892c0c76",
+      "failure_detail": "Durable extraction extract-2fcbbfca994b04c06f07c81abf7a44cbc1f675d4b901c1191376c3c13dba7d61 did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "snapshot_after": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 3,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T130138Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+      "run_response_path": ".runtime/actual-inference/20261015T130138Z-gpa-07025-full-ifb-amendment-i-requirements/api-response.json",
+      "run_response_sha256": "7911885a694b42d9652bfb0355ea43066fb0c360429666c389125882892c0c76",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T130639Z-gpa-op34276-supplier",
+      "document": "gpa-op34276.pdf",
+      "kind": "supplier",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 87.903,
+      "source_spans": 329,
+      "api_response_sha256": "d77b26998edbde6d946db0d423463f7e1829c54dc0ea482d38b4eb27176fb97f",
+      "failure_detail": "Durable extraction extract-208db8847e5acede490b38958a507b55999ac7a125ce57cb85b6c53b0feea0f2 did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "snapshot_after": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 3,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T130639Z-gpa-op34276-supplier",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "run_response_path": ".runtime/actual-inference/20261015T130639Z-gpa-op34276-supplier/api-response.json",
+      "run_response_sha256": "d77b26998edbde6d946db0d423463f7e1829c54dc0ea482d38b4eb27176fb97f",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T130808Z-gpa-op34276-requirements",
+      "document": "gpa-op34276.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 82.998,
+      "source_spans": 329,
+      "api_response_sha256": "bc27a82a22c93f07fb65152df5e25e5a059545d4fefab04850c369f350c585aa",
+      "failure_detail": "Durable extraction extract-246edae9b3dff269b49fbcad04c5ed557bc6dcf00585021a246e7c0ddcf6f04a did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "snapshot_after": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 3,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T130808Z-gpa-op34276-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "run_response_path": ".runtime/actual-inference/20261015T130808Z-gpa-op34276-requirements/api-response.json",
+      "run_response_sha256": "bc27a82a22c93f07fb65152df5e25e5a059545d4fefab04850c369f350c585aa",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T130932Z-gpa-07025-amendments-requirements",
+      "document": "gpa-07025-amendments.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 47.366,
+      "source_spans": 105,
+      "api_response_sha256": "73ac767841ef6cf7f738795a09831e5b36dc6db810c3031e1500c260acae5c41",
+      "failure_detail": "Durable extraction extract-3cfabac5b59cce3ef94975eb49b2ca5f42aabbff5b7fb422339bddf5c049466a did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "snapshot_after": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 3,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T130932Z-gpa-07025-amendments-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "32b395fcaa2ea49d054f63b38f6f53508a4dba32be5f0559f51e94b530ece22b",
+      "run_response_path": ".runtime/actual-inference/20261015T130932Z-gpa-07025-amendments-requirements/api-response.json",
+      "run_response_sha256": "73ac767841ef6cf7f738795a09831e5b36dc6db810c3031e1500c260acae5c41",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T131338Z-gpa-op34276-supplier",
+      "document": "gpa-op34276.pdf",
+      "kind": "supplier",
+      "status": "succeeded",
+      "http_status": 200,
+      "latency_seconds": 49.243,
+      "source_spans": 329,
+      "api_response_sha256": "b81534d479eb546af52a7fad5bb6e1e35eb2fb69e401774df112fe775df25dfd",
+      "failure_detail": null,
+      "snapshot_before": "6a10e120b111d91f7351aa9be320751589a55a3121e2a2609fcd391b65bca63a",
+      "snapshot_after": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T131338Z-gpa-op34276-supplier",
+      "outcome_meaning": "Pipeline persisted pending proposals; not quality acceptance",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "run_response_path": ".runtime/actual-inference/20261015T131338Z-gpa-op34276-supplier/api-response.json",
+      "run_response_sha256": "b81534d479eb546af52a7fad5bb6e1e35eb2fb69e401774df112fe775df25dfd",
+      "call_trace_ids": [
+        "ee6e1c319f7546d88d3c7a231d461386",
+        "068095a0d53a4240b90d71ea0a92a6c8",
+        "2e87fa51e1f340799d9ec37a5c746527",
+        "05cd3017c0c449c0993cfd2a78d2087f"
+      ],
+      "trace_calls_linked": 4,
+      "request_path": ".runtime/actual-model-traces/068095a0d53a4240b90d71ea0a92a6c8/request.json",
+      "raw_response_path": ".runtime/actual-model-traces/068095a0d53a4240b90d71ea0a92a6c8/response.json",
+      "input_sha256": "0fa782b2105121eccf33db29c54324ecd8151dd92323e3086b880ce7454191b1",
+      "raw_response_sha256": "bbc0f3eb8df7dcf8dc3ef5ebcc660b095d586f6e76120844d9c0a89219a966d7",
+      "request_scope": "Representative mapper call; complete run source coverage and all role calls recorded separately",
+      "coverage": {
+        "all_original_spans_present": true,
+        "source_character_count": 36349,
+        "source_sha256": "e4598f3d8aad3c2dc177d468e7c469096cf8e72a236b12accad8ced431f5c7b1",
+        "source_span_count": 329
+      },
+      "window_count": 1,
+      "planned_call_count": 4,
+      "audit_failures": [],
+      "rejected_row_count": 0,
+      "issues": [
+        "R&D MARKETING AND LYPCO INTERNATIONAL: Vendor Number: 207386 is shown in source spans but price_cents 11131650 is not present in any of the cited spans.",
+        "Vendor price for 750 kVA transformer (111,316.50 USD) is not derived from the line item's own column (price 37,105.50 USD) but from a separate line item (Item 2) not shown in this window (span s139)"
+      ]
+    },
+    {
+      "directory": "20261015T131428Z-gpa-op34276-requirements",
+      "document": "gpa-op34276.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 174.529,
+      "source_spans": 329,
+      "api_response_sha256": "13c4f6d1d42bd5195c88ccdb5a67c5fae09168af53f55d5ff92455347c62160e",
+      "failure_detail": "Durable extraction extract-43b9c6c55c81b8ac35ddd8a53b9219d7931e51a6af25eb5abce3443c74aa63de did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "snapshot_after": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T131428Z-gpa-op34276-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "run_response_path": ".runtime/actual-inference/20261015T131428Z-gpa-op34276-requirements/api-response.json",
+      "run_response_sha256": "13c4f6d1d42bd5195c88ccdb5a67c5fae09168af53f55d5ff92455347c62160e",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T131723Z-gpa-07025-amendments-requirements",
+      "document": "gpa-07025-amendments.pdf",
+      "kind": "requirements",
+      "status": "succeeded",
+      "http_status": 200,
+      "latency_seconds": 50.091,
+      "source_spans": 105,
+      "api_response_sha256": "f57c3b1488cae0152c4f3be23a72a4e148e72d33bd5ad1f0e55947793b878417",
+      "failure_detail": null,
+      "snapshot_before": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "snapshot_after": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T131723Z-gpa-07025-amendments-requirements",
+      "outcome_meaning": "Pipeline persisted pending proposals; not quality acceptance",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "32b395fcaa2ea49d054f63b38f6f53508a4dba32be5f0559f51e94b530ece22b",
+      "run_response_path": ".runtime/actual-inference/20261015T131723Z-gpa-07025-amendments-requirements/api-response.json",
+      "run_response_sha256": "f57c3b1488cae0152c4f3be23a72a4e148e72d33bd5ad1f0e55947793b878417",
+      "call_trace_ids": [
+        "cde54e00aad746e38fe50d0ec6e4bb8c",
+        "15146eba97e446f4be08c5a6f281ecd7",
+        "cfd1187aace041e481862bda6d54203b",
+        "93c84395a4e243cb83ae723ac7e578a2"
+      ],
+      "trace_calls_linked": 4,
+      "request_path": ".runtime/actual-model-traces/15146eba97e446f4be08c5a6f281ecd7/request.json",
+      "raw_response_path": ".runtime/actual-model-traces/15146eba97e446f4be08c5a6f281ecd7/response.json",
+      "input_sha256": "03eabf27e57f41b8655b52b5255fe3f65dbc6595737b468f688bf67838a35407",
+      "raw_response_sha256": "297e9fc01534115d502d710bfcb6e051ee9f8eceeb4c01fa384ac7ac436d3705",
+      "request_scope": "Representative mapper call; complete run source coverage and all role calls recorded separately",
+      "coverage": {
+        "all_original_spans_present": true,
+        "source_character_count": 7744,
+        "source_sha256": "c543ac54181f2b922ed6012c5b3424281af02e20797626c3c592afb5d742c8b1",
+        "source_span_count": 105
+      },
+      "window_count": 1,
+      "planned_call_count": 4,
+      "audit_failures": [],
+      "rejected_row_count": 11,
+      "issues": [
+        "bid opening date: September 16, 2025 9:00 A.M. (source s12) vs bid submission deadline: September 16, 2025 9:00 A.M. (source s18) \u2013 same value but listed twice with identical source_id s18 for both (s",
+        "Bid opening date and bid submission deadline are inconsistent (September 9 vs September 16 2025), conflicting with s12 and s18 (span s103)",
+        "Item 2 transformer rating 750 kVA, configuration three-phase, voltage levels 13.8 kV primary and 120/208 V secondary, mounting type pad-mounted, cover type welded, enclosure material Type 304L are not",
+        "Bid opening date changed FROM 10:00 A.M., Tuesday, September 9, 2025 (CHamoru Standard Time; ChST) TO NOW READ 9:00 A.M., Tuesday, September 16, 2025 (CHamoru Standard Time; ChST). (span s12)"
+      ]
+    },
+    {
+      "directory": "20261015T131814Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "document": "gpa-07025-full-ifb-amendment-i.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 207.084,
+      "source_spans": 1214,
+      "api_response_sha256": "5a36c0534562ec2ca1609388375f8f8df837769f4eb71594e1a5f48ea580dc0d",
+      "failure_detail": "Durable extraction extract-416e04dd3f9928e3cebfabbd540228d844eab40a35a5f9e10f96c36350bec40e did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "snapshot_after": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "counts_after": {
+        "requirements": 0,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T131814Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+      "run_response_path": ".runtime/actual-inference/20261015T131814Z-gpa-07025-full-ifb-amendment-i-requirements/api-response.json",
+      "run_response_sha256": "5a36c0534562ec2ca1609388375f8f8df837769f4eb71594e1a5f48ea580dc0d",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T132316Z-gpa-op34276-requirements",
+      "document": "gpa-op34276.pdf",
+      "kind": "requirements",
+      "status": "succeeded",
+      "http_status": 200,
+      "latency_seconds": 41.281,
+      "source_spans": 329,
+      "api_response_sha256": "7784ca2979cedfbc4fb4bdfd672aa3ea7fbabf5bc77176064e99b7918ca06365",
+      "failure_detail": null,
+      "snapshot_before": "577f7de6b8e799f1d7ecb4a3c08874a7e48ede38bb09d202396ea599045afbcd",
+      "snapshot_after": "6601445a0d9b5665a5409f9fb7a740ec57d5769bc0e1fc36900f7d5d6c428e63",
+      "counts_after": {
+        "requirements": 2,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T132316Z-gpa-op34276-requirements",
+      "outcome_meaning": "Pipeline persisted pending proposals; not quality acceptance",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "run_response_path": ".runtime/actual-inference/20261015T132316Z-gpa-op34276-requirements/api-response.json",
+      "run_response_sha256": "7784ca2979cedfbc4fb4bdfd672aa3ea7fbabf5bc77176064e99b7918ca06365",
+      "call_trace_ids": [
+        "430d0a52554d4d21ba85c90bf21caa50",
+        "ed794c5a7217470cb56a7b0c7e7b5cc9",
+        "f22c81c9dd6c437980f2c6bfb162e65b",
+        "7ff49099a8b64b259650dc9395993359"
+      ],
+      "trace_calls_linked": 4,
+      "request_path": ".runtime/actual-model-traces/ed794c5a7217470cb56a7b0c7e7b5cc9/request.json",
+      "raw_response_path": ".runtime/actual-model-traces/ed794c5a7217470cb56a7b0c7e7b5cc9/response.json",
+      "input_sha256": "bf7e00970ec034c175d32b3770fb372e23094fb9e55b70daa5c4be4a6a26d3c8",
+      "raw_response_sha256": "13f2844ec8526563eb537536be416a4d99e6b11bd944c5a7a4ff2065d9bf49d0",
+      "request_scope": "Representative mapper call; complete run source coverage and all role calls recorded separately",
+      "coverage": {
+        "all_original_spans_present": true,
+        "source_character_count": 36349,
+        "source_sha256": "e4598f3d8aad3c2dc177d468e7c469096cf8e72a236b12accad8ced431f5c7b1",
+        "source_span_count": 329
+      },
+      "window_count": 1,
+      "planned_call_count": 4,
+      "audit_failures": [],
+      "rejected_row_count": 0,
+      "issues": [
+        "Transformer Rating: unit 'kVA' not shown in source spans s7, s8 (span s7 shows 'TRANSFORMER, PAD MTD, 300 kVA' but no explicit 'kVA' unit label; span s8 shows '750 kVA Pad Mounted Transformer' with 'k",
+        "Equipment rating (300 kVA vs 750 kVA) differs between line items; source spans s7/s8 vs s139/s140. (span s7)"
+      ]
+    },
+    {
+      "directory": "20261015T132358Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "document": "gpa-07025-full-ifb-amendment-i.pdf",
+      "kind": "requirements",
+      "status": "failed",
+      "http_status": 503,
+      "latency_seconds": 211.478,
+      "source_spans": 1214,
+      "api_response_sha256": "2064476a078f51531a3d93fca263f911e15a815a77481320b937110d7aaf2d1b",
+      "failure_detail": "Durable extraction extract-c6f5bf8ddd86a9f714e41ae08be27f7a0bdc6e4cefc84c2dcc03cf0ee739564d did not complete. Check the endpoint and worker, then explicitly retry extraction; a failed run can start a new attempt and its history is retained. No approvals were granted.",
+      "snapshot_before": "6601445a0d9b5665a5409f9fb7a740ec57d5769bc0e1fc36900f7d5d6c428e63",
+      "snapshot_after": "6601445a0d9b5665a5409f9fb7a740ec57d5769bc0e1fc36900f7d5d6c428e63",
+      "counts_after": {
+        "requirements": 2,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T132358Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "outcome_meaning": "No proposals committed by this failed attempt",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+      "run_response_path": ".runtime/actual-inference/20261015T132358Z-gpa-07025-full-ifb-amendment-i-requirements/api-response.json",
+      "run_response_sha256": "2064476a078f51531a3d93fca263f911e15a815a77481320b937110d7aaf2d1b",
+      "call_trace_ids": [],
+      "trace_calls_linked": 0
+    },
+    {
+      "directory": "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "document": "gpa-07025-full-ifb-amendment-i.pdf",
+      "kind": "requirements",
+      "status": "succeeded",
+      "http_status": 200,
+      "latency_seconds": 427.118,
+      "source_spans": 1214,
+      "api_response_sha256": "02d07eae5f486c0284aca76e8fd8f07a549070204e3e2d177b368f66ec1e8a15",
+      "failure_detail": null,
+      "snapshot_before": "6601445a0d9b5665a5409f9fb7a740ec57d5769bc0e1fc36900f7d5d6c428e63",
+      "snapshot_after": "0abe08b3191437e6b1241711c220cce5912a76573589f5b747f61fa43ee54d3d",
+      "counts_after": {
+        "requirements": 35,
+        "proposals": 4,
+        "suppliers": 0,
+        "evidence": 0,
+        "decisions": 0
+      },
+      "id": "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "outcome_meaning": "Pipeline persisted pending proposals; not quality acceptance",
+      "model": "swiss-ai/Apertus-v1.5-8B",
+      "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+      "source_document_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+      "run_response_path": ".runtime/actual-inference/20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements/api-response.json",
+      "run_response_sha256": "02d07eae5f486c0284aca76e8fd8f07a549070204e3e2d177b368f66ec1e8a15",
+      "call_trace_ids": [
+        "948075aa26aa44d9bea56e7e7196b890",
+        "50ec1fd094b84de4bc5fa4978d35b66c",
+        "96c04fba1af746e5b89304a10ca11ab0",
+        "9f98a7db77dd43f2854c0e8d41fbd2fd",
+        "d804ac4475f544d1a9c30d7bc9ad54c3",
+        "c5f552a62ace4c71ac0d7d77be019e42",
+        "cdd8ebcb7497481ab1e4ef51514fc84a",
+        "342478ff5b8448a692e4455dc12b7771",
+        "4229e1873843459f81945ac3129cc4fe",
+        "014ed9b567a9471d94031492b3888a22",
+        "87b91cc18b824b21bf267864d0b1c6ec",
+        "bac6f321d46643a29481d9396dfefd8e",
+        "55d2e8f177bf41649c9149d10e3f9827",
+        "33e0109fd04842da9a42d65434f0e8ad",
+        "4319f93f33834736a776c707e955faaf",
+        "f98c02bb2963470d8168de089942d992",
+        "fd4956f4f893430cb1e8c986ee8c59b7",
+        "99a021eb476349a19ff0968247cd6e36",
+        "9d784b70bd714fb28be5e3df4a6bea31",
+        "7c534a7a9f2a4b7a84245f8d114b041e",
+        "4cc3d173ab05429d85b7e442811ec00b",
+        "6b43f7aa8f7046dd9545481af091f8af",
+        "5fde18e12af043509a876e50c26f55aa"
+      ],
+      "trace_calls_linked": 23,
+      "request_path": ".runtime/actual-model-traces/50ec1fd094b84de4bc5fa4978d35b66c/request.json",
+      "raw_response_path": ".runtime/actual-model-traces/50ec1fd094b84de4bc5fa4978d35b66c/response.json",
+      "input_sha256": "12a72488b75bda1bc2dcc98f55eb4e5bf8ba768ac23e122c2a61d3e0f4e54410",
+      "raw_response_sha256": "3b0b9791596e493f5d4ea3c73ccdf74535213563f0e34b755584b37362f4b602",
+      "request_scope": "Representative mapper call; complete run source coverage and all role calls recorded separately",
+      "coverage": {
+        "all_original_spans_present": true,
+        "source_character_count": 233182,
+        "source_sha256": "fb5b2d536fbabdd29d0f65ada6c79d1e3b67424f5a7ab3bc0e4f9bd9c30f3ca1",
+        "source_span_count": 1214
+      },
+      "window_count": 6,
+      "planned_call_count": 24,
+      "audit_failures": [
+        {
+          "reason": "Apertus adversarial challenger failed or returned invalid structured output. Its output reached the max_tokens limit and was truncated. No decisions were approved.",
+          "role": "adversarial challenger",
+          "window": 1
+        }
+      ],
+      "rejected_row_count": 0,
+      "issues": [
+        "Pad Mounted Transformers: unit 'kVA' not shown in source spans s9, s32, s168, s228 (span s9)",
+        "adversarial challenger returned invalid or truncated structured output; this window has no result from that role.",
+        "Transformer kVA Size: 750 kVA shown in source_ids [s730,s731,s732,s733,s734,s735,s736] but not in source_id s675",
+        "Secondary Voltage: 480Y/277V shown in source_ids [s731,s732] but not in source_id s675",
+        "External Dry-film Thickness: 3.5 mil shown in source_ids [s717] but not in source_id s675",
+        "Transformer kVA Size: No specific kVA value provided in source spans (span s730-s734). (span s730)",
+        "This window returned the 15-row output cap, so more obligations or offers may exist in it; review the source pages.",
+        "Transformer Rating: value '750' not shown in span s1012 (span contains no numeric rating)",
+        "Primary Voltage: value '13.8' not shown in span s1012 (span contains no numeric voltage)",
+        "Secondary Voltage: value '120' not shown in span s1012 (span contains no numeric voltage)",
+        "Equipment Type: value '3' not shown in span s1012 (span contains no numeric equipment type)",
+        "Transformer Rating: value '750' comes from the selected line item's own column, not from another line item (span s1012)",
+        "Primary Voltage: value '13.8' comes from the selected line item's own column, not from another line item (span s1012)",
+        "Secondary Voltage: value '120' comes from the selected line item's own column, not from another line item (span s1012)",
+        "Equipment Type: value '3' comes from the selected line item's own column, not from another line item (span s1012)",
+        "Equipment Type: 750 kVA not shown in source span s1089 (span shows only GPA-070-25 \u00b7 OP34276 \u00b7 Item 2)",
+        "Item Number: 2 not shown in source span s1089 (span shows only GPA-070-25 \u00b7 OP34276 \u00b7 Item 2)",
+        "Secondary Voltage: 120/208 V not shown in source span s1089 (span shows only GPA-070-25 \u00b7 OP34276 \u00b7 Item 2)",
+        "Primary Voltage: 13.8 kV not shown in source span s1089 (span shows only GPA-070-25 \u00b7 OP34276 \u00b7 Item 2)",
+        "Equipment Type '750 kVA' is not a line item column value but a description; no line item price is provided for GPA-070-25/OP34276 item 2 (span s1089) (span s1089)",
+        "Transformer Rating: 750 kVA not shown in span s1163 (shows 300 kVA item 1 and 750 kVA item 2 but no explicit 750 kVA value), span s1166 (same)",
+        "Pad Mounted: Not shown in span s1163 (only 300 kVA item 1 and 750 kVA item 2 but no explicit pad-mounted value)",
+        "Primary Voltage: Not shown in span s1163 (only 13.8 kV primary and 120/208 V secondary but no explicit 13.8 kV value)",
+        "Secondary Voltage: Not shown in span s1163 (only 120/208 V secondary but no explicit 120 V value)",
+        "Secondary Configuration: Not shown in span s1163 (only 120/208 V secondary but no explicit 208 V value)",
+        "Bid Guarantee Requirement: 15% not shown in span s1181 (only mentions Bid Guarantee \u2013 15% but no explicit 15 value)",
+        "Manufacturer Certificate Requirement: 1 certificate not shown in span s1182 (only mentions Manufacturer\u2019s Certificate but no explicit 1 value)",
+        "Local Procurement Preference: 750 kVA not shown in span s1207 (only mentions 750 kVA threshold but no explicit 750 value)",
+        "Bid Guarantee Requirement: 15% bid guarantee percentage not defined in source (span s1181)",
+        "Manufacturer Certificate Requirement: Requirement to submit manufacturer's certificate not defined in source (span s1182)",
+        "Local Procurement Preference: 750 kVA threshold for local procurement preference not defined in source (span s1207)",
+        "Bid submission envelope addressing: unit 'kV' is not present in span s1212 (span s1212)",
+        "Invoice copy requirement: unit 'copies' is not present in span s1213 (span s1213)",
+        "Service compliance phase: unit 'Phase' is not present in span s1214 (span s1214)",
+        "Bid submission envelope addressing: source s1212 does not specify envelope addressing instructions (span undefined)",
+        "Invoice copy requirement: source s1213 does not mention quadruplicate invoices (span undefined)",
+        "Service compliance phase: source s1214 lacks clear phase description (span undefined)"
+      ]
+    }
+  ],
+  "browser_captures": [
+    {
+      "id": "acceptance_slide",
+      "path": "captures/acceptance-slide-detail.png",
+      "view": "acceptance_blocked",
+      "caption": "Actual acceptance workspace with missing evidence, incomplete extraction and disabled gate creation.",
+      "sha256": "8f750ebba69743a84bf915a27b84da2b02fcaef11c23a4ac65fd10d944945cf0",
+      "captured_at": "2026-10-15T14:44:50.415097+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i",
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Unmodified pixel crop of registered actual UI screenshot for slide legibility",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot",
+      "parent_capture_id": "final_acceptance",
+      "crop_pixels": [
+        286,
+        542,
+        1568,
+        974
+      ]
+    },
+    {
+      "id": "requirements_slide",
+      "path": "captures/requirements-slide-detail.png",
+      "view": "actual_inference",
+      "caption": "Actual pending requirements after five genuine source-kind runs; 35 pending, zero approved.",
+      "sha256": "87ba1f836c4bf328bb7dfaf9fdc95a82203b0ba2f32d38c5751b219608a52c0c",
+      "captured_at": "2026-10-15T14:44:44.315363+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i",
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Unmodified pixel crop of registered actual UI screenshot for slide legibility",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot",
+      "parent_capture_id": "final_requirements",
+      "crop_pixels": [
+        286,
+        552,
+        1234,
+        952
+      ]
+    },
+    {
+      "id": "final_requirements",
+      "path": "captures/final-requirements.png",
+      "view": "actual_inference",
+      "caption": "Actual pending requirements after five genuine source-kind runs; 35 pending, zero approved.",
+      "sha256": "56d81830ad63d60833927a712d97e127c1ac208d548651e133463dec0355a625",
+      "captured_at": "2026-10-15T14:44:44.315363+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i",
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_provenance",
+      "path": "captures/final-source-provenance.png",
+      "view": "source_provenance",
+      "caption": "Full tender provenance in the actual source inspector at version 13.",
+      "sha256": "cbf9d9cde07e4764ac96e0ac33489cf4678704ba6fe47ab2166c12b34d4a0288",
+      "captured_at": "2026-10-15T14:44:45.203606+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_assurance",
+      "path": "captures/final-assurance.png",
+      "view": "extraction_assurance",
+      "caption": "Expanded preserved audit findings and incomplete extraction conditions block release.",
+      "sha256": "36da3122c99bc88b445c28ce83894edb42165c7906262ffda61e5ad54d0be8fc",
+      "captured_at": "2026-10-15T14:44:45.999178+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_price_correction",
+      "path": "captures/final-price-correction.png",
+      "view": "supplier_review",
+      "caption": "Actual PO proposal remains pending after an audited source-cited price correction.",
+      "sha256": "bbf43d5da79da0d9b78fd7e898488cd71deb6daf185e83b271f87629c65d976f",
+      "captured_at": "2026-10-15T14:44:47.104062+00:00",
+      "source_ids": [
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_price_detail",
+      "path": "captures/final-price-correction-detail.png",
+      "view": "audited_price_correction",
+      "caption": "Actual DOM region: original model total and assistant source-reading correction to unit price, explicitly pending.",
+      "sha256": "2a3b4c3ff7793719c0fbaa4367e467b77a76b638aa67c02bb3195daaeb398e81",
+      "captured_at": "2026-10-15T14:44:47.819108+00:00",
+      "source_ids": [
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Actual DOM element screenshot"
+    },
+    {
+      "id": "final_correction_source",
+      "path": "captures/final-correction-source.png",
+      "view": "correction_source",
+      "caption": "Exact source span for the audited price correction in the source inspector.",
+      "sha256": "628cbc9a9d677da51bdaee0c889637d9485e918aae59d48db2e89f8265c9c694",
+      "captured_at": "2026-10-15T14:44:48.587346+00:00",
+      "source_ids": [
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_po_page4",
+      "path": "captures/final-po-original-page4.png",
+      "view": "original_page_review",
+      "caption": "Actual original PO page 4 rendered inside the application beside the correction.",
+      "sha256": "d0b130564824eb0830a98b56d16e7018670132afaf296a9c1cb3eed0b9b98d00",
+      "captured_at": "2026-10-15T14:44:49.662539+00:00",
+      "source_ids": [
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_acceptance",
+      "path": "captures/final-acceptance.png",
+      "view": "acceptance_blocked",
+      "caption": "Actual acceptance workspace with missing evidence, incomplete extraction and disabled gate creation.",
+      "sha256": "f411e7362c08d2a785a7ab5160b37f14b01f9d1c7450ff2e5bb96364d114eb28",
+      "captured_at": "2026-10-15T14:44:50.415097+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i",
+        "gpa-op34276"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "id": "final_history",
+      "path": "captures/final-history.png",
+      "view": "change_history",
+      "caption": "Actual event history showing price correction, reassessment and forward assurance migration.",
+      "sha256": "9746ad8db9bf473b2d9a093392f8f99c7008b198fad99c210af6738b7ddb926c",
+      "captured_at": "2026-10-15T14:44:51.147443+00:00",
+      "source_ids": [
+        "gpa-op34276",
+        "gpa-07025-full-ifb-amendment-i"
+      ],
+      "inference_run_ids": [
+        "20261015T130000Z-gpa-07025-bid-abstract-supplier",
+        "20261015T131338Z-gpa-op34276-supplier",
+        "20261015T131723Z-gpa-07025-amendments-requirements",
+        "20261015T132316Z-gpa-op34276-requirements",
+        "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements"
+      ],
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "project_version": 13,
+      "capture_revision": "index-BIw0oLeV.js / index-CEeYgm3n.css",
+      "method": "Playwright screenshot of authenticated local app; no business data mutated",
+      "review": "Visually inspected actual captured state",
+      "region_note": "Full 1600x1000 viewport screenshot"
+    }
+  ],
+  "verification": {
+    "backend": {
+      "status": "passed",
+      "tests_passed": 330,
+      "command": "make check",
+      "evidence_path": ".runtime/tonight-check.log",
+      "scope": "Final complete software QA; not a model-accuracy score"
+    },
+    "frontend": {
+      "status": "passed",
+      "tests_passed": 39,
+      "command": "make check",
+      "evidence_path": ".runtime/tonight-check.log"
+    },
+    "build": {
+      "status": "passed",
+      "typescript": "passed",
+      "vite": "passed",
+      "js_asset": "index-BIw0oLeV.js",
+      "css_asset": "index-CEeYgm3n.css",
+      "evidence_path": ".runtime/tonight-check.log",
+      "deployed_assets_verified": true
+    },
+    "docker": {
+      "status": "passed",
+      "command": "make run",
+      "exit_code": 0,
+      "evidence_path": ".runtime/tonight-make-run.log",
+      "postdeploy_verification": {
+        "at": "2026-10-15T14:42:50.590382+00:00",
+        "health": {
+          "status": "ok",
+          "mode": "live",
+          "model": "swiss-ai/Apertus-v1.5-8B",
+          "model_configured": true,
+          "workflow": "temporal",
+          "database": "postgresql"
+        },
+        "snapshot": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+        "version": 13,
+        "counts": {
+          "documents": 5,
+          "requirements": 35,
+          "proposals": 4,
+          "suppliers": 0,
+          "evidence": 0,
+          "decisions": 0,
+          "extraction_runs": 5
+        },
+        "incomplete_runs": 5,
+        "original_content_and_events_preserved": true,
+        "served_assets": [
+          "/assets/index-BIw0oLeV.js",
+          "/assets/index-CEeYgm3n.css"
+        ],
+        "served_asset_hashes_match": true
+      },
+      "gateway_recovery": "Docker resolver refresh after app replacement; nginx syntax check and live authenticated routes pass"
+    },
+    "postgres_restart": {
+      "status": "passed",
+      "scope": "Post-migration app/worker restart; prior full-stack restart separately retained",
+      "snapshot": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "original_content_preserved": true,
+      "historical_events_preserved": true,
+      "evidence_path": ".runtime/tonight-deployed-verification.json",
+      "private_backup_available": true
+    },
+    "temporal_workflow": {
+      "status": "actual_inference_and_inflight_duplicate_request_verified",
+      "duplicate_behavior": "duplicate attached to same workflow; no duplicate inference",
+      "midflight_worker_crash_tested": false,
+      "evidence_index": ".runtime/impl-evidence/EVIDENCE_INDEX.json"
+    },
+    "docling": {
+      "status": "strict_success_across_two_contexts",
+      "source_count": 5,
+      "attachment_pages": 95,
+      "spans": 2136,
+      "characters": 342307,
+      "summary_path": ".runtime/quality/revalidated/combined-summary.json",
+      "failure_preserved": "Parallel isolated full-tender attempt OOM/exit137; separate API parse succeeded"
+    },
+    "mcp": {
+      "status": "read_only_tool_verified_at_earlier_checkpoint",
+      "evidence_path": ".runtime/live-mcp-verification.json",
+      "scope": "read_package only; no external writes; earlier count of zero requirements predates inference"
+    },
+    "runtime_network": {
+      "status": "bounded_routes_passed",
+      "evidence_path": ".runtime/return-review/deployed-code-network.json",
+      "public_destinations_tested": [
+        "1.1.1.1:443",
+        "8.8.8.8:53"
+      ],
+      "internal_destinations_reachable": [
+        "database:5432",
+        "temporal:7233",
+        "model-relay:8081"
+      ],
+      "model_endpoint_currently_running": false
+    },
+    "actual_apertus_inference": {
+      "status": "5_completed_source_kind_runs_all_pending",
+      "attempts": 15,
+      "completed_runs": 5,
+      "raw_call_triplets": 64,
+      "full_tender_seconds": 427.118,
+      "full_tender_spans_supplied": 1214,
+      "quality": "mixed; failed audit and row cap, audit findings, invalid rows preserved; no accuracy estimate"
+    },
+    "summary": "330 backend and 39 frontend tests passed; TypeScript/Vite build passed; rebuilt app and restart preserve all original records; actual inference produced 35 pending requirements and 4 pending offers; all 5 runs incomplete and both gates blocked.",
+    "evidence_files": [
+      {
+        "repository_relative_path": ".runtime/backend-final.log",
+        "sha256": "09f434b7046bce73070a8f0ed2c391e8791382e4e2b9e58af1efd961a5a93c1b",
+        "bytes": 180
+      },
+      {
+        "repository_relative_path": ".runtime/reproducible-image-build.log",
+        "sha256": "a44e7419aa3e5bdc52fd8517afd4dc9e68721a4cb4f0ec5950644d1ce768fd9d",
+        "bytes": 5116
+      },
+      {
+        "repository_relative_path": ".runtime/real-source-restart-verification.json",
+        "sha256": "656cb34a4a2acb391debed4da7cec1997f50bc7d59b3d527021c8ff513e8382d",
+        "bytes": 1320
+      },
+      {
+        "repository_relative_path": ".runtime/live-mcp-verification.json",
+        "sha256": "86fc0788c83238f8016c9712357c0da6abe052d984f703d9209ac38f33ac4b26",
+        "bytes": 222
+      },
+      {
+        "repository_relative_path": ".runtime/live-network-verification.json",
+        "sha256": "09b5b1f57903eedeab470dc204ec314dc2daffd21336faf4e8d1f0c29596b5bf",
+        "bytes": 431
+      },
+      {
+        "repository_relative_path": ".runtime/quality/revalidated/combined-summary.json",
+        "sha256": "661f1eaa5b78fc7f38d0f62687495db11fa60fe691ae15389f1863f5f9f8f4b8",
+        "bytes": 25019
+      },
+      {
+        "repository_relative_path": ".runtime/make-run-live-verification.json",
+        "sha256": "6febce3258ac66320b9b74d40d8fba286b1d4b5537e3a6388e1174a871ef64ea",
+        "bytes": 355
+      },
+      {
+        "repository_relative_path": ".runtime/make-run-verification.log",
+        "sha256": "bde714d4fe4dcf801a946a5a5d909782b6b28ed24020927980b69ca97d03002b",
+        "bytes": 4508
+      },
+      {
+        "repository_relative_path": ".runtime/price-correction-deployment-verification.json",
+        "sha256": "0a05c4c679b0abb5adb112974cd4e831cdfdd0f5ad0475bd96ce9c27413da877",
+        "bytes": 448
+      },
+      {
+        "repository_relative_path": ".runtime/make-run-price-correction.log",
+        "sha256": "b9ce8d0359d67e5dcbf670baf6a13c1f478d38e7af7500b9eb236ae61060857f",
+        "bytes": 4511
+      },
+      {
+        "repository_relative_path": "docs/PRICE_CORRECTION_REVIEW.md",
+        "sha256": "81c3a5093f4d90dd20de5245c29779fa226ec689ffc76f06d6416024b2bd324d",
+        "bytes": 3545
+      },
+      {
+        "repository_relative_path": "docs/PRICE_CORRECTION_INDEPENDENT_REVIEW.md",
+        "sha256": "feb0956cc0b8c17f4744d1331a08d5934ee20accf2eaf97909d275ec1515ca84",
+        "bytes": 7111
+      },
+      {
+        "repository_relative_path": ".runtime/original-preview-deployment-verification.json",
+        "sha256": "a16ea436e19e0aefa2ffb0de84278aaf94c0108981896f232d159b74e7307ee1",
+        "bytes": 1383
+      }
+    ],
+    "historical_checkpoints": [
+      {
+        "backend": {
+          "status": "passed",
+          "command": ".venv/bin/python -m pytest -q",
+          "tests_passed": 127,
+          "duration_seconds": 9.53,
+          "log_path": ".runtime/backend-final.log",
+          "scope": "Isolated software QA, not model performance"
+        },
+        "frontend": {
+          "status": "passed",
+          "command": "npm test",
+          "working_directory": "track_2b/src/web",
+          "tests_passed": 20,
+          "evidence_path": "track_2b/docs/FRONTEND_REPORT.md",
+          "scope": "Latest source-inspector change, not deployed browser verification"
+        },
+        "build": {
+          "status": "passed",
+          "command": "npm run build",
+          "working_directory": "track_2b/src/web",
+          "typescript": "passed",
+          "vite": "passed",
+          "js_asset": "index-D6v-Jk9U.js",
+          "css_asset": "index-B2SGI0za.css",
+          "evidence_path": "track_2b/docs/FRONTEND_REPORT.md",
+          "deployed_assets_verified": true,
+          "deployed_assets_verified_at": "2026-10-15T09:54:44.206920+00:00",
+          "deployed_asset_evidence_path": ".runtime/make-run-live-verification.json"
+        },
+        "docker": {
+          "status": "make_run_passed",
+          "command": "docker compose build app",
+          "log_path": ".runtime/reproducible-image-build.log",
+          "make_run_status": "Completed from public Dockerfile; actual HTTP health and latest served assets verified",
+          "make_run_command": "make run",
+          "make_run_exit_code": 0,
+          "verified_at": "2026-10-15T09:54:44.206920+00:00",
+          "make_run_evidence_path": ".runtime/make-run-live-verification.json",
+          "make_run_log_path": ".runtime/make-run-verification.log",
+          "health": {
+            "status": "ok",
+            "mode": "live",
+            "model": "swiss-ai/Apertus-v1.5-8B",
+            "model_configured": false,
+            "workflow": "temporal",
+            "database": "postgresql"
+          },
+          "served_assets": [
+            "/assets/index-D6v-Jk9U.js",
+            "/assets/index-B2SGI0za.css"
+          ],
+          "runtime_image": {
+            "id": "sha256:7d005d4ccbcdb4552a9fb7fad91d943682b0e48ab42dd4dbbeedaa4c0cad8808",
+            "architecture": "arm64",
+            "bytes": 7362150484,
+            "source": "Parent runtime inspection at original make-run checkpoint"
+          },
+          "containers_up": 6,
+          "healthy_services": [
+            "app",
+            "database",
+            "temporal"
+          ]
+        },
+        "recorded_at": "2026-10-15T09:54:44.206920+00:00",
+        "label": "Pre-price-correction software/deployment checkpoint"
+      },
+      {
+        "label": "Preserved earlier checkpoint, superseded where current execution is recorded",
+        "category": "actual_apertus_inference",
+        "record": {
+          "status": "pending",
+          "completed_calls": 0,
+          "limits": "Six windows/24 planned calls are planning evidence only"
+        }
+      },
+      {
+        "label": "Preserved earlier checkpoint, superseded where current execution is recorded",
+        "category": "price_correction",
+        "record": {
+          "status": "implemented_reviewed_and_deployed_not_yet_exercised_on_actual_model_proposal",
+          "evidence_paths": [
+            "docs/PRICE_CORRECTION_REVIEW.md",
+            "docs/PRICE_CORRECTION_INDEPENDENT_REVIEW.md",
+            "track_2b/docs/FRONTEND_REPORT.md",
+            ".runtime/price-correction-deployment-verification.json"
+          ],
+          "mechanism": "Engineer/source/snapshot-bound edits preserve original_data and trace; audit before/after/reason/source, remain pending and require a separate approval action.",
+          "limits": "Not an independent second-reviewer identity check. No actual proposal or completed model response exists at this checkpoint."
+        }
+      },
+      {
+        "label": "Preserved earlier checkpoint, superseded where current execution is recorded",
+        "category": "original_pdf_preview",
+        "record": {
+          "status": "actual_inline_original_preview_verified",
+          "evidence_path": ".runtime/original-preview-deployment-verification.json",
+          "observed": {
+            "checked_at": "2026-10-15T10:47:47.389055+00:00",
+            "health": {
+              "status": "ok",
+              "mode": "live",
+              "model": "swiss-ai/Apertus-v1.5-8B",
+              "model_configured": false,
+              "workflow": "temporal",
+              "database": "postgresql"
+            },
+            "assets": [
+              "/assets/index-CQJqGKmM.js",
+              "/assets/index-BEgCKw9W.css"
+            ],
+            "project_unchanged": true,
+            "snapshot_hash": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+            "document_count": 5,
+            "previews": [
+              {
+                "document": "gpa-07025-bid-abstract.pdf",
+                "original_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+                "page": 3,
+                "image_size": [
+                  1800,
+                  1165
+                ],
+                "png_sha256": "28c47a4cf4daa97086a73ff6bed4337960d796d68e6577c415fe826f1c6147cd",
+                "cache_control": "private, no-store",
+                "unauthenticated_status": 401
+              },
+              {
+                "document": "gpa-07025-full-ifb-amendment-i.pdf",
+                "original_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10",
+                "page": 57,
+                "image_size": [
+                  1093,
+                  1799
+                ],
+                "png_sha256": "a6166c9df610e7eed26d9125c1eef955a3eab155dbe319bf49fce54cbbc0c228",
+                "cache_control": "private, no-store",
+                "unauthenticated_status": 401
+              }
+            ],
+            "browser_capture": "track_2b/submission/captures/bid-original-page3-before-inference.jpg"
+          },
+          "limits": "Previewing stored originals supports source review; no requirement/model proposal or price correction was created."
+        }
+      },
+      {
+        "label": "Preserved earlier checkpoint, superseded where current execution is recorded",
+        "category": "mcp",
+        "record": {
+          "status": "read_package_passed",
+          "protocol": "2025-11-25",
+          "listed_tools": [
+            "prepare_purchase_draft",
+            "read_document_revision",
+            "read_package"
+          ],
+          "invoked_tool": "read_package",
+          "requirements": 0,
+          "mutations_performed": false,
+          "evidence_path": ".runtime/live-mcp-verification.json"
+        }
+      },
+      {
+        "label": "Preserved earlier checkpoint, superseded where current execution is recorded",
+        "category": "temporal_workflow",
+        "record": {
+          "status": "actual_completed_runs_recorded",
+          "completed_runs": 5,
+          "duplicate_midrun_attached": true,
+          "midflight_worker_crash_tested": false,
+          "limits": "Agent restart/duplicate evidence retained; active-worker crash recovery not tested."
+        }
+      }
+    ],
+    "price_correction": {
+      "status": "exercised_on_actual_pending_PO_proposal",
+      "original_model_price_cents": 11131650,
+      "corrected_price_cents": 3710550,
+      "currency": "USD",
+      "price_basis": "unit",
+      "actor_scope": "AI assistant source reading, not qualified engineering approval",
+      "source": "PO page 4",
+      "raw_model_data_preserved": true,
+      "proposal_remains_pending": true
+    },
+    "original_pdf_preview": {
+      "status": "actual_PO_page4_preview_captured",
+      "capture_id": "final_po_page4",
+      "source_id": "gpa-op34276",
+      "page": 4
+    },
+    "pending_implementation_delta": "deployed_verified",
+    "trace_integrity": {
+      "status": "passed",
+      "trace_files_verified": 192,
+      "run_responses_verified": 15,
+      "source_mapper_spans_exact": true,
+      "evidence_path": ".runtime/return-review/full-source-verification.json"
+    },
+    "independent_release_control_review": {
+      "status": "passed",
+      "backend_tests": 96,
+      "frontend_tests": 39,
+      "scope": "Assurance gaps, legacy migration, price bases, trace linkage; all scoped findings resolved"
+    }
+  },
+  "submission_uploaded": false,
+  "selected_scope": {
+    "procurement_id": "GPA-070-25",
+    "purchase_order": "OP34276",
+    "line_item": 2,
+    "equipment": "750 kVA three-phase pad-mounted transformer",
+    "quantity": 3,
+    "exclude_other_scope": "Separate item 1: 300 kVA configuration"
+  },
+  "source_qa_reference_path": "../data/evaluation/gpa-source-facts.json",
+  "source_review_path": "../../docs/REAL_PACKAGE_REVIEW.md",
+  "qa_reference_is_inference_input": false,
+  "source_page_accounting": {
+    "downloaded_pdf_count": 5,
+    "downloaded_pdf_pages": 95,
+    "unique_content_pages": null,
+    "note": "95 counts attachment pages. Embedded E-004 pages 10-29 match all 20 standalone scan image sets; specification/amendment/invitation content overlaps. No unique-page count is asserted."
+  },
+  "embedded_specification_comparison": {
+    "full_source_id": "gpa-07025-full-ifb-amendment-i",
+    "standalone_source_id": "gpa-e004-rev10",
+    "all_20_pages_match": true,
+    "method": "Compare sorted encoded image-stream SHA256, width, height, filter and JBIG2-global-data hash for every page; outer page envelope/pagination is additional.",
+    "qa_reference_contains_all_page_pairs": true
+  },
+  "parsing_status": {
+    "status": "strict_success_across_two_execution_contexts",
+    "final_parser_evidence_pending": false,
+    "verified_at": "2026-10-15T09:44:25.580839+00:00",
+    "summary_path": ".runtime/quality/revalidated/combined-summary.json",
+    "reference_document": "docs/STRICT_SOURCE_PARSING.md",
+    "contexts": "Four isolated offline reparses plus the separately completed actual API full-tender parse; not all five in one isolated run.",
+    "totals": {
+      "attachment_pages": 95,
+      "source_spans": 2136,
+      "retained_characters": 342307,
+      "unique_pages": null
+    },
+    "versions": {
+      "docling": "2.139.0",
+      "docling_core": "2.101.1",
+      "pdfium": "5.14.0",
+      "rapidocr": "3.10.0"
+    },
+    "isolated_parser_image": "sha256:c484c461a1261c8d84e0a753a8c2e73058a13304c07ef1b2a82bf2069185f424",
+    "isolated_network_mode": "none",
+    "preserved_failed_attempt": {
+      "status": "failed",
+      "termination": "Docker OOM",
+      "exit_code": 137,
+      "event_unix_timestamp": 1792056953,
+      "summary": "summary-attempt-1.json",
+      "log": "container-attempt-1.log",
+      "docker_events": "container-attempt-1-events.json"
+    },
+    "full_tender_window_plan": {
+      "source_spans": 1214,
+      "retained_characters": 233182,
+      "window_count": 6,
+      "planned_role_calls": 24,
+      "actual_inference_calls": 24,
+      "original_span_order_preserved": true,
+      "raw_character_limit": 48000,
+      "serialized_source_character_limit": 56000,
+      "supplier_and_evidence_status": "Requirements run completed; supplier/evidence full-document single-pass inference was not performed.",
+      "actual_call_note": "24 raw calls including failed audit; original saved run telemetry linked 23. Historical raw records preserved."
+    },
+    "legacy_mac_po_artifact": {
+      "repository_relative_path": ".runtime/sources/gpa-op34276.parsed.json",
+      "sha256": "99c3899e8d81f5df418bb009a1d399f0f80e37bc1604888e173e35235382b984",
+      "span_count": 654,
+      "scope": "Historical artifact reviewed for selected fields; not current runtime parser output"
+    },
+    "limits": "Strict success establishes conversion status and page coverage, not perfect OCR, image-content extraction, semantic accuracy or engineering acceptance."
+  },
+  "qa_reference_metadata": {
+    "records": {
+      "qa_reference": {
+        "repository_relative_path": "track_2b/data/evaluation/gpa-source-facts.json",
+        "sha256": "52cd507d1d479ea2baa6c486d128ac88cb4b23f687b6f21d62e74a3b7fce56f1"
+      },
+      "source_review": {
+        "repository_relative_path": "docs/REAL_PACKAGE_REVIEW.md",
+        "sha256": "8c258682e6bf2db3041fd8d0b85ee58f57512591a5f1dbe50e5f9f3daca1f0a7"
+      },
+      "data_readme": {
+        "repository_relative_path": "track_2b/data/README.md",
+        "sha256": "38da84e6d3ffd16cf6ba9435f6f122bbda9114407dad1f2b1bdc37b1ee08aa2e"
+      }
+    },
+    "expert_validated": false,
+    "is_model_input": false,
+    "factual_values_preserved": 35,
+    "canonical_page_locators": 39,
+    "canonical_span_references": 52,
+    "historical_po_locators_separately_hash_scoped": 18,
+    "canonical_bid_ocr_mismatches": 3,
+    "limits": "Partial/visual-only price checks preserve original errors; not model accuracy. QA corrections and annotations never substitute for actual model input/output."
+  },
+  "model_serving_preparation": {
+    "model": "swiss-ai/Apertus-v1.5-8B",
+    "model_revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+    "image": "ghcr.io/swiss-ai/vllm_apertus_1.5_release@sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6",
+    "status": "served_genuine_runs_then_stopped_workloads_restored",
+    "hardware": "RTX 5090 Laptop GPU, 24463 MiB",
+    "profile": {
+      "max_model_len": 32768,
+      "gpu_memory_utilization": 0.89,
+      "cpu_offload_gb": 2,
+      "max_num_seqs": 1,
+      "max_num_batched_tokens": 2048,
+      "temperature": 0,
+      "enable_thinking": false,
+      "text_only": true
+    }
+  },
+  "pending_implementation_delta": {
+    "assurance_gates": "snapshot-bound run conditions; known gaps and audit findings block both releases; no generic bypass",
+    "price_basis": "unknown basis conditional; unit/lot displayed explicitly",
+    "human_review": "all real results pending; no engineering approvals",
+    "assurance_resolution_workflow": "not implemented; incomplete runs remain blocked pending future scoped review implementation"
+  },
+  "adjacent_market_reference": {
+    "organization": "Mercanis",
+    "claim": "Raised over $20 million Series A, led by Partech and AVP",
+    "announcement_date": "2025-06-18",
+    "source_url": "https://partechpartners.com/news/mercanis-secures-over-20m-in-series-a-round",
+    "verified_date": "2026-10-15",
+    "scope": "Adjacent procurement-software funding; no TenderProof traction/validation/ROI inference; vendor performance claims excluded"
+  },
+  "actual_execution_summary": {
+    "attempts": 15,
+    "completed_source_kind_runs": 5,
+    "unique_inferred_documents": 4,
+    "trace_triplets": 64,
+    "pending_requirements": 35,
+    "pending_offers": 4,
+    "approved_suppliers": 0,
+    "evidence": 0,
+    "decisions": 0,
+    "expert_validation": false,
+    "critical_quality_notes": [
+      "Bid offers have wrong bidder/item prices; not corrected or approved.",
+      "Requirements contain inaccurate or meaningless properties and out-of-scope items.",
+      "Amendment run rejected 11 rows and saved zero; not an empty raw model response.",
+      "Full tender input coverage complete, extraction completeness not established: one failed audit and one row cap.",
+      "Delivery trigger present in supplier offer but missing as separate requirement."
+    ],
+    "historical_trace_reconciliation": {
+      "failed_audit_trace_id": "4acde44e84324b4293f666645239d948",
+      "run_id": "20261015T134845Z-gpa-07025-full-ifb-amendment-i-requirements",
+      "reason": "Preserved raw response reached 800 completion tokens; original persisted run trace linked only 23/24 calls. Metadata linkage is a post-run review finding, raw records unchanged."
+    }
+  },
+  "current_snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+  "current_version": 13,
+  "historical_browser_captures": [
+    {
+      "id": "full_tender_provenance_before_inference",
+      "path": "captures/full-tender-provenance.jpg",
+      "view": "source_provenance",
+      "caption": "Actual source inspector showing the complete 57-page GPA tender, publisher URL and original SHA-256 before model extraction; requirements remain empty at this checkpoint.",
+      "captured_at": "2026-10-15T09:57:29.790862+00:00",
+      "source_ids": [
+        "gpa-07025-full-ifb-amendment-i"
+      ],
+      "inference_run_ids": [],
+      "snapshot_hash": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "capture_revision": "Production assets index-D6v-Jk9U.js and index-B2SGI0za.css",
+      "sha256": "bb77b8ce46be340f8e38bd9211c5753c5928a5992a2b58da716a7ed02ce7e679"
+    },
+    {
+      "id": "bid_original_page3_before_inference",
+      "path": "captures/bid-original-page3-before-inference.jpg",
+      "view": "original_page_review",
+      "caption": "Actual source inspector displays page3 of the stored original GPA bid abstract before inference; requirements are empty at this checkpoint.",
+      "captured_at": "2026-10-15T10:47:26.009703+00:00",
+      "source_ids": [
+        "gpa-07025-bid-abstract"
+      ],
+      "inference_run_ids": [],
+      "snapshot_hash": "cdd3f564c90af98af33cd105510521297b4f0e19dbba7351d508b3044d13a73e",
+      "capture_revision": "Production assets index-CQJqGKmM.js and index-BEgCKw9W.css",
+      "sha256": "f11bd2dee32aa3365742bb60ed47dc0efbfb5befedc91a7d02057844dbb43ac0",
+      "notes": "Inline actual PDF preview verified. Browser automation security blocked opening a separate blob preview tab; no workaround was used."
+    }
+  ],
+  "artifact_input_review": {
+    "reviewed_at": "2026-10-15T14:47:53.246633+00:00",
+    "all_original_source_hashes_verified": true,
+    "all_15_response_hashes_verified": true,
+    "representative_call_hashes_verified": true,
+    "final_capture_count": 9,
+    "business_approvals_granted": false
+  }
+}

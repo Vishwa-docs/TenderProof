@@ -1,0 +1,105 @@
+{
+  "states": [
+    {
+      "slide": 1,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 2,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 3,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 4,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 5,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 6,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 7,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 8,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 9,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    },
+    {
+      "slide": 10,
+      "visibleSlides": 1,
+      "stageRatio": 1.7777777777777777,
+      "brokenImages": 0,
+      "overflows": [],
+      "outOfBounds": []
+    }
+  ],
+  "phone": {
+    "width": 390,
+    "height": 219.375,
+    "ratio": 1.7777777777777777,
+    "bodyScrollWidth": 390,
+    "innerWidth": 390
+  },
+  "errors": [],
+  "externalRequests": [],
+  "keyboardPassed": true,
+  "editingTogglePassed": true,
+  "verified_at": "2026-10-15T15:03:00.348019+00:00",
+  "pdf_pages": 10,
+  "pdf_all_pages_visually_reviewed": true,
+  "html_all_slides_visually_reviewed": true,
+  "html_sha256": "da7c06a78d581bd4a146c7ff02d1fb2a15ac83ec3bec23668df34776de1cf1d5",
+  "pdf_sha256": "671ced639e1a555b51ee5e90807d794c0e38970ebe6443b25dbe11fcf1310f13",
+  "script_sha256": "ef8a2cd6b4177df8f910d26c2f06218966c7e80b5afc23395bce5205bf7d814e",
+  "spoken_paragraphs_exactly_match_notes": true,
+  "style": "Engineering Field Notes",
+  "pdf_link_cleanup_pixel_identical": true
+}

@@ -1,0 +1,70 @@
+{
+  "project": "TenderProof",
+  "team": "SwissChivers",
+  "state": "local_assets_verified_final_user_video_pending",
+  "generated_at": "2026-10-15T15:03:00.348019+00:00",
+  "report_pages": 6,
+  "deck_slides": 12,
+  "native_table_slides": [
+    3,
+    12
+  ],
+  "video_duration_seconds": 116.021333,
+  "report_all_pages_visually_reviewed": true,
+  "deck_all_slides_visually_reviewed": true,
+  "video_all_seven_scenes_visually_reviewed": true,
+  "human_audio_playback_reviewed": false,
+  "source_provenance_manifest": "REAL_SOURCE_EVIDENCE.json",
+  "artifacts": [
+    {
+      "path": "output/SwissChivers_Report.pdf",
+      "bytes": 79778,
+      "sha256": "deede29dba6452bcf9084ecb80169a01c2c338eff290d3d8e35aa4f4a7db70e4"
+    },
+    {
+      "path": "output/TenderProof_Deck.pdf",
+      "bytes": 1667633,
+      "sha256": "75a6d3ec6f2c1126eef5faf09ba90ed856df4d4d12452ea09ee61227728ba324"
+    },
+    {
+      "path": "output/TenderProof_Deck.pptx",
+      "bytes": 175325,
+      "sha256": "61a7e5956f8d6f8a754fda255f1269d3cac42f7e31790119430eb3f8bf48701b"
+    },
+    {
+      "path": "output/TenderProof_Demo.mp4",
+      "bytes": 4254895,
+      "sha256": "fd8892a6ab0ed22f5277efbca03cb2e9140bf8be011570d817bb1b1fd4e12e79"
+    },
+    {
+      "path": "output/TenderProof_Demo.srt",
+      "bytes": 843,
+      "sha256": "222e986e901fbfdb93eb82bcdd4d541664003f6166f75a4cda5ba3d7da6f47b5"
+    },
+    {
+      "path": "output/TenderProof_Slides.html",
+      "bytes": 1253961,
+      "sha256": "da7c06a78d581bd4a146c7ff02d1fb2a15ac83ec3bec23668df34776de1cf1d5"
+    },
+    {
+      "path": "output/TenderProof_Slides.pdf",
+      "bytes": 556435,
+      "sha256": "671ced639e1a555b51ee5e90807d794c0e38970ebe6443b25dbe11fcf1310f13"
+    },
+    {
+      "path": "../../demo.md",
+      "bytes": 3857,
+      "sha256": "ef8a2cd6b4177df8f910d26c2f06218966c7e80b5afc23395bce5205bf7d814e"
+    }
+  ],
+  "required_report_repository_path": "track_2b/SwissChivers_Report.pdf",
+  "speaking_deck_slides": 10,
+  "spoken_slides": 8,
+  "appendix_slides": 2,
+  "speaking_deck_all_html_and_pdf_pages_visually_reviewed": true,
+  "speaking_deck_offline_and_navigation_checks_passed": true,
+  "video_role": "optional_generated_rehearsal_draft",
+  "final_user_video_pending": true,
+  "script_spoken_words": 221,
+  "script_target_seconds": 115
+}

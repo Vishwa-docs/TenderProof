@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:18,000
+Five complete public documents. One equipment scope. Every proposal stays linked to its source.
+
+2
+00:00:18,000 --> 00:00:32,000
+Original purchase order, page 4. Item 2 contains three 750 kVA transformers.
+
+3
+00:00:32,000 --> 00:00:50,000
+35 pending requirements and 4 pending offers. Input coverage does not establish correctness.
+
+4
+00:00:50,000 --> 00:01:12,000
+USD 111,316.50 lot total became USD 37,105.50 per unit. The proposal remains pending.
+
+5
+00:01:12,000 --> 00:01:30,000
+Failed audits, omitted obligations and capped output remain unresolved conditions.
+
+6
+00:01:30,000 --> 00:01:46,000
+No applicable FAT report, serial evidence or approved unit drawing. No release has occurred.
+
+7
+00:01:46,000 --> 00:01:56,000
+330 backend tests. 39 frontend tests. Next: expert evaluation with a design partner.

@@ -1,0 +1,157 @@
+{
+  "repo": "swiss-ai/Apertus-v1.5-8B",
+  "revision": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1852,
+      "sha256": "78fa9c32a35d7a2cb42c8974a27a62798cb63d4e2a7f843ef5fe2673beb2a00e",
+      "upstream_git_blob_sha1": "d654c71444c34791b2c2a4c24691bd1472118aba",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "Apertus_1_5_EU_Code_of_Practice.pdf",
+      "bytes": 151960,
+      "sha256": "2e4b304b04e445632f074ae10481386a72e97945c8a6b8ae8788a73f2b3c72e5",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "Apertus_1_5_EU_Public_Summary.pdf",
+      "bytes": 305928,
+      "sha256": "09275f31dffa639f993c8727ccc10f950e1e4fa6c6a15be9d9c44989577e9fd4",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "upstream_git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "PRIVACY_POLICY.pdf",
+      "bytes": 74180,
+      "sha256": "2bad7851327017d928450864aa3b4d10c9fe40b842a2f988399083918ca0df97",
+      "upstream_git_blob_sha1": "1a63e836368174f10c97d99a10f35655d0b92458",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "README.md",
+      "bytes": 22106,
+      "sha256": "fa725b6c757cea9798e45a1693668eeb5ed52c457b03fa48382067d85b710b0c",
+      "upstream_git_blob_sha1": "d55ffd524c37503e210dca3cafeea51ba8f2d11d",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "USAGE_POLICY.pdf",
+      "bytes": 53794,
+      "sha256": "424b0a0d24ee1369f9a8614d9e4c7eb0fc3ee8a9ad7ece39baea3a83f0d4ba76",
+      "upstream_git_blob_sha1": "8ddd8e25b6672340dd4f921ba623578571a65526",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "assets/text_performance_plot.png",
+      "bytes": 270249,
+      "sha256": "5183f403871fe56745c38822a72d3c50e53a76d2cae4acadb67a9e253595bd61",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "assets/visual_performance_plot.png",
+      "bytes": 136273,
+      "sha256": "f3fe104ab0b8081a8bd6b41c2f5684349c788c926acbb7d67aa496c87d2c52e2",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 16614,
+      "sha256": "d23af2850029e9df88bb017e06e0c14a0462604588f1dbe4f519cdfac3e260e0",
+      "upstream_git_blob_sha1": "a0707308b76caa7f3916a8c9b0aa2ab45b13b9c7",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "config.json",
+      "bytes": 2607,
+      "sha256": "391963f8b992c8445f68123306c8fb4aff1df62ddb5477989efd5cd2d491b686",
+      "upstream_git_blob_sha1": "c07b7c03d8ec3196de2e51716a8990aa5ef39a50",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 157,
+      "sha256": "9131f56adebe0d591ba8ddc2d18d18edaf762a1ebce6750b24319c86b1d7d6d5",
+      "upstream_git_blob_sha1": "03f863248858c7a86747dec945dad7c751b66f71",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "model-apertus-model-00001-of-00004.safetensors",
+      "bytes": 4026725622,
+      "sha256": "60d31e2d767d389ba990972a21cd0524e18c1ed39b65fcc727285db613ea81dc",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model-apertus-model-00002-of-00004.safetensors",
+      "bytes": 4701918018,
+      "sha256": "8a0ae0ba1c37a5571276f042085c8f782b6f02c68a888acf1ae35c33b8253bd9",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model-apertus-model-00003-of-00004.safetensors",
+      "bytes": 3791726250,
+      "sha256": "17f4ce43b67eacee899b6f23664d6b457259b2fbc89f5561cd69831d34a412c0",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model-apertus-model-00004-of-00004.safetensors",
+      "bytes": 4697854302,
+      "sha256": "40bf7c8ba48bfe6748b6cf796bfe65cea0115fe74d0aa38ad5fcdb6af2cf3e0d",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model-vision_tokenizer-model.safetensors",
+      "bytes": 872647552,
+      "sha256": "0f358b3c908d216172675cd57184ff6ce310705e385fedfd31c6f34e8197f9c8",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model-wavtokenizer-model.safetensors",
+      "bytes": 305269780,
+      "sha256": "b2632390709c3cb1319d1a0c1387d5364587b8a78a00efa2e93f15185ae82c02",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 100124,
+      "sha256": "d7277f7abd8d669b6711987f41c90acffadf3a36e8589d7b9172275220836818",
+      "upstream_git_blob_sha1": "b73f2c52f058410e95a520a255bb1da2987f9bbf",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "processor_config.json",
+      "bytes": 763,
+      "sha256": "6ac8e5d4654417f54c73ae7d5949371d1269785e34e11ec424682bb652367711",
+      "upstream_git_blob_sha1": "cff23562a58ac775e81d0aeb0f446a80608881bc",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "bytes": 552,
+      "sha256": "358c249e2fb29060c6b73157d428853b0c48710deffc8ee670ab1013880946c9",
+      "upstream_git_blob_sha1": "a782b2f1cdab4d0bacb2dc0f85d02c4b1e31f0bd",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 44028400,
+      "sha256": "1f2f6198ea5789e5a90ec7c5ec5cf0d5242cf5b8de007105537c91d777581582",
+      "verification": "upstream_lfs_sha256"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 2030,
+      "sha256": "43cdc9d1f25c45ae88cd4ee6509ec63a8088a19af1dc7300d13b874a626de871",
+      "upstream_git_blob_sha1": "6d25132cef332366ba086bd97f682d3df3918812",
+      "verification": "pinned_git_blob_and_downloaded_sha256"
+    }
+  ],
+  "verified_from": "https://huggingface.co/swiss-ai/Apertus-v1.5-8B/tree/ef4bbc54d6fe658bc782280ff9f3b53a10a9758f"
+}

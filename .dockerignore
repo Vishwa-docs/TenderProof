@@ -1,0 +1,11 @@
+.git
+.venv*
+.runtime
+.superpowers
+**/node_modules
+**/dist
+**/__pycache__
+**/.build
+track_2b/submission
+.env
+**/test-results

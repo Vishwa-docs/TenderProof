@@ -1,0 +1,83 @@
+name: tenderproof
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tenderproof
+      POSTGRES_DB: tenderproof
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run make setup-access first}
+    volumes: ["database_live:/var/lib/postgresql/data"]
+    networks: [sovereign]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tenderproof"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  temporal:
+    image: temporalio/temporal:1.4.1
+    command: ["server", "start-dev", "--ip", "0.0.0.0", "--db-filename", "/home/temporal/temporal.db"]
+    volumes: ["temporal_live:/home/temporal"]
+    networks: [sovereign]
+    healthcheck:
+      test: ["CMD", "temporal", "operator", "cluster", "health", "--command-timeout", "3s"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  app:
+    build: .
+    image: tenderproof:local
+    environment: &environment
+      APP_MODE: live
+      DATABASE_URL: postgresql+psycopg://tenderproof:${POSTGRES_PASSWORD:?Run make setup-access first}@database:5432/tenderproof
+      TEMPORAL_ADDRESS: temporal:7233
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_NAME: ${LLM_NAME:-swiss-ai/Apertus-v1.5-8B}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-300}
+      APERTUS_TRACE_DIR: /data/inference-traces
+      TENDERPROOF_PRINCIPALS_JSON: ${TENDERPROOF_PRINCIPALS_JSON:-{}}
+    volumes: ["artifacts_live:/data"]
+    networks: [sovereign]
+    depends_on:
+      database: {condition: service_healthy}
+      temporal: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  worker:
+    image: tenderproof:local
+    pull_policy: never
+    command: ["python", "-m", "tenderproof.worker"]
+    environment: *environment
+    volumes: ["artifacts_live:/data"]
+    networks: [sovereign]
+    restart: on-failure
+    depends_on:
+      app: {condition: service_healthy}
+  gateway:
+    image: nginx:1.27-alpine
+    user: "101:101"
+    ports: ["127.0.0.1:8001:8080"]
+    volumes: ["./deploy/nginx.conf:/etc/nginx/nginx.conf:ro"]
+    read_only: true
+    tmpfs: ["/tmp", "/var/cache/nginx:uid=101,gid=101", "/var/run:uid=101,gid=101"]
+    networks: [ingress, sovereign]
+    depends_on:
+      app: {condition: service_healthy}
+  model-relay:
+    image: nginx:1.27-alpine
+    user: "101:101"
+    volumes: ["./deploy/model-relay.conf:/etc/nginx/nginx.conf:ro"]
+    read_only: true
+    tmpfs: ["/tmp", "/var/cache/nginx:uid=101,gid=101", "/var/run:uid=101,gid=101"]
+    networks: [ingress, sovereign]
+volumes:
+  database_live:
+  temporal_live:
+  artifacts_live:
+networks:
+  ingress:
+  sovereign:
+    internal: true

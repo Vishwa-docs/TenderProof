@@ -1,0 +1,57 @@
+{
+  "project": "Guam Power Authority GPA-070-25 / OP34276",
+  "scope": "GPA-070-25 / OP34276 item 2: 750 kVA three-phase pad-mounted transformer, 13.8 kV primary and 120/208 V secondary. Exclude the separate 300 kVA item 1.",
+  "rights": "Original PDFs remain third-party copyrighted works. This catalog does not grant redistribution rights. Fetch originals into ignored local runtime storage for analysis.",
+  "sources": [
+    {
+      "id": "gpa-op34276",
+      "filename": "gpa-op34276.pdf",
+      "title": "Awarded purchase order OP34276",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_OP%2034276.pdf",
+      "expected_pages": 9,
+      "expected_sha256": "da91f24252a7131e06a9861e56593a66146173bf0e8d0764f2194e6e63b8c551",
+      "publisher": "Guam Power Authority",
+      "host": "Open GovGuam"
+    },
+    {
+      "id": "gpa-e004-rev10",
+      "filename": "gpa-e004-rev10.pdf",
+      "title": "Engineering specification E-004 Revision 10",
+      "url": "https://go.opengovguam.com/app/webroot/userfiles/files/Spec%20E-004%20Revision%2010%20-%20Three%20Phase%20Pad%20Mounted%20Distribution%20Transformer%282%29.pdf",
+      "expected_pages": 20,
+      "expected_sha256": "d21a10dd0d4b31ad85c1bfa1fa07d577b0beeccd24774d109cef94129a05c414",
+      "publisher": "Guam Power Authority",
+      "host": "Open GovGuam"
+    },
+    {
+      "id": "gpa-07025-bid-abstract",
+      "filename": "gpa-07025-bid-abstract.pdf",
+      "title": "GPA-070-25 original bid abstract",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20Bid%20Abstract.pdf",
+      "expected_pages": 5,
+      "expected_sha256": "ea238725bcf796aa9df08ba0d7cffacd105943a0782fd05b736f9cc5ed9a4b8b",
+      "publisher": "Guam Power Authority",
+      "host": "Open GovGuam"
+    },
+    {
+      "id": "gpa-07025-amendments",
+      "filename": "gpa-07025-amendments.pdf",
+      "title": "Portal issuance attachment: amendments and invitation, not the full original IFB",
+      "url": "https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20IFB%20Issuance.pdf",
+      "expected_pages": 4,
+      "expected_sha256": "32b395fcaa2ea49d054f63b38f6f53508a4dba32be5f0559f51e94b530ece22b",
+      "publisher": "Guam Power Authority",
+      "host": "Open GovGuam"
+    },
+    {
+      "id": "gpa-07025-full-ifb-amendment-i",
+      "filename": "gpa-07025-full-ifb-amendment-i.pdf",
+      "title": "Complete 55-page GPA-070-25 invitation with Amendment I (57 PDF pages)",
+      "url": "https://www.ppa.org.fj/wp-content/uploads/2025/08/220825GPA-GPA-070-25-with-Amendment-I.pdf",
+      "expected_pages": 57,
+      "publisher": "Guam Power Authority",
+      "host": "Pacific Power Association",
+      "expected_sha256": "a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10"
+    }
+  ]
+}

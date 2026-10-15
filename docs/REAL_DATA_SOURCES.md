@@ -1,0 +1,41 @@
+# Authentic transformer procurement sources
+
+Checked 2026-10-15 using Exa search/fetch and official Open GovGuam documents. Full third-party PDFs are not packaged here. The public pages show an all-rights-reserved footer; no explicit redistribution license was established. Catalog links may be published; downloaded originals should remain in ignored `.runtime/sources` for local ingestion unless permission is obtained. Do not label these documents CDLA/CC-BY merely because they are publicly downloadable.
+
+## Selected procurement: GPA-070-25
+
+Issuer: Guam Power Authority. Title: Pad Mounted Transformers. The official procurement page identifies GPA-070-25, posted 2025-08-21, bid close 2025-09-16, and links the related purchase order, bid abstract and amendments. The index records an award of USD 201,964.10 to R&D Marketing And Lypco International. These are actual recorded procurement facts, not prototype estimates. [Official procurement page](https://go.opengovguam.com/tenders/tender_details/gpa/GPA-070-25), [official FY2025 index](https://go.opengovguam.com/tenders/tenders_list/gpa?fy=2025).
+
+| Document | Verified purpose and limits | Full source |
+| --- | --- | --- |
+| Full GPA-070-25 tender with Amendment I | **57 pages: two Amendment I pages plus the original 55-page tender.** The original envelope ID matches the government invitation. Contains the same scanned E-004 Rev. 10 (July 29, 2022) as the standalone specification; full PDF pages 10-29 map to specification pages 1-20. Later official Amendments II and III remain separate. | [Full PPA-hosted GPA tender](https://www.ppa.org.fj/wp-content/uploads/2025/08/220825GPA-GPA-070-25-with-Amendment-I.pdf) |
+| OP34276 / contract C-070-25 | Nine-page purchase order, dated 2025-10-13. Includes 300 kVA and 750 kVA equipment specifications, quoted supplier/manufacturer/model, real quantities and prices, and obligations to provide certified laboratory reports. Suitable immediately for complete-PDF ingestion. A requirement for a report is not the report itself. | [Purchase order PDF](https://go.opengovguam.com/uploads/ggbids/packet_1765520985_OP%2034276.pdf) |
+| E-004 Revision 10 | Twenty-page official three-phase pad-mounted transformer engineering specification. OP34276 expressly incorporates this exact specification revision. It is a full technical source for the same procurement equipment category. | [Full technical specification PDF](https://go.opengovguam.com/app/webroot/userfiles/files/Spec%20E-004%20Revision%2010%20-%20Three%20Phase%20Pad%20Mounted%20Distribution%20Transformer%282%29.pdf) |
+| GPA-070-25 bid abstract | Five-page scanned original bid tabulation. OCR is noisy; bidder names, amounts and model numbers require visual review before approval. It is a same-procurement source, not a general manufacturer catalog. | [Bid abstract PDF](https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20Bid%20Abstract.pdf) |
+| Portal file labeled “IFB Issuance” | Only four pages: an amendment compilation and invitation page. It refers to an original 55-page bid package but **is not that full original package**. Includes the drawing-approval-relative delivery condition. The complete original tender is now available separately in the PPA-hosted 57-page file above; this portal attachment itself is still only four pages. | [Four-page portal attachment](https://go.opengovguam.com/uploads/ggbids/packet_1765520985_GPA-070-25%20IFB%20Issuance.pdf) |
+| Amendment II | Authentic clarification resolving sealed welded cover versus flip-top hood; a useful real interpretation conflict. Standalone fetch failed once, but the text is present on PDF page 2 of the four-page portal attachment above. | [Standalone amendment II](https://go.opengovguam.com/uploads/ggbids/packet_1756790332_GPA-070-25%20-%20Amd%20II%20FINAL.pdf) |
+| Amendment III | Two-page authentic bid-opening change, dated 2025-09-08. This changes a bidding deadline; it does not increase rated power. | [Amendment III PDF](https://go.opengovguam.com/uploads/ggbids/packet_1757374813_GPA-070-25%20-%20Amd%20III%20FINAL.pdf) |
+| Amendment I | Two-page authentic bid-opening change, dated 2025-08-21. | [Amendment I PDF](https://go.opengovguam.com/uploads/ggbids/packet_1755759553_GPA-070-25%20Amd%20I%20FINAL.pdf) |
+
+OP34276 PDF page 1 describes the 300 kVA item; page 4 describes the 750 kVA item. Both specify primary voltage 13.8 kV and secondary 120/208 V. The selected manufacturers/models appear on PDF pages 3 and 6. The recorded vendor is distinct from the manufacturer. Total USD 201,964.10 is the combined order total, not the price of one 750 kVA unit. The 750 kVA unit price is USD 37,105.50 and line total USD 111,316.50 for three units; the 300 kVA line totals USD 90,647.60 for four units. [Primary order](https://go.opengovguam.com/uploads/ggbids/packet_1765520985_OP%2034276.pdf).
+
+The full tender file was verified as 1,668,269 bytes, SHA-256 `a101432f314d0839c3d114779f42b03e7b08766476a78eb817074ea7d1f01d10`. All 57 pages were rendered. Original printed pages 1-55 occupy PDF pages 3-57; selected item 2 is PDF pages 8-9 (printed 6-7). Tender price, supplier-model and compliance response fields are blank. The embedded specification revision is visually verified and its image streams match the standalone scan page by page. [Full tender](https://www.ppa.org.fj/wp-content/uploads/2025/08/220825GPA-GPA-070-25-with-Amendment-I.pdf), [detailed source review](REAL_PACKAGE_REVIEW.md).
+
+The five source files total 95 attachment pages, including duplicated E-004 and amendment/invitation material. They do not represent 95 unique pages. Matching printed envelope identifiers support document correspondence; this review does not verify electronic signatures or grant redistribution rights.
+
+## Evidence gaps that must stay gaps
+
+No actual unit-specific factory acceptance test report, actual serial-number nameplate photograph, or complete supplier technical submission for GPA-070-25 was verified in this pass. The order asks for those submittals; that does not prove they were received or that measurements passed. No serial, test measurement, cooling rating, revision match, acceptance result or supplier commercial adjustment should be filled from assumptions. A publicly found test report for another unit/procurement may only be presented with its actual provenance and assessed as unrelated; it cannot become evidence for this order.
+
+The delivery phrase is 24 weeks **after GPA-approved drawings**, not project week 24 from an established project epoch. Preserve that trigger and keep schedule feasibility unresolved until an actual approval date/project baseline is sourced. The order's 750 kVA item and 300 kVA item are separate configurations; define the project scope explicitly before extracting a single selected configuration.
+
+## Additional authentic reference, not matched to GPA-070-25
+
+[Official GPA technical specification index](https://go.opengovguam.com/bids/tech_docs/gpa) also provides [E-034 Revision 6, 32-page 34.5/13.8 kV substation transformer specification](https://go.opengovguam.com/app/webroot/userfiles/files/Spec%20E-034%20Revision%206%20-%2034.5%20kV%2013.8%20kV%20Substation%20Power%20Transformer%20Outdoor%20Type%281%29.pdf). Its testing requirements are visible on PDF pages 27-28. This is an authentic broader power-transformer reference, but no same-procurement connection to GPA-070-25 has been established, and it must not be substituted into that package.
+
+## State of this research deliverable
+
+This catalog, the detailed source review and a separate assistant-checked QA fact manifest were written. Original PDFs remain in ignored local runtime storage and were not added to the public dataset. No model response was fabricated and no synthetic application dataset was generated. The interrupted synthetic packaging scripts created during the earlier brief were removed by their author. Existing application/test fixtures are being handled separately by the parent implementation.
+
+
+The five originals have separately documented conversion and source-coverage checks in [STRICT_SOURCE_PARSING.md](STRICT_SOURCE_PARSING.md), including the failed isolated attempt and the separately verified successful integrated full-tender parse.
