@@ -1,7 +1,7 @@
 {
   "project": "TenderProof",
   "team": "SwissChivers",
-  "state": "local_assets_verified_final_user_video_pending",
+  "state": "public_repository_verified_final_user_video_pending",
   "generated_at": "2026-10-15T15:03:00.348019+00:00",
   "report_pages": 6,
   "deck_slides": 12,
@@ -66,5 +66,8 @@
   "video_role": "optional_generated_rehearsal_draft",
   "final_user_video_pending": true,
   "script_spoken_words": 221,
-  "script_target_seconds": 115
+  "script_target_seconds": 115,
+  "public_repository": "https://github.com/Vishwa-docs/TenderProof",
+  "public_slides_url": "https://vishwa-docs.github.io/TenderProof/",
+  "public_slides_verified_without_authentication": true
 }

@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-10-15T15:05:31.076830+00:00",
+  "repo": "https://github.com/Vishwa-docs/TenderProof",
+  "source_download_without_authentication": true,
+  "all_export_files_match_public_archive": true,
+  "report_url_without_authentication": "https://raw.githubusercontent.com/Vishwa-docs/TenderProof/main/track_2b/SwissChivers_Report.pdf",
+  "report_sha256": "deede29dba6452bcf9084ecb80169a01c2c338eff290d3d8e35aa4f4a7db70e4",
+  "video_final_recording_pending": true,
+  "published_commit": "45778b0926341ed77b6f831a59b2d2afdeeb8526",
+  "template": "HackApertus/project-template",
+  "public_repository_created_from_official_template": true,
+  "original_worktree_branch_unchanged": true,
+  "final_event_submitted": false,
+  "source_download_url_at_verification": "https://codeload.github.com/Vishwa-docs/TenderProof/zip/45778b0926341ed77b6f831a59b2d2afdeeb8526",
+  "file_count_at_verified_commit": 183,
+  "slides": {
+    "url": "https://vishwa-docs.github.io/TenderProof/",
+    "final_url": "https://vishwa-docs.github.io/TenderProof/track_2b/submission/output/TenderProof_Slides.html#1",
+    "accessed_without_authentication": true,
+    "html_sha256": "da7c06a78d581bd4a146c7ff02d1fb2a15ac83ec3bec23668df34776de1cf1d5",
+    "matches_verified_local_html": true,
+    "slide_count": 10,
+    "keyboard_navigation_passed": true,
+    "broken_images": 0,
+    "errors": [],
+    "verified_at": "2026-10-15T15:07:34.431Z"
+  }
+}

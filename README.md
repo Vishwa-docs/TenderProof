@@ -8,7 +8,7 @@ The application starts with an **empty `default` project**. It has no seeded bus
 
 Apertus v1.5 8B completed five source-kind runs on four authentic PDFs, including the complete 57-page tender. The case contains 35 pending requirements and four pending offers, with mixed extraction quality. An audited PO unit-price correction preserves the raw output. All results remain pending; missing FAT and unresolved extraction conditions block release. The GPU endpoint was stopped after recording and borrowed workloads restored.
 
-[Speaking slides](track_2b/submission/output/TenderProof_Slides.html) · [Exact video script](demo.md) · [Judge quickstart](docs/JUDGE_QUICKSTART.md) · [Six-page report](track_2b/SwissChivers_Report.pdf) · [Submission verification](track_2b/submission/VERIFICATION.md)
+[Open speaking slides](https://vishwa-docs.github.io/TenderProof/) · [Exact video script](demo.md) · [Judge quickstart](docs/JUDGE_QUICKSTART.md) · [Six-page report](track_2b/SwissChivers_Report.pdf) · [Submission verification](track_2b/submission/VERIFICATION.md)
 
 ## Run with Docker
 

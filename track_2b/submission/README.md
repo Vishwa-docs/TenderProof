@@ -17,3 +17,5 @@ The final assets use actual captured application states, complete authentic publ
 The official hand-in is https://hackapertus.ch/online-hack/submissions, not Devpost. Deadline: **16 October 2026, 12:00 CEST / 15:30 IST**. Submit once per project. The form requires a public repository URL, the report PDF and an accessible video URL; the deck is optional supporting material.
 
 The model endpoint is currently stopped after recording. Follow `../../docs/JUDGE_QUICKSTART.md` for a fresh run with a genuine Apertus endpoint. The app alone does not provision inference. Runtime archives remain private and are never replayed as a fresh model result.
+
+Published repository: https://github.com/Vishwa-docs/TenderProof. Browser presentation: https://vishwa-docs.github.io/TenderProof/. Both were checked without authentication. The final team-recorded video and event form submission remain pending.
