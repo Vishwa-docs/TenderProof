@@ -1,73 +1,44 @@
 {
   "project": "TenderProof",
   "team": "SwissChivers",
-  "state": "public_repository_verified_final_user_video_pending",
-  "generated_at": "2026-10-15T15:03:00.348019+00:00",
-  "report_pages": 6,
-  "deck_slides": 12,
-  "native_table_slides": [
-    3,
-    12
-  ],
-  "video_duration_seconds": 116.021333,
+  "generated_at": "2026-10-16T05:18:56.003015+00:00",
+  "state": "artifact_package_ready_final_user_video_pending",
+  "code_commit": "c1141f19b5bde590b650b1f1215f692353f609ec",
+  "report_content_pages": 6,
+  "report_reference_pages": 1,
+  "report_total_pages": 7,
+  "supporting_deck_slides": 10,
   "report_all_pages_visually_reviewed": true,
-  "deck_all_slides_visually_reviewed": true,
-  "video_all_seven_scenes_visually_reviewed": true,
-  "human_audio_playback_reviewed": false,
+  "slides_all_html_and_pdf_pages_visually_reviewed": true,
   "source_provenance_manifest": "REAL_SOURCE_EVIDENCE.json",
   "artifacts": [
     {
       "path": "output/SwissChivers_Report.pdf",
-      "bytes": 79778,
-      "sha256": "deede29dba6452bcf9084ecb80169a01c2c338eff290d3d8e35aa4f4a7db70e4"
-    },
-    {
-      "path": "output/TenderProof_Deck.pdf",
-      "bytes": 1667633,
-      "sha256": "75a6d3ec6f2c1126eef5faf09ba90ed856df4d4d12452ea09ee61227728ba324"
-    },
-    {
-      "path": "output/TenderProof_Deck.pptx",
-      "bytes": 175325,
-      "sha256": "61a7e5956f8d6f8a754fda255f1269d3cac42f7e31790119430eb3f8bf48701b"
-    },
-    {
-      "path": "output/TenderProof_Demo.mp4",
-      "bytes": 4254895,
-      "sha256": "fd8892a6ab0ed22f5277efbca03cb2e9140bf8be011570d817bb1b1fd4e12e79"
-    },
-    {
-      "path": "output/TenderProof_Demo.srt",
-      "bytes": 843,
-      "sha256": "222e986e901fbfdb93eb82bcdd4d541664003f6166f75a4cda5ba3d7da6f47b5"
+      "bytes": 89868,
+      "sha256": "bff1ef3baab84009045c2fbf8320e51c7c4c95a24671cd5f3d7a729508298890"
     },
     {
       "path": "output/TenderProof_Slides.html",
-      "bytes": 1253961,
-      "sha256": "da7c06a78d581bd4a146c7ff02d1fb2a15ac83ec3bec23668df34776de1cf1d5"
+      "bytes": 2413224,
+      "sha256": "3a4746ece7af005524b5677fe14fee6c65ec974bceacb646216a7d77088144a1"
     },
     {
       "path": "output/TenderProof_Slides.pdf",
-      "bytes": 556435,
-      "sha256": "671ced639e1a555b51ee5e90807d794c0e38970ebe6443b25dbe11fcf1310f13"
+      "bytes": 1374757,
+      "sha256": "dcea40d965b0cb976e74c648dd7beb3206370e9c5ef2bbf7916a5eff360d19aa"
     },
     {
       "path": "../../demo.md",
-      "bytes": 3857,
-      "sha256": "ef8a2cd6b4177df8f910d26c2f06218966c7e80b5afc23395bce5205bf7d814e"
+      "bytes": 3859,
+      "sha256": "8634088dd03926daf7e4ebbe155fc28d1ca60f5ee3964f70a13c75ff7cef22c1"
     }
   ],
   "required_report_repository_path": "track_2b/SwissChivers_Report.pdf",
-  "speaking_deck_slides": 10,
-  "spoken_slides": 8,
-  "appendix_slides": 2,
-  "speaking_deck_all_html_and_pdf_pages_visually_reviewed": true,
-  "speaking_deck_offline_and_navigation_checks_passed": true,
-  "video_role": "optional_generated_rehearsal_draft",
-  "final_user_video_pending": true,
-  "script_spoken_words": 221,
+  "script_spoken_words": 189,
   "script_target_seconds": 115,
+  "script_scene_count": 5,
+  "video_application_only": true,
+  "final_user_video_pending": true,
   "public_repository": "https://github.com/Vishwa-docs/TenderProof",
-  "public_slides_url": "https://vishwa-docs.github.io/TenderProof/",
-  "public_slides_verified_without_authentication": true
+  "public_slides_url": "https://vishwa-docs.github.io/TenderProof/"
 }

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 435" role="img">
+  <title>Snapshot investigation, draft export and controlled release</title>
+  <desc>Editable source for matching vector SVG and PDF diagrams. Arrows identify API calls or stored evidence flow.</desc>
+  <rect stroke-width="1.5" x="20" y="30" width="270" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="155.0" y="64.5" fill="#163448">Sources and proposals</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="155.0" y="87.5" fill="#163448">Original refs + raw output</text>
+  <rect stroke-width="1.5" x="365" y="30" width="270" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="500.0" y="64.5" fill="#163448">Review content</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="500.0" y="87.5" fill="#163448">Meaning, units, corrections</text>
+  <rect stroke-width="1.5" x="710" y="30" width="270" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="845.0" y="64.5" fill="#163448">Snapshot H</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="87.5" fill="#163448">Content + assurance</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="290,70 365,70" fill="none" stroke="#536472" />
+  <polygon points="365,70 355.9103425032512,74.1687080242921 355.9103425032512,65.8312919757079" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="635,70 710,70" fill="none" stroke="#536472" />
+  <polygon points="710,70 700.9103425032512,74.1687080242921 700.9103425032512,65.8312919757079" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="845,110 845,135 155,135 155,175" fill="none" stroke="#536472" />
+  <polygon points="155,175 150.8312919757079,165.91034250325114 159.1687080242921,165.91034250325114" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="181" y="160" fill="#163448">read</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="500,135 500,175" fill="none" stroke="#536472" />
+  <polygon points="500,175 495.83129197570787,165.91034250325114 504.16870802429213,165.91034250325114" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="535" y="160" fill="#163448">assess</text>
+  <rect stroke-width="1.5" x="20" y="175" width="270" height="105" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="155.0" y="210.5" fill="#163448">Read-only investigation</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="155.0" y="233.5" fill="#163448">Search + issue queue</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="155.0" y="256.5" fill="#163448">Lineage + stored diff</text>
+  <rect stroke-width="1.5" x="365" y="175" width="270" height="105" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="500.0" y="210.5" fill="#163448">Gate checks</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="500.0" y="233.5" fill="#163448">Assurance + feasible supplier</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="500.0" y="256.5" fill="#163448">Shipment evidence applies</text>
+  <rect stroke-width="1.5" x="710" y="175" width="270" height="105" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="845.0" y="199.0" fill="#163448">Separate role approvals</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="222.0" fill="#163448">Purchase: Engineer</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="245.0" fill="#163448">Shipment: Inspector</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="268.0" fill="#163448">+ Commercial for each gate</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="635,227 710,227" fill="none" stroke="#536472" />
+  <polygon points="710,227 700.9103425032512,231.1687080242921 700.9103425032512,222.8312919757079" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="671" y="214" fill="#163448">pass</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="155,280 155,330" fill="none" stroke="#536472" />
+  <polygon points="155,330 150.8312919757079,320.9103425032512 159.1687080242921,320.9103425032512" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="500,280 500,330" fill="none" stroke="#536472" />
+  <polygon points="500,330 495.83129197570787,320.9103425032512 504.16870802429213,320.9103425032512" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="522" y="313" fill="#163448">fail</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="845,280 845,330" fill="none" stroke="#536472" />
+  <polygon points="845,330 840.8312919757079,320.9103425032512 849.1687080242921,320.9103425032512" fill="#536472" />
+  <rect stroke-width="1.5" x="20" y="330" width="270" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="155.0" y="364.5" fill="#163448">Draft dossier</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="155.0" y="387.5" fill="#163448">Content hash; pending stays</text>
+  <rect stroke-width="1.5" x="365" y="330" width="270" height="80" rx="5" fill="#FFF4E9" stroke="#A66A26" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="500.0" y="364.5" fill="#163448">BLOCKED</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="500.0" y="387.5" fill="#163448">Unresolved condition</text>
+  <rect stroke-width="1.5" x="710" y="330" width="270" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="845.0" y="353.0" fill="#163448">Commercial release</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="376.0" fill="#163448">Recheck H and gates</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="845.0" y="399.0" fill="#163448">Immutable simulator packet</text>
+</svg>

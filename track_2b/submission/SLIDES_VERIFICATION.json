@@ -1,105 +1,131 @@
 {
+  "verified_at": "2026-10-16T05:14:50.846253+00:00",
+  "purpose": "Optional supporting engineering slides linked from README; independent of the application-only demo script.",
+  "style": "Engineering Field Notes",
+  "slide_count": 10,
+  "pdf_pages": 10,
   "states": [
     {
       "slide": 1,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Review gates bind releasesto reviewed evidence.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 2,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Package scope selects three750 kVA transformers.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 3,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Evidence workspaces connect sourceinspection with revision review.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 4,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Price corrections preservethe original model output.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 5,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Source search locatesthe original purchase order price.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 6,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Incomplete evidence blockspurchase and shipment release.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 7,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Trace archives preserverecorded GPU execution evidence.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 8,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Role gates require approvalsfor each package revision.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 9,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "Recorded inference runs exposeunresolved extraction limits.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     },
     {
       "slide": 10,
-      "visibleSlides": 1,
-      "stageRatio": 1.7777777777777777,
-      "brokenImages": 0,
+      "title": "The roadmap puts qualified validationbefore planned extensions.",
       "overflows": [],
-      "outOfBounds": []
+      "outOfBounds": [],
+      "brokenImages": 0
     }
   ],
   "phone": {
     "width": 390,
     "height": 219.375,
     "ratio": 1.7777777777777777,
-    "bodyScrollWidth": 390,
-    "innerWidth": 390
+    "left": 0,
+    "top": 312.3125,
+    "overflowX": false,
+    "overflowY": false
   },
   "errors": [],
   "externalRequests": [],
   "keyboardPassed": true,
   "editingTogglePassed": true,
-  "verified_at": "2026-10-15T15:03:00.348019+00:00",
-  "pdf_pages": 10,
-  "pdf_all_pages_visually_reviewed": true,
+  "inlineEditingPersisted": true,
+  "saveHtmlPassed": true,
   "html_all_slides_visually_reviewed": true,
-  "html_sha256": "da7c06a78d581bd4a146c7ff02d1fb2a15ac83ec3bec23668df34776de1cf1d5",
-  "pdf_sha256": "671ced639e1a555b51ee5e90807d794c0e38970ebe6443b25dbe11fcf1310f13",
-  "script_sha256": "ef8a2cd6b4177df8f910d26c2f06218966c7e80b5afc23395bce5205bf7d814e",
-  "spoken_paragraphs_exactly_match_notes": true,
-  "style": "Engineering Field Notes",
-  "pdf_link_cleanup_pixel_identical": true
+  "pdf_all_pages_visually_reviewed": true,
+  "headline_words_max": 8,
+  "bullet_words_max": 11,
+  "bullets_per_slide_max": 4,
+  "notes_independent_of_demo": true,
+  "optional_notes_empty": true,
+  "software_qa_counts": {
+    "backend": 380,
+    "frontend": 51,
+    "meaning": "Software behavior checks; no semantic accuracy improvement claimed."
+  },
+  "embedded_captures": [
+    {
+      "path": "captures/workbench-overview.png",
+      "sha256": "0b898799379a88dd13a2b0fbdf345224a6b83abf0510e6d03b5b004cd787a901",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:12:52.514301+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
+    },
+    {
+      "path": "captures/workbench-search.png",
+      "sha256": "a79a786900dfe70284c9647f67bbc948f728335e45b0c20e326a6ef61a68a425",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:12:52.574959+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
+    }
+  ],
+  "capture_display": "CSS crops highlight source search and overview status; captured application pixels remain unchanged.",
+  "html_sha256": "3a4746ece7af005524b5677fe14fee6c65ec974bceacb646216a7d77088144a1",
+  "pdf_sha256": "dcea40d965b0cb976e74c648dd7beb3206370e9c5ef2bbf7916a5eff360d19aa",
+  "builder_sha256": "b94e5237fa45c51b4b78487bd3a246584ace61d1e415e23cd293d79d18eeca3b",
+  "theme_sha256": "1547249346a3fb0dc2846721b7c0d0f5b5e7f9971f05f0ea9fe2bf8fa7517bed",
+  "controller_sha256": "cf630559d2ba60c086e75e78e8b4942ae68ba8c2a28f672f0279d1e477094a0f",
+  "planned_extensions": 20
 }

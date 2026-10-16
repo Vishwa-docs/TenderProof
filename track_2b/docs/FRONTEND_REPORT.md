@@ -1,4 +1,39 @@
-# TenderProof frontend - current live-only implementation
+# Frontend verification — 16 October 2026
+
+The current workbench has six connected workspaces.
+Overview summarizes the package, review issues, and release state.
+Evidence adds ranked source search, adjacent context, duplicate citations, source coverage, and stored lineage links.
+Change history compares exact stored snapshots.
+Overview exports draft Markdown and JSON dossiers.
+
+The compact release strip opens a filterable review queue.
+Raw extraction conditions remain available inside a collapsed section.
+The source inspector opens a wide overlay with original PDF controls.
+Body text uses 16 px. Secondary text uses at least 13 px.
+The app uses local system fonts and makes no external font request.
+
+## Current checks
+
+- 51 frontend regression tests passed.
+- TypeScript checking and the Vite production build passed.
+- 36 recorded-package views passed at 1440, 1280, 768, and 390 px.
+- No tested page overflowed its viewport.
+- No visible text measured below 13 px.
+- The browser audit recorded zero script errors and zero external requests.
+
+The responsive audit uses preserved real records with read-only response interception.
+It verifies layout and behavior. It does not represent new model inference or a deployed API test.
+The final deployment checks appear in [VERIFICATION.md](../submission/VERIFICATION.md).
+
+The application preserves existing authorization, price correction, source inspection, and release controls.
+Draft dossier export grants no approval.
+Search scores measure lexical relevance. Citation coverage does not measure extraction recall.
+
+The notes below record earlier implementation stages. Their test counts and bundle hashes describe those stages.
+
+---
+
+# Earlier frontend implementation notes
 
 The current application is a real-data review workbench. All demonstration controls, role-header overrides, fabricated project banners, reset operations, canned corrections and canned amendments were removed after the user's live-data-only instruction. Earlier synthetic UI captures and demonstrations are superseded and are not evidence for this release.
 
@@ -17,7 +52,7 @@ Source inspection supports document upload, original authenticated download, ima
 
 Navy navigation, warm ivory documents and teal actions use restrained tables and linework. The source inspector stays available on desktop and stacks on narrow screens. Modals support focus/escape navigation; motions respect reduced-motion settings. External font service use has system fallbacks and is disclosed in the web README.
 
-## Current verification
+## Earlier verification
 
 The frontend suite uses isolated controlled QA responses based on actual public Guam Power Authority GPA-070-25 / OP34276 metadata and numerical facts. It does not provide app data or claim model outputs. Coverage includes bearer-only requests, explicit witness/snapshot review, exact source/page, API failure without replacement data, mandatory scope, metadata PATCH, extraction purpose/supplier, historical immutable downloads, original-content errors, legitimate empty workspaces and mutation locking.
 

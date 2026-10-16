@@ -1,75 +1,185 @@
+"""Build the supporting engineering deck without importing application narration.
+
+The HTML embeds verified captures, font data, theme CSS, and the controller.
+Optional slide_notes.json is a mapping of slide numbers to reference notes.
+It is independent of demo.md, which defines the application recording sequence.
+"""
 from pathlib import Path
-import re,json,html,hashlib,base64
-r=Path(__file__).resolve().parents[1];src=r/'source';out=r/'output';out.mkdir(exist_ok=True)
-fontcss=(src/'presentation-fonts.css').read_text();base=(src/'viewport-base.css').read_text()
-(src/'presentation-fonts.css').write_text(fontcss);(src/'viewport-base.css').write_text(base)
-notes=re.findall(r'^> (.*)$',(r.parents[1]/'demo.md').read_text(),re.M)
-# Use verified actual screenshots. No drawn or seeded application state.
-evidence=json.loads((r/'REAL_SOURCE_EVIDENCE.json').read_text())
-for f in ['final-price-correction-detail.png','final-assurance.png']:
- cap=next(c for c in evidence['browser_captures'] if c['path']=='captures/'+f)
- assert hashlib.sha256((r/cap['path']).read_bytes()).hexdigest()==cap['sha256']
-slides=[]
-def slide(i,title,content,classes='',note=None):
- note=notes[i-1] if note is None and i<=8 else (note or '')
- slides.append(f'''<!-- === SLIDE {i}: {html.escape(title)} === -->
-<section class="slide {classes}" aria-label="{i}. {html.escape(title)}"><header><span data-edit>TENDERPROOF</span><span data-edit>{'SWISSCHIVERS / HACK APERTUS' if i<=8 else 'APPENDIX / REFERENCE'}</span></header>{content}<footer><span data-edit>{'ENGINEERING REVIEW / APERTUS' if i<=8 else 'REFERENCE MATERIAL / OUTSIDE THE VIDEO'}</span><span>{i:02} / 10</span></footer><aside class="speaker-notes" hidden>{html.escape(note)}</aside></section>''')
-slide(1,'Evidence before release','''<div class="cover-rule"></div><div class="cover-copy"><h1 class="reveal" data-edit>Evidence before<br>release.</h1><p class="cover-sub reveal" data-edit>Engineering review for equipment procurement.</p></div><div class="cover-bottom"><span data-edit>Promises. Purchases. Acceptance.</span><span data-edit>One reviewed package.</span></div>''','cover')
-slide(2,'One purchase. Five documents.','''<h2 class="reveal" data-edit>One purchase. Five documents.</h2><div class="case-left"><div class="eyebrow" data-edit>GUAM POWER AUTHORITY / OP34276 / ITEM 2</div><div class="case-number" data-edit>3 × 750 <small>kVA</small></div><p class="spec" data-edit>13.8 kV primary<br>120/208 V secondary</p><p class="source-note" data-edit>Public procurement record.<br>Separate 300 kVA item excluded.</p></div><div class="document-list"><div><b>01</b><span data-edit>Full tender</span><em>57 pages</em></div><div><b>02</b><span data-edit>Engineering specification</span><em>20 pages</em></div><div><b>03</b><span data-edit>Bid abstract</span><em>5 pages</em></div><div><b>04</b><span data-edit>Amendments / issuance</span><em>4 pages</em></div><div><b>05</b><span data-edit>Purchase order</span><em>9 pages</em></div><p class="source-note" data-edit>Complete originals. Some content overlaps.</p></div>''','paper')
-slide(3,'Apertus proposes. Engineers decide.','''<h2 class="reveal" data-edit>Apertus proposes.<br>Engineers decide.</h2><div class="workflow"><div><b>01</b><h3 data-edit>Requirements</h3><p data-edit>Review the meaning.<br>Open the source.</p></div><div><b>02</b><h3 data-edit>Supplier offers</h3><p data-edit>Check commitments.<br>Compare price bases.</p></div><div><b>03</b><h3 data-edit>Acceptance</h3><p data-edit>Match evidence to<br>the actual equipment.</p></div><div><b>04</b><h3 data-edit>Change control</h3><p data-edit>Bind approvals to<br>the reviewed revision.</p></div></div><p class="bottom-line" data-edit>A changed package requires a new decision.</p>''')
-slide(4,'The model confused total and unit price.','''<h2 class="reveal" data-edit>The model confused<br>total and unit price.</h2><div class="price-grid"><div><div class="eyebrow" data-edit>MODEL PROPOSAL / THREE-UNIT TOTAL</div><div class="amount wrong" data-edit>$111,316.50</div><p data-edit>Entered in the unit-price field.</p></div><div><div class="eyebrow" data-edit>CORRECTED / PER UNIT</div><div class="amount correct" data-edit>$37,105.50</div><p data-edit>Source: purchase order, page 4.</p></div></div><div class="price-bottom"><span data-edit>USD / 3 units</span><span data-edit>Correction recorded. Approval pending.</span></div>''','paper')
-slide(5,'The correction keeps its evidence.','''<h2 class="reveal" data-edit>The correction keeps its evidence.</h2><div class="correction-frame"><img src="../captures/final-price-correction-detail.png" alt="Actual audited correction: USD111316.50 to USD37105.50, citing purchase order page4 and explicitly awaiting qualified review."></div><div class="evidence-labels"><span data-edit>Original output</span><span data-edit>Source page</span><span data-edit>Actor + reason</span></div><p class="bottom-line" data-edit>Assistant source reading. Still awaiting qualified review.</p>''')
-slide(6,'Incomplete evidence blocks release.','''<h2 class="reveal" data-edit>Incomplete evidence<br>blocks release.</h2><div class="assurance-crop"><img src="../captures/final-assurance.png" alt="Actual application warning shows incomplete extraction, a truncated audit, an output cap and blocked release gates."></div><div class="gate-facts"><div><span data-edit>Factory acceptance report</span><b data-edit>Missing</b></div><div><span data-edit>Extraction assurance</span><b data-edit>Incomplete</b></div><div><span data-edit>Purchase + shipment</span><b class="accent" data-edit>Blocked</b></div></div><p class="bottom-line" data-edit>35 requirements. 4 offers. All pending.</p>''','paper')
-slide(7,'Runs under your control.','''<h2 class="reveal" data-edit>Runs under your control.</h2><div class="architecture"><div class="arch-model"><span class="eyebrow" data-edit>ON-PREMISE INFERENCE</span><h3 data-edit>Apertus 1.5 / 8B</h3><p data-edit>Participant-controlled GPU</p></div><div class="arch-line"></div><div class="arch-components"><div><h3 data-edit>PostgreSQL</h3><p data-edit>Versioned records</p></div><div><h3 data-edit>Temporal</h3><p data-edit>Durable extraction</p></div><div><h3 data-edit>Z3</h3><p data-edit>Encoded constraints</p></div></div></div><div class="test-stats"><div class="eyebrow" data-edit>SOFTWARE CHECKS PASSED</div><b data-edit>330 <small>backend</small></b><b data-edit>39 <small>frontend</small></b><p data-edit>Tests verify software behavior.</p></div><p class="small-bottom" data-edit>Recorded inference completed. Model endpoint stopped after testing.</p>''')
-slide(8,'Transformers first.','''<div class="closing-title"><div class="eyebrow" data-edit>COMMERCIAL ENTRY PLAN</div><h2 class="reveal" data-edit>Transformers<br>first.</h2></div><div class="entry-plan"><div><span>01</span><p data-edit>Energy EPC contractors</p></div><div><span>02</span><p data-edit>Design partner pilot</p></div><div><span>03</span><p data-edit>Enterprise purchasing<br>and more equipment</p></div></div><div class="closing-line" data-edit>TenderProof. Evidence before release.</div>''','cover')
-wave=[['Connect the enterprise','ERP purchase orders','PLM synchronization','Supplier clarifications','Enterprise identity','Portfolio dashboard'],['Broaden engineering','Switchgear / protection','Battery / inverter packs','BIM / IFC linkage','Simulation adapters','Standards applicability'],['Follow execution','Inspection hold points','Shipping readiness','Site commissioning','Change-order preparation','Warranty investigation'],['Improve economics','Lifecycle energy losses','Supplier performance','Spare interchangeability','Expert feedback / evaluation','Cross-project sourcing']]
-cols=''.join('<div><h3 data-edit>'+x[0]+'</h3>'+''.join(f'<p><span>{5+k*5+j:02}</span><span data-edit>{v}</span></p>' for j,v in enumerate(x[1:]))+'</div>' for k,x in enumerate(wave))
-slide(9,'Twenty planned extensions.','''<h2 data-edit>Twenty planned extensions.</h2><div class="roadmap">'''+cols+'''</div><p class="small-bottom" data-edit>Future work. Sequenced after expert validation of the launch workflow.</p>''','paper',note='Planned extensions5–24 from the approved roadmap. None is presented as an existing integration.')
-slide(10,'What we measured.','''<h2 data-edit>What we measured.</h2><div class="run-facts"><div><b data-edit>5</b><span data-edit>completed source-kind runs</span></div><div><b data-edit>64</b><span data-edit>preserved call traces</span></div><div><b data-edit>427 s</b><span data-edit>full 57-page tender</span></div></div><div class="limits"><h3 data-edit>Quality remains a review task.</h3><p data-edit>Wrong bidder prices and out-of-scope requirements.<br>One failed audit and one capped window in the full tender.<br>No expert-approved benchmark or customer outcome claimed.</p></div><div class="references"><a href="https://go.opengovguam.com/tenders/tender_details/gpa/GPA-070-25">GPA procurement sources</a><a href="https://huggingface.co/swiss-ai/Apertus-v1.5-8B">Apertus model</a><a href="https://github.com/Vishwa-docs/TenderProof/blob/main/track_2b/submission/VERIFICATION.md">Verification record</a></div>''',note='15attempts retained:5completed10failed,4distinctPDFs inferred,5completePDFsparsed. 57page tender supplied1214spans in427.118s. Complete source coverage is not extraction completeness. No model accuracy score is asserted.')
-css='''
-/* === THEME: ENGINEERING FIELD NOTES === */
-:root{--stage-bg:#091a20;--slide-bg:#102b34;--ink:#f3efe4;--muted:#b9ccc9;--accent:#d4df87;--rule:#476368;--paper:#f2f0e7}
-*{box-sizing:border-box}body{font-family:'IBM Plex Sans',sans-serif;color:var(--ink)} h1,h2,h3,p{margin:0} h1,h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;padding-bottom:24px} .slide{padding:0 120px;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:96px 96px}
-/* === SLIDE CHROME === */
-header,footer{position:absolute;left:120px;right:120px;display:flex;align-items:center;justify-content:space-between;font-size:23px;letter-spacing:2px}header{top:76px}header span:first-child{font-weight:600;letter-spacing:4px}footer{bottom:55px;color:var(--muted);font-size:20px}h2{position:absolute;left:120px;top:180px;max-width:1660px;font-size:105px;line-height:1.02;letter-spacing:-1px}.eyebrow{font-size:24px;letter-spacing:1.7px;color:var(--accent)}.source-note{font-size:25px;color:var(--muted);line-height:1.5}.paper{--slide-bg:var(--paper);--ink:#173039;--muted:#576867;--accent:#326d62;--rule:#acbcb1;color:var(--ink);background-image:none}.paper footer{color:var(--muted)}.bottom-line{position:absolute;left:120px;right:120px;top:909px;font-size:37px;line-height:1.3;color:var(--accent)}.small-bottom{position:absolute;left:120px;right:120px;top:932px;font-size:26px;color:var(--muted)}
-/* === COVER AND CLOSE === */
-.cover-rule{position:absolute;left:120px;right:120px;top:246px;border-top:2px solid #b8d2c5}.cover-copy{position:absolute;left:120px;top:294px}.cover h1{font-size:176px;line-height:.96;letter-spacing:-2px}.cover-sub{font-size:40px;margin-top:52px;line-height:1.4}.cover-bottom{position:absolute;left:120px;right:120px;top:900px;display:flex;justify-content:space-between;font-size:30px;color:var(--accent)}.closing-title{position:absolute;left:120px;top:237px}.closing-title h2{position:static;margin-top:35px;font-size:156px;line-height:.98}.entry-plan{position:absolute;left:1070px;right:120px;top:284px}.entry-plan div{border-top:1px solid var(--rule);padding:30px 0 36px;display:flex;gap:45px;align-items:baseline}.entry-plan span{font-size:24px;color:var(--accent)}.entry-plan p{font-size:42px;line-height:1.25}.closing-line{position:absolute;left:120px;top:900px;font-size:40px;color:var(--accent)}
-/* === PROCUREMENT CASE === */
-.case-left{position:absolute;left:120px;top:385px;width:840px}.case-number{font-family:'Barlow Condensed';font-weight:700;font-size:150px;margin-top:38px;line-height:1;padding-bottom:24px}.case-number small{font-size:70px}.spec{font-size:44px;line-height:1.35;margin:35px 0 46px}.document-list{position:absolute;left:1070px;top:357px;width:730px}.document-list>div{display:flex;align-items:baseline;gap:24px;padding:24px 0;border-bottom:1px solid var(--rule);font-size:31px}.document-list b{font-size:23px;color:var(--accent);font-weight:400}.document-list em{font-style:normal;font-size:24px;color:var(--muted);margin-left:auto;white-space:nowrap}.document-list .source-note{margin-top:35px}
-/* === REVIEW WORKFLOW === */
-.workflow{position:absolute;left:120px;right:120px;top:510px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}.workflow div{border-top:2px solid var(--rule);padding-top:24px}.workflow b{font-size:27px;color:var(--accent)}.workflow h3{font-size:40px;margin:40px 0 26px;font-weight:600}.workflow p{font-size:31px;line-height:1.45;color:var(--muted)}
-/* === REAL PRICE CORRECTION === */
-.price-grid{position:absolute;left:120px;right:120px;top:500px;display:grid;grid-template-columns:1fr 1fr;gap:90px}.price-grid>div{padding-top:30px;border-top:2px solid var(--rule)}.price-grid .eyebrow{font-size:23px}.amount{font-family:'Barlow Condensed';font-size:133px;font-weight:700;letter-spacing:-2px;margin:32px 0 27px;white-space:nowrap}.wrong{color:#845140}.correct{color:#286759}.price-grid p{font-size:33px}.price-bottom{position:absolute;left:120px;right:120px;top:910px;display:flex;justify-content:space-between;font-size:31px;color:var(--accent)}.correction-frame{position:absolute;left:120px;right:120px;top:411px;min-height:280px;background:#f8f8f0}.correction-frame img{width:100%;height:auto;display:block}.evidence-labels{position:absolute;left:120px;right:120px;top:775px;display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:24px;font-size:32px;color:var(--muted)}
-/* === EXTRACTION AND ACCEPTANCE GATES === */
-.assurance-crop{position:absolute;left:120px;top:467px;width:1112px;height:395px;overflow:hidden;background:#fff7e7}.assurance-crop img{position:absolute;max-width:none;max-height:none;width:1408px;left:-258px;top:-219px}.gate-facts{position:absolute;left:1320px;right:120px;top:445px}.gate-facts div{padding:22px 0 24px;border-bottom:1px solid var(--rule)}.gate-facts span{display:block;font-size:27px;color:var(--muted)}.gate-facts b{display:block;margin-top:12px;font-size:47px;font-weight:600}.accent{color:var(--accent)}
-/* === DEPLOYMENT === */
-.architecture{position:absolute;left:120px;top:384px;width:1020px}.arch-model{border-top:2px solid var(--rule);padding:25px 0}.arch-model h3{font-size:58px;margin:24px 0 14px}.arch-model p{font-size:31px;color:var(--muted)}.arch-line{height:65px;border-left:2px solid var(--rule);margin-left:30px}.arch-components{display:grid;grid-template-columns:1.2fr 1.1fr .7fr;gap:32px;border-top:2px solid var(--rule);padding-top:32px}.arch-components h3{font-size:37px}.arch-components p{font-size:26px;line-height:1.4;margin-top:18px;color:var(--muted)}.test-stats{position:absolute;left:1260px;top:389px;right:120px}.test-stats>b{display:block;font-family:'Barlow Condensed';font-size:108px;line-height:1.25;margin-top:25px}.test-stats small{font-family:'IBM Plex Sans';font-size:32px;font-weight:400;color:var(--muted)}.test-stats p{font-size:25px;color:var(--muted);margin-top:36px}
-/* === APPENDICES === */
-.roadmap{position:absolute;left:120px;right:120px;top:380px;display:grid;grid-template-columns:repeat(4,1fr);gap:42px}.roadmap h3{font-size:33px;min-height:98px;border-bottom:2px solid var(--rule);line-height:1.2;color:var(--accent)}.roadmap p{display:flex;gap:18px;margin-top:28px;font-size:29px;line-height:1.2;min-height:52px}.roadmap p>span:first-child{font-size:22px;color:var(--muted);padding-top:4px}.run-facts{position:absolute;left:120px;right:120px;top:350px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:80px}.run-facts b{font-family:'Barlow Condensed';font-size:120px;display:block;line-height:1.1;padding-bottom:24px;color:var(--accent)}.run-facts span{display:block;font-size:30px;margin-top:22px}.limits{position:absolute;left:120px;top:648px}.limits h3{font-size:38px;margin-bottom:25px}.limits p{font-size:30px;line-height:1.5;color:var(--muted)}.references{position:absolute;left:120px;right:120px;top:938px;display:flex;gap:60px}.references a{font-size:23px;color:var(--accent)}
-/* === TRANSITIONS === */
-.slide{transition:opacity .25s ease,visibility .25s}.reveal{opacity:0;transform:translateY(18px);transition:opacity .3s ease,transform .3s ease}.slide.visible .reveal{opacity:1;transform:none} .slide.visible .cover-sub{transition-delay:.13s}
-/* === OUTSIDE-STAGE CONTROLS AND INLINE EDITING === */
-.deck-controls{display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid #78908d66;border-radius:6px;background:#091a20e8;color:#e9efdf;opacity:0;transition:opacity .2s}.deck-controls:hover,.deck-controls:focus-within{opacity:1}.deck-controls button,.edit-toggle{font-family:'IBM Plex Sans';font-size:14px;border:1px solid #78908d;background:#17353d;color:#f3efe4;padding:8px 12px;cursor:pointer}.deck-controls span{font-size:13px}.edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;z-index:10000}.edit-toggle{position:fixed;top:12px;left:12px;z-index:10001;opacity:0;pointer-events:none;transition:opacity .2s}.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}[contenteditable=true]{outline:2px dashed #cedd84;outline-offset:5px}.recording .deck-controls,.recording .edit-hotzone,.recording .edit-toggle{visibility:hidden}.recording{cursor:none}
-@media print{.edit-hotzone,.edit-toggle{display:none}.reveal{opacity:1!important;transform:none!important} @page{size:1920px 1080px;margin:0}}
-'''
-js='''
-/* === SLIDE PRESENTATION CONTROLLER === */
-class SlidePresentation {
- constructor(){this.slides=[...document.querySelectorAll('.slide')];this.stage=document.querySelector('.deck-stage');this.currentSlide=0;this.editing=false;this.scale();addEventListener('resize',()=>this.scale());this.bind();this.restoreEdits();this.showSlide(Number(location.hash.slice(1)||1)-1);}
- scale(){const s=Math.min(innerWidth/1920,innerHeight/1080);this.stage.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`;}
- showSlide(index){this.currentSlide=Math.max(0,Math.min(index,this.slides.length-1));this.slides.forEach((s,i)=>{s.classList.toggle('active',i===this.currentSlide);s.classList.toggle('visible',i===this.currentSlide);s.setAttribute('aria-hidden',String(i!==this.currentSlide));});document.querySelector('#count').textContent=`${this.currentSlide+1} / ${this.slides.length}`;history.replaceState(null,'','#'+(this.currentSlide+1));}
- bind(){document.querySelector('#prev').onclick=()=>this.showSlide(this.currentSlide-1);document.querySelector('#next').onclick=()=>this.showSlide(this.currentSlide+1);document.querySelector('#fullscreen').onclick=()=>this.fullscreen();document.querySelector('#save').onclick=()=>this.save();addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();this.save();return;}if(e.target.isContentEditable)return;const k=e.key;if(['ArrowRight','ArrowDown',' ','PageDown'].includes(k)){e.preventDefault();this.showSlide(this.currentSlide+1);}if(['ArrowLeft','ArrowUp','PageUp'].includes(k)){e.preventDefault();this.showSlide(this.currentSlide-1);}if(k==='Home')this.showSlide(0);if(k==='End')this.showSlide(this.slides.length-1);if(k.toLowerCase()==='f')this.fullscreen();if(k.toLowerCase()==='e')this.toggleEdit();if(k.toLowerCase()==='r')document.body.classList.toggle('recording');});let start=0;addEventListener('touchstart',e=>start=e.changedTouches[0].clientX,{passive:true});addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-start;if(!this.editing&&Math.abs(dx)>50)this.showSlide(this.currentSlide+(dx<0?1:-1));},{passive:true});let last=0;addEventListener('wheel',e=>{if(this.editing||Math.abs(e.deltaY)<20||Date.now()-last<600)return;last=Date.now();this.showSlide(this.currentSlide+(e.deltaY>0?1:-1));},{passive:true});const zone=document.querySelector('.edit-hotzone'),toggle=document.querySelector('#editToggle');let timer;for(const el of [zone,toggle]){el.onmouseenter=()=>{clearTimeout(timer);toggle.classList.add('show');};el.onmouseleave=()=>{timer=setTimeout(()=>{if(!this.editing)toggle.classList.remove('show');},400);};el.onclick=()=>this.toggleEdit();}document.querySelectorAll('[data-edit]').forEach((el,i)=>{el.dataset.editId=String(i);el.addEventListener('input',()=>{try{const values=[...document.querySelectorAll('[data-edit]')].map(n=>n.innerHTML);localStorage.setItem('tenderproof-speaking-deck-v1',JSON.stringify(values));}catch{}});});}
- fullscreen(){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen?.();}
- toggleEdit(){this.editing=!this.editing;document.querySelectorAll('[data-edit]').forEach(n=>n.contentEditable=String(this.editing));const b=document.querySelector('#editToggle');b.classList.toggle('active',this.editing);b.textContent=this.editing?'Editing · E to finish':'Edit · E';}
- restoreEdits(){try{const saved=JSON.parse(localStorage.getItem('tenderproof-speaking-deck-v1')||'null');if(saved)document.querySelectorAll('[data-edit]').forEach((n,i)=>{if(typeof saved[i]==='string')n.innerHTML=saved[i];});}catch{}}
- save(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('[contenteditable]').forEach(n=>n.removeAttribute('contenteditable'));const data='<!doctype html>\\n'+clone.outerHTML;const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([data],{type:'text/html'}));link.download='TenderProof_Slides.html';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);}
-}
-window.deck=new SlidePresentation();
-'''
-htmlfile='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TenderProof — SwissChivers</title><style>/* === EMBEDDED GOOGLE FONTS; LICENCES IN LICENSES/PRESENTATION-FONTS.txt === */\n'+fontcss+'\n'+base+'\n'+css+'</style></head><body><div class="deck-viewport"><main class="deck-stage" id="deckStage">'+''.join(slides)+'</main></div><nav class="deck-controls" aria-label="Slide controls"><button id="prev" aria-label="Previous slide">←</button><span id="count"></span><button id="next" aria-label="Next slide">→</button><button id="fullscreen">Full screen · F</button><button id="save">Save HTML</button><span>R: hide controls</span></nav><div class="edit-hotzone" aria-hidden="true"></div><button class="edit-toggle" id="editToggle" aria-label="Toggle text editing">Edit · E</button><script>'+js+'</script></body></html>'
-for name in ['final-price-correction-detail.png','final-assurance.png']:
- htmlfile=htmlfile.replace('../captures/'+name,'data:image/png;base64,'+base64.b64encode((r/'captures'/name).read_bytes()).decode())
-(out/'TenderProof_Slides.html').write_text(htmlfile)
-(src/'frontend-slides-controller.js').write_text(js)
-(src/'frontend-slides-theme.css').write_text(css)
-print('Created10slides,8spoken+2appendices;',len(htmlfile),'characters. Actual screenshots embedded; no runtime dependencies.')
+import base64
+import hashlib
+import html
+import json
+
+root = Path(__file__).resolve().parents[1]
+source = root / 'source'
+output = root / 'output'
+output.mkdir(exist_ok=True)
+font_css = (source / 'presentation-fonts.css').read_text()
+base_css = (source / 'viewport-base.css').read_text()
+theme_css = (source / 'frontend-slides-theme.css').read_text()
+controller = (source / 'frontend-slides-controller.js').read_text()
+notes_path = source / 'slide_notes.json'
+notes = json.loads(notes_path.read_text()) if notes_path.exists() else {}
+
+# Preserve the existing capture provenance; never redraw application evidence.
+evidence = json.loads((root / 'REAL_SOURCE_EVIDENCE.json').read_text())
+capture_names = ['workbench-search.png', 'workbench-overview.png']
+for name in capture_names:
+    capture = next(item for item in evidence['browser_captures'] if item['path'] == 'captures/' + name)
+    assert hashlib.sha256((root / capture['path']).read_bytes()).hexdigest() == capture['sha256']
+
+slides = []
+
+def bullets(items, classes=''):
+    return '<ul class="mechanism-list ' + classes + '">' + ''.join(
+        f'<li data-edit><strong>{html.escape(mechanism)}</strong>: {html.escape(claim)}</li>'
+        for mechanism, claim in items
+    ) + '</ul>'
+
+def slide(number, title, content, classes=''):
+    note = html.escape(notes.get(str(number), ''))
+    slides.append(f'''<!-- === SLIDE {number}: {html.escape(title)} === -->
+<section class="slide {classes}" aria-label="{number}. {html.escape(title)}">
+<header><span data-edit>TENDERPROOF</span><span data-edit>SWISSCHIVERS / HACK APERTUS</span></header>
+{content}
+<footer><span data-edit>SUPPORTING ENGINEERING MATERIAL</span><span>{number:02} / 10</span></footer>
+<aside class="speaker-notes" hidden>{note}</aside>
+</section>''')
+
+slide(1, 'Review gates bind releases to reviewed evidence', '''
+<div class="cover-rule"></div>
+<div class="cover-copy"><h1 class="reveal" data-edit>Review gates bind releases<br>to reviewed evidence.</h1>
+<p class="cover-sub reveal" data-edit>Transformer procurement review with Apertus.</p></div>
+''' + bullets([
+    ('Apertus', 'Proposes source-linked claims.'),
+    ('Review gates', 'Bind approvals to the package revision.'),
+], 'cover-bullets'), 'cover')
+
+slide(2, 'Package scope selects three 750 kVA transformers', '''
+<h2 class="reveal" data-edit>Package scope selects three<br>750 kVA transformers.</h2>
+<div class="case-left"><div class="eyebrow" data-edit>GUAM POWER AUTHORITY / OP34276 / ITEM 2</div>
+<div class="case-number" data-edit>3 × 750 <small>kVA</small></div>
+<p class="spec" data-edit>13.8 kV primary<br>120/208 V secondary</p>
+<p class="source-note" data-edit>The scope excludes the separate 300 kVA item 1.</p></div>
+<table class="source-table"><thead><tr><th>Original</th><th>Pages</th></tr></thead><tbody>
+<tr><td data-edit>Full tender</td><td data-edit>57</td></tr>
+<tr><td data-edit>E-004 specification</td><td data-edit>20</td></tr>
+<tr><td data-edit>Bid abstract</td><td data-edit>5</td></tr>
+<tr><td data-edit>Amendments / issuance</td><td data-edit>4</td></tr>
+<tr><td data-edit>Purchase order</td><td data-edit>9</td></tr>
+</tbody></table>
+<p class="source-overlap" data-edit>95 attachment pages include overlapping material.</p>
+''', 'paper')
+
+slide(3, 'Evidence workspaces connect source inspection with revision review', '''
+<h2 class="reveal" data-edit>Evidence workspaces connect source<br>inspection with revision review.</h2>
+<div class="flow-diagram" aria-label="Source spans flow through Apertus proposals, human review, and snapshot-bound checks">
+<div><span>01 / SOURCE</span><h3 data-edit>Docling spans</h3><p data-edit>Original PDF + page locator</p></div><b>→</b>
+<div><span>02 / INTERPRETATION</span><h3 data-edit>Apertus proposals</h3><p data-edit>Four bounded roles</p></div><b>→</b>
+<div><span>03 / REVIEW</span><h3 data-edit>Human decisions</h3><p data-edit>Meaning + applicability</p></div><b>→</b>
+<div><span>04 / VERIFICATION</span><h3 data-edit>Snapshot checks</h3><p data-edit>Z3 + commercial rules</p></div>
+</div>
+''' + bullets([
+    ('BM25 search', 'Ranks retained source passages without claiming confidence.'),
+    ('Lineage', 'Links documents, claims, corrections, and recorded runs.'),
+    ('Snapshot diff', 'Exposes changed fields and affected source references.'),
+    ('Draft dossier', 'Exports snapshot-bound review records without granting approval.'),
+], 'flow-bullets'))
+
+slide(4, 'Price corrections preserve the original model output', '''
+<h2 class="reveal" data-edit>Price corrections preserve<br>the original model output.</h2>
+<div class="price-grid"><div><div class="eyebrow" data-edit>MODEL PROPOSAL / THREE-UNIT TOTAL</div>
+<div class="amount wrong" data-edit>$111,316.50</div><p data-edit>The model used the unit-price field.</p></div>
+<div><div class="eyebrow" data-edit>ASSISTANT CORRECTION / PER UNIT</div>
+<div class="amount correct" data-edit>$37,105.50</div><p data-edit>Purchase order PDF page 4.</p></div></div>
+''' + bullets([
+    ('Correction', 'Preserves raw output; qualified review remains pending.'),
+], 'price-bullet'), 'paper')
+
+slide(5, 'Source search locates the original purchase order price', '''
+<h2 class="reveal" data-edit>Source search locates<br>the original purchase order price.</h2>
+<div class="workbench-search-frame"><img src="../captures/workbench-search.png" alt="Deployed Safari search returns purchase order page 4 first, with the retained unit price and three-unit total."></div>
+''' + bullets([
+    ('Exact retrieval', 'Ranks purchase order page 4 first for $37,105.50.'),
+    ('Source inspection', 'Opens the cited passage and original PDF page.'),
+], 'workbench-search-bullets'))
+
+slide(6, 'Incomplete evidence blocks purchase and shipment release', '''
+<h2 class="reveal" data-edit>Incomplete evidence blocks<br>purchase and shipment release.</h2>
+<div class="workbench-overview-frame"><img src="../captures/workbench-overview.png" alt="Deployed Safari overview shows 43 blocking issues, 35 pending requirements, four pending offers, and zero acceptance records."></div>
+''' + bullets([
+    ('Review state', '35 requirements and four offers remain pending.'),
+    ('FAT evidence', 'No acceptance record exists; shipment remains blocked.'),
+], 'workbench-overview-bullets'), 'paper')
+
+slide(7, 'Trace archives preserve recorded GPU execution evidence', '''
+<h2 class="reveal" data-edit>Trace archives preserve<br>recorded GPU execution evidence.</h2>
+<div class="architecture"><div class="arch-model"><span class="eyebrow" data-edit>RECORDED MODEL EXECUTION</span>
+<h3 data-edit>Apertus v1.5 / 8B</h3><p data-edit>Participant-controlled GPU host</p></div>
+<div class="arch-line"></div><div class="arch-components">
+<div><h3 data-edit>PostgreSQL</h3><p data-edit>Versioned package state</p></div>
+<div><h3 data-edit>Temporal</h3><p data-edit>Durable extraction workflow</p></div>
+<div><h3 data-edit>Relay</h3><p data-edit>Authenticated model access</p></div></div></div>
+<div class="runtime-state"><div class="eyebrow" data-edit>CURRENT ENDPOINT STATE</div><h3 data-edit>Stopped</h3>
+<p data-edit>Operator restored borrowed workloads after recording.</p></div>
+''' + bullets([
+    ('Deployment', 'Uses operator-controlled infrastructure; Swiss residency remains unverified.'),
+], 'runtime-bullet'))
+
+slide(8, 'Role gates require approvals for each package revision', '''
+<h2 class="reveal" data-edit>Role gates require approvals<br>for each package revision.</h2>
+<table class="approval-table"><thead><tr><th>Decision</th><th>Required authority</th><th>Recorded state</th></tr></thead><tbody>
+<tr><td data-edit>Purchase release</td><td data-edit>Engineer + Commercial</td><td data-edit>Blocked</td></tr>
+<tr><td data-edit>Shipment release</td><td data-edit>Inspector + Commercial</td><td data-edit>Blocked</td></tr>
+</tbody></table>
+''' + bullets([
+    ('Revision change', 'Stales prior decisions and triggers full-package reassessment.'),
+    ('Initial identity', 'Restricts the engineer principal to the default project.'),
+    ('Acceptance', 'Leaves missing measurements and unit identity unknown.'),
+], 'approval-bullets'), 'paper')
+
+slide(9, 'Recorded inference runs expose unresolved extraction limits', '''
+<h2 data-edit>Recorded inference runs expose<br>unresolved extraction limits.</h2>
+<div class="run-facts"><div><b data-edit>380 / 51</b><span data-edit>backend / frontend tests passed</span></div>
+<div><b data-edit>5 / 64</b><span data-edit>completed runs / call traces</span></div>
+<div><b data-edit>427 s</b><span data-edit>full 57-page tender</span></div></div>
+''' + bullets([
+    ('Software QA', 'Verifies behavior; model accuracy remains unmeasured.'),
+    ('Execution history', 'Retains 15 attempts: five completed and ten failed.'),
+    ('Recorded proposals', 'Include wrong bidder prices and out-of-scope requirements.'),
+    ('Full tender', 'Retains one failed audit and one capped window.'),
+], 'measurement-bullets') + '''
+<div class="references"><a href="https://go.opengovguam.com/tenders/tender_details/gpa/GPA-070-25">GPA procurement sources</a><a href="https://huggingface.co/swiss-ai/Apertus-v1.5-8B">Apertus model</a><a href="https://github.com/Vishwa-docs/TenderProof/blob/main/track_2b/submission/VERIFICATION.md">Execution verification</a></div>
+''')
+
+roadmap = [
+    ('Connect enterprise systems', ['ERP purchase orders', 'PLM synchronization', 'Supplier clarifications', 'Enterprise identity', 'Portfolio dashboard']),
+    ('Broaden engineering schemas', ['Switchgear / protection', 'Battery / inverter packs', 'BIM / IFC linkage', 'Simulation adapters', 'Standards applicability']),
+    ('Track equipment execution', ['Inspection hold points', 'Shipping readiness', 'Site commissioning', 'Change-order preparation', 'Warranty investigation']),
+    ('Evaluate lifecycle decisions', ['Lifecycle energy losses', 'Supplier performance', 'Spare interchangeability', 'Expert feedback / evaluation', 'Cross-project sourcing']),
+]
+roadmap_columns = ''.join('<div><h3 data-edit>' + html.escape(title) + '</h3><table><tbody>' + ''.join(
+    f'<tr><td>{5 + column * 5 + row:02}</td><td data-edit>{html.escape(item)}</td></tr>'
+    for row, item in enumerate(items)
+) + '</tbody></table></div>' for column, (title, items) in enumerate(roadmap))
+slide(10, 'The roadmap puts qualified validation before planned extensions', '''
+<h2 data-edit>The roadmap puts qualified validation<br>before planned extensions.</h2>
+<div class="roadmap">''' + roadmap_columns + '''</div>
+<p class="small-bottom" data-edit>Twenty planned extensions follow qualified validation of the transformer workflow.</p>
+''', 'paper')
+
+html_file = '''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TenderProof | Supporting engineering slides</title><style>
+/* === EMBEDDED GOOGLE FONTS; LICENCES IN LICENSES/PRESENTATION-FONTS.txt === */
+''' + font_css + '\n' + base_css + '\n' + theme_css + '''
+</style></head><body><div class="deck-viewport"><main class="deck-stage" id="deckStage">
+''' + ''.join(slides) + '''</main></div>
+<nav class="deck-controls" aria-label="Slide controls"><button id="prev" aria-label="Previous slide">←</button><span id="count"></span><button id="next" aria-label="Next slide">→</button><button id="fullscreen">Full screen · F</button><button id="save">Save HTML</button><span>R: hide controls</span></nav>
+<div class="edit-hotzone" aria-hidden="true"></div><button class="edit-toggle" id="editToggle" aria-label="Toggle text editing">Edit · E</button><script>
+''' + controller + '</script></body></html>'
+for name in capture_names:
+    encoded = base64.b64encode((root / 'captures' / name).read_bytes()).decode()
+    html_file = html_file.replace('../captures/' + name, 'data:image/png;base64,' + encoded)
+(output / 'TenderProof_Slides.html').write_text(html_file)
+print(f'Created {len(slides)} supporting slides; {len(html_file)} characters. Captures and fonts embedded; narration remains independent.')

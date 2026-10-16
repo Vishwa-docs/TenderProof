@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 435" role="img">
+  <title>Deployment, read-only investigation and inference</title>
+  <desc>Editable source for matching vector SVG and PDF diagrams. Arrows identify API calls or stored evidence flow.</desc>
+  <rect stroke-width="1.5" x="10" y="35" width="770" height="385" rx="5" fill="#F8FAFB" stroke="#9BAEB8" />
+  <rect stroke-width="1.5" x="800" y="35" width="190" height="385" rx="5" fill="#F8FAFB" stroke="#9BAEB8" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="start" x="25" y="23" fill="#163448">Operator-administered application host</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="start" x="805" y="23" fill="#163448">Controlled GPU</text>
+  <rect stroke-width="1.5" x="25" y="70" width="180" height="85" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="115.0" y="107.0" fill="#163448">React UI</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="115.0" y="130.0" fill="#163448">Scoped MCP client</text>
+  <rect stroke-width="1.5" x="260" y="60" width="250" height="200" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="385.0" y="120.0" fill="#163448">FastAPI + Z3</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="385.0" y="143.0" fill="#163448">Review / gate controls</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="385.0" y="166.0" fill="#163448">Read-only workbench</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="385.0" y="189.0" fill="#163448">BM25 / lineage / diff</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="385.0" y="212.0" fill="#163448">Draft dossier hash</text>
+  <rect stroke-width="1.5" x="550" y="60" width="210" height="85" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="655.0" y="97.0" fill="#163448">Docling</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="655.0" y="120.0" fill="#163448">PDF to page spans</text>
+  <rect stroke-width="1.5" x="550" y="190" width="210" height="96" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="655.0" y="221.0" fill="#163448">Stored evidence</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="655.0" y="244.0" fill="#163448">PostgreSQL state</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="655.0" y="267.0" fill="#163448">PDF / trace volume</text>
+  <rect stroke-width="1.5" x="260" y="325" width="250" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="385.0" y="359.5" fill="#163448">Temporal + worker</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="385.0" y="382.5" fill="#163448">Extract and persist</text>
+  <rect stroke-width="1.5" x="550" y="325" width="210" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="655.0" y="359.5" fill="#163448">Model relay</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="655.0" y="382.5" fill="#163448">Fixed API route</text>
+  <rect stroke-width="1.5" x="810" y="325" width="170" height="80" rx="5" fill="#FFFFFF" stroke="#116B67" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="20" font-weight="700" text-anchor="middle" x="895.0" y="348.0" fill="#163448">Apertus / vLLM</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="895.0" y="371.0" fill="#163448">RTX 5090 Laptop</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="19" font-weight="400" text-anchor="middle" x="895.0" y="394.0" fill="#163448">24 GB VRAM</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="815" y="95" fill="#163448">Private route</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="815" y="121" fill="#163448">Authenticated</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="815" y="200" fill="#163448">Model stopped</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="815" y="226" fill="#163448">after recorded</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="815" y="252" fill="#163448">execution</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="205,111 260,111" fill="none" stroke="#536472" />
+  <polygon points="260,111 250.91034250325114,115.1687080242921 250.91034250325114,106.8312919757079" fill="#536472" />
+  <polygon points="205,111 214.08965749674886,106.83129197570788 214.08965749674886,115.1687080242921" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="510,100 550,100" fill="none" stroke="#536472" />
+  <polygon points="550,100 540.9103425032512,104.1687080242921 540.9103425032512,95.8312919757079" fill="#536472" />
+  <polygon points="510,100 519.0896574967488,95.83129197570788 519.0896574967488,104.1687080242921" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="510,230 550,230" fill="none" stroke="#536472" />
+  <polygon points="550,230 540.9103425032512,234.1687080242921 540.9103425032512,225.8312919757079" fill="#536472" />
+  <polygon points="510,230 519.0896574967488,225.8312919757079 519.0896574967488,234.1687080242921" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="385,260 385,325" fill="none" stroke="#536472" />
+  <polygon points="385,325 380.83129197570787,315.9103425032512 389.16870802429213,315.9103425032512" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="417" y="297" fill="#163448">jobs</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="510,345 530,345 530,300 655,300 655,286" fill="none" stroke="#536472" />
+  <polygon points="655,286 659.1687080242921,295.0896574967488 650.8312919757079,295.0896574967488" fill="#536472" />
+  <polygon points="510,345 519.0896574967488,340.83129197570787 519.0896574967488,349.16870802429213" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="614" y="317" fill="#163448">read / commit</text>
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="510,375 550,375" fill="none" stroke="#536472" />
+  <polygon points="550,375 540.9103425032512,379.16870802429213 540.9103425032512,370.83129197570787" fill="#536472" />
+  <polygon points="510,375 519.0896574967488,370.83129197570787 519.0896574967488,379.16870802429213" fill="#536472" />
+  <polyline stroke-width="1.8" stroke-dasharray="none" points="760,365 810,365" fill="none" stroke="#536472" />
+  <polygon points="810,365 800.9103425032512,369.16870802429213 800.9103425032512,360.83129197570787" fill="#536472" />
+  <polygon points="760,365 769.0896574967488,360.83129197570787 769.0896574967488,369.16870802429213" fill="#536472" />
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="26" y="212" fill="#163448">Stored spans and</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="26" y="238" fill="#163448">snapshots support</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="26" y="264" fill="#163448">read-only views.</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="26" y="354" fill="#163448">Read path needs</text>
+  <text font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="400" text-anchor="start" x="26" y="380" fill="#163448">no model request.</text>
+</svg>

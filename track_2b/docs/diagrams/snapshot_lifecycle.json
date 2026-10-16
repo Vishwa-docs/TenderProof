@@ -1,0 +1,265 @@
+{
+  "width": 1000,
+  "height": 435,
+  "title": "Snapshot investigation, draft export and controlled release",
+  "description": "Editable source for matching vector SVG and PDF diagrams. Arrows identify API calls or stored evidence flow.",
+  "elements": [
+    {
+      "type": "box",
+      "x": 20,
+      "y": 30,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "Sources and proposals",
+        "Original refs + raw output"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 365,
+      "y": 30,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "Review content",
+        "Meaning, units, corrections"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 710,
+      "y": 30,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "Snapshot H",
+        "Content + assurance"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          290,
+          70
+        ],
+        [
+          365,
+          70
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          635,
+          70
+        ],
+        [
+          710,
+          70
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          845,
+          110
+        ],
+        [
+          845,
+          135
+        ],
+        [
+          155,
+          135
+        ],
+        [
+          155,
+          175
+        ]
+      ],
+      "label": "read",
+      "lx": 181,
+      "ly": 160,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          500,
+          135
+        ],
+        [
+          500,
+          175
+        ]
+      ],
+      "label": "assess",
+      "lx": 535,
+      "ly": 160,
+      "bidir": false
+    },
+    {
+      "type": "box",
+      "x": 20,
+      "y": 175,
+      "w": 270,
+      "h": 105,
+      "lines": [
+        "Read-only investigation",
+        "Search + issue queue",
+        "Lineage + stored diff"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 365,
+      "y": 175,
+      "w": 270,
+      "h": 105,
+      "lines": [
+        "Gate checks",
+        "Assurance + feasible supplier",
+        "Shipment evidence applies"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 710,
+      "y": 175,
+      "w": 270,
+      "h": 105,
+      "lines": [
+        "Separate role approvals",
+        "Purchase: Engineer",
+        "Shipment: Inspector",
+        "+ Commercial for each gate"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          635,
+          227
+        ],
+        [
+          710,
+          227
+        ]
+      ],
+      "label": "pass",
+      "lx": 671,
+      "ly": 214,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          155,
+          280
+        ],
+        [
+          155,
+          330
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          500,
+          280
+        ],
+        [
+          500,
+          330
+        ]
+      ],
+      "label": "fail",
+      "lx": 522,
+      "ly": 313,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          845,
+          280
+        ],
+        [
+          845,
+          330
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": false
+    },
+    {
+      "type": "box",
+      "x": 20,
+      "y": 330,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "Draft dossier",
+        "Content hash; pending stays"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 365,
+      "y": 330,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "BLOCKED",
+        "Unresolved condition"
+      ],
+      "kind": "blocked"
+    },
+    {
+      "type": "box",
+      "x": 710,
+      "y": 330,
+      "w": 270,
+      "h": 80,
+      "lines": [
+        "Commercial release",
+        "Recheck H and gates",
+        "Immutable simulator packet"
+      ],
+      "kind": "node"
+    }
+  ]
+}

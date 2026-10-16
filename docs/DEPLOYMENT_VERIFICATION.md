@@ -1,6 +1,6 @@
 # Current deployment verification — 15 October 2026
 
-The final recorded build passes **330 Python tests, 39 frontend tests, TypeScript and Vite**. `make run` rebuilt the application. Authenticated API calls and current JS/CSS asset hashes match the build. Forward migration preserved all original content and events; an app/worker restart preserved version 13 and snapshot `fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6`.
+The 16 October workbench build passes **380 Python tests, 51 frontend tests, TypeScript and Vite**. `make run` rebuilt the application. Authenticated API calls and current JS/CSS asset hashes match the build. Forward migration preserved all original content and events; an app/worker restart preserved version 13 and snapshot `fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6`.
 
 The current real case contains five documents, 35 pending requirements and four pending offers. All five extraction runs have unresolved assurance conditions. There are no approvals, acceptance evidence or releases. Genuine Apertus inference completed before the model endpoint was stopped and borrowed workloads restored. See [final verification](../track_2b/submission/VERIFICATION.md) and [real model execution](REAL_MODEL_INTEGRATION.md).
 

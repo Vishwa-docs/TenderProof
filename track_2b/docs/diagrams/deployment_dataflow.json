@@ -1,0 +1,354 @@
+{
+  "width": 1000,
+  "height": 435,
+  "title": "Deployment, read-only investigation and inference",
+  "description": "Editable source for matching vector SVG and PDF diagrams. Arrows identify API calls or stored evidence flow.",
+  "elements": [
+    {
+      "type": "box",
+      "x": 10,
+      "y": 35,
+      "w": 770,
+      "h": 385,
+      "lines": [],
+      "kind": "boundary"
+    },
+    {
+      "type": "box",
+      "x": 800,
+      "y": 35,
+      "w": 190,
+      "h": 385,
+      "lines": [],
+      "kind": "boundary"
+    },
+    {
+      "type": "text",
+      "x": 25,
+      "y": 23,
+      "text": "Operator-administered application host",
+      "size": 20,
+      "bold": true,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 805,
+      "y": 23,
+      "text": "Controlled GPU",
+      "size": 20,
+      "bold": true,
+      "anchor": "start"
+    },
+    {
+      "type": "box",
+      "x": 25,
+      "y": 70,
+      "w": 180,
+      "h": 85,
+      "lines": [
+        "React UI",
+        "Scoped MCP client"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 260,
+      "y": 60,
+      "w": 250,
+      "h": 200,
+      "lines": [
+        "FastAPI + Z3",
+        "Review / gate controls",
+        "Read-only workbench",
+        "BM25 / lineage / diff",
+        "Draft dossier hash"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 550,
+      "y": 60,
+      "w": 210,
+      "h": 85,
+      "lines": [
+        "Docling",
+        "PDF to page spans"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 550,
+      "y": 190,
+      "w": 210,
+      "h": 96,
+      "lines": [
+        "Stored evidence",
+        "PostgreSQL state",
+        "PDF / trace volume"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 260,
+      "y": 325,
+      "w": 250,
+      "h": 80,
+      "lines": [
+        "Temporal + worker",
+        "Extract and persist"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 550,
+      "y": 325,
+      "w": 210,
+      "h": 80,
+      "lines": [
+        "Model relay",
+        "Fixed API route"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "box",
+      "x": 810,
+      "y": 325,
+      "w": 170,
+      "h": 80,
+      "lines": [
+        "Apertus / vLLM",
+        "RTX 5090 Laptop",
+        "24 GB VRAM"
+      ],
+      "kind": "node"
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 95,
+      "text": "Private route",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 121,
+      "text": "Authenticated",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 200,
+      "text": "Model stopped",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 226,
+      "text": "after recorded",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 815,
+      "y": 252,
+      "text": "execution",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          205,
+          111
+        ],
+        [
+          260,
+          111
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": true
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          510,
+          100
+        ],
+        [
+          550,
+          100
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": true
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          510,
+          230
+        ],
+        [
+          550,
+          230
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": true
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          385,
+          260
+        ],
+        [
+          385,
+          325
+        ]
+      ],
+      "label": "jobs",
+      "lx": 417,
+      "ly": 297,
+      "bidir": false
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          510,
+          345
+        ],
+        [
+          530,
+          345
+        ],
+        [
+          530,
+          300
+        ],
+        [
+          655,
+          300
+        ],
+        [
+          655,
+          286
+        ]
+      ],
+      "label": "read / commit",
+      "lx": 614,
+      "ly": 317,
+      "bidir": true
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          510,
+          375
+        ],
+        [
+          550,
+          375
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": true
+    },
+    {
+      "type": "arrow",
+      "points": [
+        [
+          760,
+          365
+        ],
+        [
+          810,
+          365
+        ]
+      ],
+      "label": null,
+      "lx": null,
+      "ly": null,
+      "bidir": true
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 212,
+      "text": "Stored spans and",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 238,
+      "text": "snapshots support",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 264,
+      "text": "read-only views.",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 354,
+      "text": "Read path needs",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 380,
+      "text": "no model request.",
+      "size": 18,
+      "bold": false,
+      "anchor": "start"
+    }
+  ]
+}

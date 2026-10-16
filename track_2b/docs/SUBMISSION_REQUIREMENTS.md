@@ -50,7 +50,7 @@ The form does **not** request a deck, hosted application URL, logo, tagline, scr
 - [ ] Create the team's own PUBLIC repository from the template and submit its real URL. Current upstream origin alone is insufficient.
 - [ ] Run the Docker container with `make run` from the repository root and complete an end-to-end judge flow on a clean setup.
 - [ ] Update `track_2b/technical_report.md`; place the final PDF in `track_2b/` as `TeamName_Report.pdf`. The confirmed team name gives `SwissChivers_Report.pdf`.
-- [ ] Keep report content at most six pages excluding references. The local artifact is kept at most six pages total to satisfy the portal's shorter wording too.
+- [ ] Keep report content at most six pages excluding references. The official Track 2B template permits six content pages plus references.
 - [ ] Record a prototype demo no longer than 120 seconds; verify duration and audio, publish an accessible URL, test the link without the creator's session.
 - [ ] Keep `track_2b/data/` at or below 100 MB.
 - [ ] Apply Apache-2.0 to code/weights, CC-BY-4.0 to team-authored documentation/non-code output, CDLA-Permissive-2.0 to submitted datasets; retain third-party rights/notices and verify the right to redistribute each source item.

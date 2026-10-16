@@ -1101,6 +1101,38 @@
       "method": "Playwright screenshot of authenticated local app; no business data mutated",
       "review": "Visually inspected actual captured state",
       "region_note": "Full 1600x1000 viewport screenshot"
+    },
+    {
+      "path": "captures/workbench-overview.png",
+      "sha256": "0b898799379a88dd13a2b0fbdf345224a6b83abf0510e6d03b5b004cd787a901",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:12:52.514301+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
+    },
+    {
+      "path": "captures/workbench-search.png",
+      "sha256": "a79a786900dfe70284c9647f67bbc948f728335e45b0c20e326a6ef61a68a425",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:12:52.574959+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
+    },
+    {
+      "path": "captures/workbench-original.png",
+      "sha256": "330b4c345d23993005f32032d3223022c208ace867242103afdbcaefabc96062",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:14:45.681407+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
+    },
+    {
+      "path": "captures/workbench-diff.png",
+      "sha256": "8fc17dbf1df184b27c553d4d79b33c1b7b60167531359cd5dd3e40d6288a3816",
+      "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+      "captured_at": "2026-10-16T05:14:45.732633+00:00",
+      "source": "Deployed authenticated Safari application",
+      "crop": "Browser toolbar and unrelated tabs removed; application pixels unchanged."
     }
   ],
   "verification": {
@@ -1684,5 +1716,224 @@
     "representative_call_hashes_verified": true,
     "final_capture_count": 9,
     "business_approvals_granted": false
+  },
+  "evidence_workbench_verification": {
+    "at": "2026-10-16T05:11:17.360893+00:00",
+    "scope": "Read-only checks on the actual saved procurement package. No new inference or approval.",
+    "snapshot_hash": "fec4b6ba125c296f9564f2e475ef6e441b1ee93a55a7ccbc2df826b2a2620ba6",
+    "version": 13,
+    "summary": {
+      "document_count": 5,
+      "span_count": 2136,
+      "requirement_count": 35,
+      "pending_requirement_count": 35,
+      "approved_requirement_count": 0,
+      "pending_offer_count": 4,
+      "pending_evidence_count": 0,
+      "supplier_count": 0,
+      "evidence_count": 0,
+      "correction_count": 1,
+      "approval_count": 0,
+      "release_count": 0,
+      "issue_count": 48,
+      "blocking_issue_count": 43
+    },
+    "release_gates": [
+      {
+        "gate": "purchase",
+        "status": "blocked",
+        "issue_ids": [
+          "extraction_gap:474db8407c5bbaace644edfc",
+          "extraction_gap:70d89a0be9d7608588f0110c",
+          "extraction_gap:9417edeca93baea0e17f3917",
+          "extraction_gap:9c49732a2d69b6bcba3804dd",
+          "extraction_gap:d1ee05fa439dcd248ed0d42d",
+          "missing_schedule:default",
+          "missing_supplier:default",
+          "pending_requirement:08140c3dddab76c963e0",
+          "pending_requirement:0a42f69af207350471a0",
+          "pending_requirement:222bbe729f30720054c3",
+          "pending_requirement:22b3d4d0c88b2871391b",
+          "pending_requirement:23bd0baa01b86265a26e",
+          "pending_requirement:256a6c4098147bbf69b7",
+          "pending_requirement:27078bf81225d4cdf9a5",
+          "pending_requirement:3a3dcc0b097f3cc0e4f4",
+          "pending_requirement:3f6223d31b4172a808f8",
+          "pending_requirement:40993adf4707fbefbdab",
+          "pending_requirement:46748e1e7e625b39acb0",
+          "pending_requirement:4717e3ab25ae6b8f8b3e",
+          "pending_requirement:4dffecf960a0e9706755",
+          "pending_requirement:562a8b4ae65d243862c7",
+          "pending_requirement:5c15581ae39657c9e876",
+          "pending_requirement:5e98384145afd95a0afd",
+          "pending_requirement:5eee211a250dc7a98d99",
+          "pending_requirement:62c41ce1d551c86fb66e",
+          "pending_requirement:7408d445cb73903dc3f1",
+          "pending_requirement:772d11e0178afc60d623",
+          "pending_requirement:7eb44ea50b5779461c8e",
+          "pending_requirement:7f5f619442746643e8bc",
+          "pending_requirement:83cfdd7a9af313f5acae",
+          "pending_requirement:900ecefd02436766dad1",
+          "pending_requirement:93288f75e5fbe8f17b92",
+          "pending_requirement:970feba0b46db82cb562",
+          "pending_requirement:9e55b9bb65c1f2215776",
+          "pending_requirement:a5aeeb833891b32129ee",
+          "pending_requirement:ac56acc480f71b3db28b",
+          "pending_requirement:c4093da41d6355fb09ef",
+          "pending_requirement:e14b015eaad53ed8f520",
+          "pending_requirement:e28fb27e6c852360c3fb",
+          "pending_requirement:e69c4e0797c81d36cff9",
+          "pending_requirement:e73d193f35e37f0da804",
+          "pending_requirement:f089eff1b10a8be38f14"
+        ]
+      },
+      {
+        "gate": "shipment",
+        "status": "blocked",
+        "issue_ids": [
+          "extraction_gap:474db8407c5bbaace644edfc",
+          "extraction_gap:70d89a0be9d7608588f0110c",
+          "extraction_gap:9417edeca93baea0e17f3917",
+          "extraction_gap:9c49732a2d69b6bcba3804dd",
+          "extraction_gap:d1ee05fa439dcd248ed0d42d",
+          "missing_evidence:default",
+          "missing_schedule:default",
+          "missing_supplier:default",
+          "pending_requirement:08140c3dddab76c963e0",
+          "pending_requirement:0a42f69af207350471a0",
+          "pending_requirement:222bbe729f30720054c3",
+          "pending_requirement:22b3d4d0c88b2871391b",
+          "pending_requirement:23bd0baa01b86265a26e",
+          "pending_requirement:256a6c4098147bbf69b7",
+          "pending_requirement:27078bf81225d4cdf9a5",
+          "pending_requirement:3a3dcc0b097f3cc0e4f4",
+          "pending_requirement:3f6223d31b4172a808f8",
+          "pending_requirement:40993adf4707fbefbdab",
+          "pending_requirement:46748e1e7e625b39acb0",
+          "pending_requirement:4717e3ab25ae6b8f8b3e",
+          "pending_requirement:4dffecf960a0e9706755",
+          "pending_requirement:562a8b4ae65d243862c7",
+          "pending_requirement:5c15581ae39657c9e876",
+          "pending_requirement:5e98384145afd95a0afd",
+          "pending_requirement:5eee211a250dc7a98d99",
+          "pending_requirement:62c41ce1d551c86fb66e",
+          "pending_requirement:7408d445cb73903dc3f1",
+          "pending_requirement:772d11e0178afc60d623",
+          "pending_requirement:7eb44ea50b5779461c8e",
+          "pending_requirement:7f5f619442746643e8bc",
+          "pending_requirement:83cfdd7a9af313f5acae",
+          "pending_requirement:900ecefd02436766dad1",
+          "pending_requirement:93288f75e5fbe8f17b92",
+          "pending_requirement:970feba0b46db82cb562",
+          "pending_requirement:9e55b9bb65c1f2215776",
+          "pending_requirement:a5aeeb833891b32129ee",
+          "pending_requirement:ac56acc480f71b3db28b",
+          "pending_requirement:c4093da41d6355fb09ef",
+          "pending_requirement:e14b015eaad53ed8f520",
+          "pending_requirement:e28fb27e6c852360c3fb",
+          "pending_requirement:e69c4e0797c81d36cff9",
+          "pending_requirement:e73d193f35e37f0da804",
+          "pending_requirement:f089eff1b10a8be38f14"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "query": "37,105.50",
+        "result_count": 2,
+        "top_source_ids": [
+          "da91f24252a7131e06a9861e:139",
+          "ea238725bcf796aa9df08ba0:5"
+        ],
+        "elapsed_ms": 186.24,
+        "all_returned_citations_match_original": true
+      },
+      {
+        "query": "24 weeks drawing approval",
+        "result_count": 8,
+        "top_source_ids": [
+          "a101432f314d0839c3d11477:258",
+          "32b395fcaa2ea49d054f63b3:81",
+          "da91f24252a7131e06a9861e:97"
+        ],
+        "elapsed_ms": 89.74,
+        "all_returned_citations_match_original": true
+      },
+      {
+        "query": "750 kVA",
+        "result_count": 8,
+        "top_source_ids": [
+          "a101432f314d0839c3d11477:287",
+          "da91f24252a7131e06a9861e:140",
+          "a101432f314d0839c3d11477:209"
+        ],
+        "elapsed_ms": 81.02,
+        "all_returned_citations_match_original": true
+      },
+      {
+        "query": "13.8 kV",
+        "result_count": 8,
+        "top_source_ids": [
+          "a101432f314d0839c3d11477:175",
+          "da91f24252a7131e06a9861e:9",
+          "a101432f314d0839c3d11477:173"
+        ],
+        "elapsed_ms": 80.92,
+        "all_returned_citations_match_original": true
+      },
+      {
+        "query": "zzzyyxxqvplmk",
+        "result_count": 0,
+        "top_source_ids": [],
+        "elapsed_ms": 80.32,
+        "all_returned_citations_match_original": true
+      }
+    ],
+    "retrieval_latency_median_ms": 81.02,
+    "snapshot_count": 13,
+    "diff": {
+      "from_version": 11,
+      "to_version": 12,
+      "price_cents": {
+        "path": "/data/price_cents",
+        "before": 11131650,
+        "after": 3710550
+      }
+    },
+    "dossier": {
+      "packet_hash": "5bd1d138c4aef23d6fd7520745637ad6f3ca84688fb3ecb3ba31d7c559dc9233",
+      "bytes": 851212,
+      "deterministic": true,
+      "pending_only": true
+    },
+    "authentication_and_isolation_passed": true,
+    "bounds_and_unknown_snapshot_passed": true,
+    "live_state_unchanged": true
+  },
+  "workbench_release": {
+    "at": "2026-10-16T05:16:19.435882+00:00",
+    "code_commit": "c1141f19b5bde590b650b1f1215f692353f609ec",
+    "backend_tests": 380,
+    "frontend_tests": 51,
+    "typescript_and_build_passed": true,
+    "deployed_asset_hashes_verified": true,
+    "safari_actions_verified": [
+      "source price search",
+      "original PDF page 4 preview",
+      "revision 11 to 12 price comparison",
+      "review issue queue",
+      "Markdown draft dossier download"
+    ],
+    "ui_state": "Authenticated Overview ready for user recording",
+    "no_new_inference": true,
+    "live_snapshot_unchanged": true,
+    "responsive_views": 36,
+    "viewport_widths": [
+      1440,
+      1280,
+      768,
+      390
+    ],
+    "minimum_visible_text_px": 13
   }
 }
