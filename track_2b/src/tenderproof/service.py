@@ -4,11 +4,12 @@ import json
 from copy import deepcopy
 from datetime import datetime, timezone
 from uuid import uuid4
-from sqlalchemy import create_engine, MetaData, Table, Column, String, JSON, select, insert, update
+from sqlalchemy import create_engine, MetaData, Table, Column, String, JSON, select, insert, update, func
 from pydantic import ValidationError
 from .domain import assess_requirement, assess_evidence, compare_options, witness_for
 from .models import Supplier, SupplierPriceCorrectionRequest
 from .assurance import extraction_run, legacy_runs
+from . import evidence_workbench
 
 class Conflict(Exception): pass
 class Forbidden(Exception): pass
@@ -89,6 +90,83 @@ class Service:
         p['comparisons']=compare_options(p)
         p['evidence_assessments']=[assess_evidence(e,find(p['suppliers'],e['supplier_id']),p['requirements']) for e in p['evidence']]
         return p
+
+    def _workbench_eligible_gates(self,p):
+        """Read the existing preparation checks; never create or approve a decision."""
+        eligible=[]
+        for gate in ('purchase','shipment'):
+            for supplier in p['suppliers']:
+                try:self._gate(p,supplier['id'],gate)
+                except Conflict:continue
+                eligible.append(gate)
+                break
+        return eligible
+
+    def _verify_workbench_snapshot(self,p,pid,expected_hash=None,legacy=False):
+        """Do not attach a preserved snapshot identity to corrupt or misplaced JSON."""
+        if not isinstance(p,dict) or p.get('id')!=pid:
+            raise evidence_workbench.ViewProblem(409,'Stored package identity does not match its project snapshot.')
+        expected_hash=expected_hash or p.get('snapshot_hash')
+        matches=p.get('snapshot_hash')==expected_hash and snapshot(p)==expected_hash
+        if not matches and legacy and 'extraction_runs' not in p and p.get('snapshot_hash')==expected_hash:
+            # This is the one historical content schema before extraction assurance.
+            old_content={k:p.get(k,[] if k in ('requirements','suppliers','evidence','documents','proposals') else None)
+                for k in CONTENT_KEYS if k!='extraction_runs'}
+            matches=digest(old_content)==expected_hash
+        if not matches:
+            raise evidence_workbench.ViewProblem(409,'Stored package content does not match its snapshot hash; evidence view unavailable.')
+        return p
+
+    def _workbench_read(self,pid,assess=False):
+        with self.engine.connect() as conn:
+            p=self._verify_workbench_snapshot(self._read(conn,pid),pid)
+        if assess:
+            p['comparisons']=compare_options(p)
+            p['evidence_assessments']=[assess_evidence(e,find(p['suppliers'],e['supplier_id']),p['requirements']) for e in p['evidence']]
+        return p
+
+    def evidence_analysis(self,pid):
+        p=self._workbench_read(pid,assess=True)
+        return evidence_workbench.analyze(p,self._workbench_eligible_gates(p))
+
+    def search_evidence(self,pid,q,document_id=None,limit=12):
+        p=self._workbench_read(pid)
+        return evidence_workbench.search(p,q,document_id,limit)
+
+    def list_snapshots(self,pid):
+        with self.engine.connect() as conn:
+            p=self._verify_workbench_snapshot(self._read(conn,pid),pid)
+            scope=self.snapshots.c.project_id==pid
+            total=conn.execute(select(func.count()).select_from(self.snapshots).where(scope)).scalar_one()
+            rows=conn.execute(select(self.snapshots.c.hash,self.snapshots.c.state).where(scope)
+                .order_by(self.snapshots.c.state['version'].as_integer().desc(),self.snapshots.c.hash).limit(100)).all()
+            if not any(row[0]==p['snapshot_hash'] for row in rows):
+                current=conn.execute(select(self.snapshots.c.hash,self.snapshots.c.state)
+                    .where(scope,self.snapshots.c.hash==p['snapshot_hash'])).first()
+                if current is None:
+                    raise evidence_workbench.ViewProblem(409,'The current package snapshot is missing from stored history.')
+                rows=rows[:99]+[current]
+            states=[self._verify_workbench_snapshot(state,pid,value,legacy=True) for value,state in rows]
+        return dict(project_id=pid,snapshot_hash=p['snapshot_hash'],current_snapshot_hash=p['snapshot_hash'],
+            total_count=total,truncated=total>100,limit=100,
+            snapshots=[evidence_workbench.snapshot_metadata(state,p['snapshot_hash']) for state in states])
+
+    def diff_snapshots(self,pid,from_hash,to_hash):
+        import re
+        if any(not isinstance(h,str) or not re.fullmatch(r'[0-9a-f]{64}',h) for h in (from_hash,to_hash)):
+            raise evidence_workbench.ViewProblem(422,'Snapshot hashes must be 64 lowercase hexadecimal characters.')
+        with self.engine.connect() as conn:
+            p=self._verify_workbench_snapshot(self._read(conn,pid),pid)
+            states=[]
+            for value in (from_hash,to_hash):
+                row=conn.execute(select(self.snapshots.c.state).where(self.snapshots.c.project_id==pid,self.snapshots.c.hash==value)).first()
+                if row is None:raise KeyError(value)
+                states.append(self._verify_workbench_snapshot(deepcopy(row[0]),pid,value,legacy=True))
+        return evidence_workbench.diff(*states,p['snapshot_hash'])
+
+    def review_dossier(self,pid):
+        p=self._workbench_read(pid,assess=True)
+        return evidence_workbench.dossier(p,self._workbench_eligible_gates(p))
 
     def _mutate(self,pid,expected,actor,fn,operation_key=None):
         with self.engine.connect() as conn:

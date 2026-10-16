@@ -110,7 +110,14 @@ export interface Project {
   equipment: string;
   mode: string;
   proposals?: Proposal[];
-  extraction_runs?: {id:string; document_id:string|null; kind:string|null; status:string; conditions:string[]; trace:Record<string,unknown>}[];
+  extraction_runs?: {
+    id: string;
+    document_id: string | null;
+    kind: string | null;
+    status: string;
+    conditions: string[];
+    trace: Record<string, unknown>;
+  }[];
   required_delivery_week?: number | null;
   schedule_source_id?: string | null;
   snapshot_hash: string;
@@ -154,4 +161,178 @@ export interface Health {
   model_configured: boolean;
   workflow: string;
   database: string;
+}
+
+export type WorkbenchTarget =
+  "requirements" | "suppliers" | "evidence" | "sources" | "workflow";
+export interface ReviewIssue {
+  id: string;
+  type: string;
+  severity: "blocking" | "review" | "info";
+  title: string;
+  detail: string;
+  record_type: string;
+  record_id: string;
+  document_id: string | null;
+  source_ids: string[];
+  gates: string[];
+  next_action: {
+    label: string;
+    target: WorkbenchTarget;
+    record_id: string | null;
+    document_id: string | null;
+    source_id: string | null;
+  };
+}
+export interface LineageNode {
+  id: string;
+  type: string;
+  label: string;
+  record_id: string;
+  document_id: string | null;
+  source_ids: string[];
+}
+export interface PackageAnalysis {
+  project_id: string;
+  snapshot_hash: string;
+  version: number;
+  summary: {
+    document_count: number;
+    span_count: number;
+    requirement_count: number;
+    pending_requirement_count: number;
+    approved_requirement_count: number;
+    pending_offer_count: number;
+    pending_evidence_count: number;
+    supplier_count: number;
+    evidence_count: number;
+    correction_count: number;
+    issue_count: number;
+    blocking_issue_count: number;
+    approval_count: number;
+    release_count: number;
+  };
+  release_gates: {
+    gate: "purchase" | "shipment";
+    status: "blocked" | "review_required";
+    issue_ids: string[];
+  }[];
+  issues: ReviewIssue[];
+  documents: {
+    document_id: string;
+    name: string;
+    sha256: string;
+    page_count: number | null;
+    span_count: number;
+    cited_span_count: number;
+    citation_coverage: number;
+    requirement_count: number;
+    proposal_count: number;
+    correction_count: number;
+    extraction_run_count: number;
+    pending_count: number;
+    assurance_status: "recorded" | "incomplete" | "not_extracted";
+  }[];
+  lineage: {
+    nodes: LineageNode[];
+    edges: { source: string; target: string; relation: string }[];
+    truncated: boolean;
+    limit: number;
+  };
+}
+export interface SourceSearchResponse {
+  project_id: string;
+  snapshot_hash: string;
+  query: string;
+  retrieval_method: string;
+  score_meaning: string;
+  limit: number;
+  total_matches: number;
+  results: {
+    source_id: string;
+    document_id: string;
+    document_name: string;
+    page: number;
+    sha256: string;
+    text: string;
+    text_start: number;
+    text_end: number;
+    text_truncated: boolean;
+    score: number;
+    matched_terms: string[];
+    context: {
+      source_id: string;
+      page: number;
+      text: string;
+      text_start: number;
+      text_end: number;
+      text_truncated: boolean;
+    }[];
+    duplicate_citations: {
+      source_id: string;
+      document_id: string;
+      document_name: string;
+      page: number;
+      sha256: string;
+    }[];
+    duplicate_count: number;
+  }[];
+}
+export interface SnapshotList {
+  project_id: string;
+  snapshot_hash: string;
+  current_snapshot_hash: string;
+  total_count: number;
+  truncated: boolean;
+  limit: number;
+  snapshots: {
+    snapshot_hash: string;
+    version: number;
+    is_current: boolean;
+    created_at: string | null;
+    summary: Record<string, number>;
+  }[];
+}
+export interface SnapshotDiff {
+  project_id: string;
+  snapshot_hash: string;
+  from_hash: string;
+  to_hash: string;
+  from_version: number;
+  to_version: number;
+  changed: boolean;
+  summary: { added: number; removed: number; modified: number };
+  changes: {
+    collection: string;
+    record_id: string;
+    change: "added" | "removed" | "modified";
+    label: string;
+    fields: { path: string; before: unknown; after: unknown }[];
+    source_ids: string[];
+    document_ids: string[];
+  }[];
+  impacted_records: { type: string; id: string; source_ids: string[] }[];
+  sensitive_content_omitted: boolean;
+}
+export interface ReviewDossier {
+  schema_version: string;
+  packet_type: "draft_review_dossier";
+  status: "draft";
+  meaning: string;
+  project_id: string;
+  snapshot_hash: string;
+  version: number;
+  packet_hash: string;
+  summary: PackageAnalysis["summary"];
+  release_gates: PackageAnalysis["release_gates"];
+  issues: ReviewIssue[];
+  source_catalog: Record<string, unknown>[];
+  requirements: Record<string, unknown>[];
+  proposals: Record<string, unknown>[];
+  suppliers: Record<string, unknown>[];
+  evidence: Record<string, unknown>[];
+  corrections: Record<string, unknown>[];
+  extraction_runs: Record<string, unknown>[];
+  lineage: PackageAnalysis["lineage"];
+  decisions: Record<string, unknown>[];
 }

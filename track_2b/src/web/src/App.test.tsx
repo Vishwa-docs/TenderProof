@@ -187,38 +187,108 @@ function previewTransport() {
   };
 }
 
-describe("live engineering workspace", () => {
-  it.each(["unit", "lot_total", null])("shows currency and explicit price basis %s with a neutral heading", async (basis) => {
-    server({suppliers:[{...project.suppliers[0],price_basis:basis}]});
-    const user=userEvent.setup();render(<App />);
-    await screen.findByText("Rated capacity");
-    await user.click(screen.getByRole("button",{name:"Supplier comparison 02"}));
-    const row=screen.getByRole("row",{name:/Documented price/});
-    expect(row).toHaveTextContent("USD");
-    expect(row).toHaveTextContent(basis==="unit"?"Per unit":basis==="lot_total"?"Lot total":"Price basis not stated");
-    expect(screen.queryByRole("columnheader",{name:"Documented unit price"})).not.toBeInTheDocument();
+async function openReviewWorkspace() {
+  const app = render(<App />);
+  const user = userEvent.setup();
+  await user.click(
+    await screen.findByRole("button", { name: /^Requirements / }),
+  );
+  await user.click(
+    screen.getByRole("button", { name: "Toggle source inspector" }),
+  );
+  return app;
+}
+async function openRawAssurance(user: ReturnType<typeof userEvent.setup>) {
+  await user.click(screen.getByRole("button", { name: /^Review issues/ }));
+  await user.click(screen.getByText(/^Raw extraction records/));
+  const assurance = screen.getByRole("region", {
+    name: "Extraction assurance",
   });
+  await user.click(within(assurance).getByText("OP34276.pdf · requirements"));
+  return assurance;
+}
+
+describe("live engineering workspace", () => {
+  it.each(["unit", "lot_total", null])(
+    "shows currency and explicit price basis %s with a neutral heading",
+    async (basis) => {
+      server({ suppliers: [{ ...project.suppliers[0], price_basis: basis }] });
+      const user = userEvent.setup();
+      await openReviewWorkspace();
+      await screen.findByText("Rated capacity");
+      await user.click(
+        screen.getByRole("button", { name: "Supplier comparison 04" }),
+      );
+      const row = screen.getByRole("row", { name: /Documented price/ });
+      expect(row).toHaveTextContent("USD");
+      expect(row).toHaveTextContent(
+        basis === "unit"
+          ? "Per unit"
+          : basis === "lot_total"
+            ? "Lot total"
+            : "Price basis not stated",
+      );
+      expect(
+        screen.queryByRole("columnheader", { name: "Documented unit price" }),
+      ).not.toBeInTheDocument();
+    },
+  );
   it("keeps source-specific extraction assurance visible beside review and gate controls", async () => {
-    server({requirements:project.requirements.map(r=>({...r,status:"approved"})), extraction_runs:[{
-      id:"qa-incomplete-run",document_id:"qa-order",kind:"requirements",status:"incomplete",
-      conditions:["Audit failed: adversarial challenger (window 1).","1 model row rejected."],
-      trace:{audit_failures:[{trace_id:"qa-failed-audit"}],coverage:{all_original_spans_present:true},issues:[]}
-    }]});
-    const user=userEvent.setup();render(<App />);await screen.findByText("Rated capacity");
-    for (const workspace of [null,"Supplier comparison 02","Acceptance & release 03"]) {
-      if(workspace) await user.click(screen.getByRole("button",{name:workspace}));
-      const assurance=screen.getByRole("region",{name:"Extraction assurance"});
+    server({
+      requirements: project.requirements.map((r) => ({
+        ...r,
+        status: "approved",
+      })),
+      extraction_runs: [
+        {
+          id: "qa-incomplete-run",
+          document_id: "qa-order",
+          kind: "requirements",
+          status: "incomplete",
+          conditions: [
+            "Audit failed: adversarial challenger (window 1).",
+            "1 model row rejected.",
+          ],
+          trace: {
+            audit_failures: [{ trace_id: "qa-failed-audit" }],
+            coverage: { all_original_spans_present: true },
+            issues: [],
+          },
+        },
+      ],
+    });
+    const user = userEvent.setup();
+    await openReviewWorkspace();
+    await screen.findByText("Rated capacity");
+    for (const workspace of [
+      null,
+      "Supplier comparison 04",
+      "Acceptance & release 05",
+    ]) {
+      if (workspace)
+        await user.click(screen.getByRole("button", { name: workspace }));
+      expect(
+        screen.getByRole("region", { name: "Release status" }),
+      ).toHaveTextContent("Purchase and shipment blocked");
+      const assurance = await openRawAssurance(user);
       expect(assurance).toHaveTextContent("OP34276.pdf");
       expect(assurance).toHaveTextContent("qa-incomplete-run");
-      expect(assurance).toHaveTextContent("Audit failed: adversarial challenger (window 1).");
+      expect(assurance).toHaveTextContent(
+        "Audit failed: adversarial challenger (window 1).",
+      );
       expect(assurance).toHaveTextContent("1 model row rejected.");
+      await user.click(
+        screen.getByRole("button", { name: "Close review issues" }),
+      );
     }
-    expect(screen.getByRole("button",{name:"New gate review"})).toBeDisabled();
+    expect(
+      screen.getByRole("button", { name: "New gate review" }),
+    ).toBeDisabled();
   });
 
   it("has no demonstration roles or fabricated project controls", async () => {
     const request = server();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     expect(screen.queryByLabelText("Demo role")).not.toBeInTheDocument();
     expect(screen.queryByText("Reset demo")).not.toBeInTheDocument();
@@ -234,7 +304,7 @@ describe("live engineering workspace", () => {
   it("requires an explicit witness answer and binds approval to the current snapshot", async () => {
     const request = server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
       screen.getByRole("button", { name: "Review requirement Rated capacity" }),
@@ -263,7 +333,7 @@ describe("live engineering workspace", () => {
   it("opens the exact source and actual page reference", async () => {
     server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
       screen.getByRole("button", {
@@ -306,7 +376,7 @@ describe("live engineering workspace", () => {
       ],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
       screen.getByRole("button", {
@@ -350,7 +420,7 @@ describe("live engineering workspace", () => {
   it("does not infer an original URL or page count from available source spans", async () => {
     server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: /OP34276.pdf.*Rev/ }));
     const inspector = within(screen.getByLabelText("Source inspector"));
@@ -371,7 +441,7 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    const app = render(<App />);
+    const app = await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     expect(
       request.mock.calls.filter(([url]) => String(url).includes("/preview")),
@@ -438,7 +508,7 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: /OP34276.pdf.*Rev/ }));
     await user.click(
@@ -475,7 +545,7 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: /OP34276.pdf.*Rev/ }));
     await user.click(
@@ -516,7 +586,7 @@ describe("live engineering workspace", () => {
   it("requires explicit project scope before approval or extraction", async () => {
     server({ equipment: "" });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     expect(
       screen.getByText(/Set project details before extraction or approval/),
@@ -536,7 +606,7 @@ describe("live engineering workspace", () => {
   it("saves real project metadata with PATCH and the displayed snapshot", async () => {
     const request = server({ name: "", customer: "", equipment: "" });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: "Project details" }));
     expect(
@@ -572,7 +642,7 @@ describe("live engineering workspace", () => {
   it("uses bearer authentication and never sends a role header", async () => {
     const request = server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: "Connect token" }));
     await user.type(screen.getByLabelText("Access token"), "qa-auth-token");
@@ -595,7 +665,7 @@ describe("live engineering workspace", () => {
   it("sends extraction kind and the selected supplier with the current scope snapshot", async () => {
     const request = server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: /OP34276.pdf.*Rev/ }));
     await user.selectOptions(
@@ -639,10 +709,10 @@ describe("live engineering workspace", () => {
       ],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Acceptance & release 03" }),
+      screen.getByRole("button", { name: "Acceptance & release 05" }),
     );
     expect(screen.getByText("Prototype release · ERP simulator")).toBeVisible();
     expect(
@@ -669,7 +739,7 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(screen.getByRole("button", { name: /OP34276.pdf.*Rev/ }));
     await user.click(screen.getByRole("button", { name: "Download original" }));
@@ -693,19 +763,19 @@ describe("live engineering workspace", () => {
       equipment: "",
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("No requirements yet");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     expect(screen.getByText("No supplier configurations yet")).toBeVisible();
     await user.click(
-      screen.getByRole("button", { name: "Acceptance & release 03" }),
+      screen.getByRole("button", { name: "Acceptance & release 05" }),
     );
     expect(
       screen.getByRole("button", { name: "New gate review" }),
     ).toBeDisabled();
-    await user.click(screen.getByRole("button", { name: "Change history 04" }));
+    await user.click(screen.getByRole("button", { name: "Change history 06" }));
     expect(
       screen.queryByRole("button", { name: /amendment|reset|correction/i }),
     ).not.toBeInTheDocument();
@@ -732,7 +802,7 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
       screen.getByRole("button", { name: "Review requirement Rated capacity" }),
@@ -827,7 +897,7 @@ describe("live engineering workspace", () => {
       );
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
       screen.getByRole("button", { name: /GPA-070-25 Bid Abstract.pdf.*Rev/ }),
@@ -912,10 +982,10 @@ describe("live engineering workspace", () => {
         );
       });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     await user.click(screen.getByRole("button", { name: "Correct price" }));
     const form = within(
@@ -991,10 +1061,10 @@ describe("live engineering workspace", () => {
       documents: [qa.document],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     await user.click(screen.getByRole("button", { name: "Correct price" }));
     const form = within(
@@ -1048,10 +1118,10 @@ describe("live engineering workspace", () => {
       documents: [qa.document],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     await user.click(screen.getByRole("button", { name: "Correct price" }));
     const form = within(
@@ -1098,10 +1168,10 @@ describe("live engineering workspace", () => {
         : original(url, init),
     );
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     await user.click(screen.getByRole("button", { name: "Correct price" }));
     const form = within(
@@ -1157,10 +1227,10 @@ describe("live engineering workspace", () => {
       ],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     expect(
       screen.getByRole("region", { name: "Manual price correction history" }),
@@ -1199,10 +1269,10 @@ describe("live engineering workspace", () => {
       documents: [qa.document],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     const history = within(
       screen.getByRole("region", { name: "Manual price correction history" }),
@@ -1232,15 +1302,15 @@ describe("live engineering workspace", () => {
         ],
       });
       const user = userEvent.setup();
-      render(<App />);
+      await openReviewWorkspace();
       await screen.findByText("Rated capacity");
       await user.click(
-        screen.getByRole("button", { name: "Supplier comparison 02" }),
+        screen.getByRole("button", { name: "Supplier comparison 04" }),
       );
       expect(
-        within(
-          screen.getByRole("row", { name: /Documented price/ }),
-        ).getByText("Not provided"),
+        within(screen.getByRole("row", { name: /Documented price/ })).getByText(
+          "Not provided",
+        ),
       ).toBeVisible();
       expect(
         within(
@@ -1260,14 +1330,14 @@ describe("live engineering workspace", () => {
       })),
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     expect(screen.getByText(/Configuration unknown/)).toBeVisible();
     await user.click(
-      screen.getByRole("button", { name: "Acceptance & release 03" }),
+      screen.getByRole("button", { name: "Acceptance & release 05" }),
     );
     await user.click(screen.getByRole("button", { name: "New gate review" }));
     expect(
@@ -1277,10 +1347,10 @@ describe("live engineering workspace", () => {
   it("shows explicit zero ancillary costs as currency amounts", async () => {
     server();
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     await user.click(
-      screen.getByRole("button", { name: "Supplier comparison 02" }),
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
     );
     expect(
       screen.getByRole("row", { name: /Recorded expedite \/ rework/ }),
@@ -1307,10 +1377,10 @@ describe("live engineering workspace", () => {
         ],
       });
       const user = userEvent.setup();
-      render(<App />);
+      await openReviewWorkspace();
       await screen.findByText("Rated capacity");
       await user.click(
-        screen.getByRole("button", { name: "Supplier comparison 02" }),
+        screen.getByRole("button", { name: "Supplier comparison 04" }),
       );
       expect(
         screen.getByRole("row", { name: /Recorded expedite \/ rework/ }),
@@ -1335,13 +1405,13 @@ describe("live engineering workspace", () => {
       ],
     });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     expect(await screen.findByText("Awaiting requirements")).toBeVisible();
     expect(
       screen.queryByText("Encoded review complete"),
     ).not.toBeInTheDocument();
     await user.click(
-      screen.getByRole("button", { name: "Acceptance & release 03" }),
+      screen.getByRole("button", { name: "Acceptance & release 05" }),
     );
     expect(
       screen.getByRole("button", { name: "New gate review" }),
@@ -1355,7 +1425,7 @@ describe("live engineering workspace", () => {
       "750 kVA three-phase pad-mounted transformer; primary 13.8 kV, secondary 120/208 V; Eaglerise ZGSLB-750/13.8-0.208; OP34276 item 2";
     server({ equipment: scope });
     const user = userEvent.setup();
-    render(<App />);
+    await openReviewWorkspace();
     await screen.findByText("Rated capacity");
     const sidebar = screen.getByLabelText("Active project");
     expect(within(sidebar).getByText(project.name)).toBeVisible();
@@ -1372,24 +1442,81 @@ describe("live engineering workspace", () => {
 describe("extraction assurance and commercial display", () => {
   afterEach(() => vi.restoreAllMocks());
   it("keeps incomplete-run context visible across review workspaces and disables gates", async () => {
-    server({ extraction_runs: [{id:"qa-run", document_id:"qa-order", kind:"requirements", status:"incomplete", conditions:["Audit failed: adversarial challenger."], trace:{}}],
-      requirements:project.requirements.map(r=>({...r,status:"approved"})),
-      comparisons:project.comparisons.map(c=>({...c,status:"feasible"})) });
-    const user=userEvent.setup();render(<App />);
-    expect(await screen.findByText("Extraction assurance requires review")).toBeVisible();
-    await user.click(screen.getByText("OP34276.pdf · requirements"));
-    expect(screen.getByText(/Audit failed: adversarial challenger/)).toBeVisible();
-    await user.click(screen.getByRole("button",{name:"Supplier comparison 02"}));
-    expect(screen.getByText("Extraction assurance requires review")).toBeVisible();
-    await user.click(screen.getByRole("button",{name:"Acceptance & release 03"}));
-    expect(screen.getByText("Extraction assurance requires review")).toBeVisible();
-    expect(screen.getByRole("button",{name:"New gate review"})).toBeDisabled();
+    server({
+      extraction_runs: [
+        {
+          id: "qa-run",
+          document_id: "qa-order",
+          kind: "requirements",
+          status: "incomplete",
+          conditions: ["Audit failed: adversarial challenger."],
+          trace: {},
+        },
+      ],
+      requirements: project.requirements.map((r) => ({
+        ...r,
+        status: "approved",
+      })),
+      comparisons: project.comparisons.map((c) => ({
+        ...c,
+        status: "feasible",
+      })),
+    });
+    const user = userEvent.setup();
+    await openReviewWorkspace();
+    for (const workspace of [
+      null,
+      "Supplier comparison 04",
+      "Acceptance & release 05",
+    ]) {
+      if (workspace)
+        await user.click(screen.getByRole("button", { name: workspace }));
+      expect(
+        screen.getByRole("region", { name: "Release status" }),
+      ).toHaveTextContent("Purchase and shipment blocked");
+      const assurance = await openRawAssurance(user);
+      expect(
+        within(assurance).getByText(/Audit failed: adversarial challenger/),
+      ).toBeVisible();
+      await user.click(
+        screen.getByRole("button", { name: "Close review issues" }),
+      );
+    }
+    expect(
+      screen.getByRole("button", { name: "New gate review" }),
+    ).toBeDisabled();
   });
   it("labels a lot total honestly and formats the proposed amount as currency", async () => {
-    server({suppliers:project.suppliers.map(s=>({...s,price_basis:"lot_total"})),proposals:[{id:"qa-price",kind:"supplier",document_id:"qa-order",status:"pending",source_ids:["qa-po-page4"],data:{name:"Recorded supplier",price_cents:11131650,currency:"USD",price_basis:"lot_total"}}]});
-    const user=userEvent.setup();render(<App />);await screen.findByText("Rated capacity");
-    await user.click(screen.getByRole("button",{name:"Supplier comparison 02"}));
-    expect(screen.getByRole("columnheader",{name:"Documented price"})).toBeVisible();
+    server({
+      suppliers: project.suppliers.map((s) => ({
+        ...s,
+        price_basis: "lot_total",
+      })),
+      proposals: [
+        {
+          id: "qa-price",
+          kind: "supplier",
+          document_id: "qa-order",
+          status: "pending",
+          source_ids: ["qa-po-page4"],
+          data: {
+            name: "Recorded supplier",
+            price_cents: 11131650,
+            currency: "USD",
+            price_basis: "lot_total",
+          },
+        },
+      ],
+    });
+    const user = userEvent.setup();
+    await openReviewWorkspace();
+    await screen.findByText("Rated capacity");
+    await user.click(
+      screen.getByRole("button", { name: "Supplier comparison 04" }),
+    );
+    expect(
+      screen.getByRole("columnheader", { name: "Documented price" }),
+    ).toBeVisible();
     expect(screen.getByText(/USD.*111.*316.50/)).toBeVisible();
     expect(screen.getAllByText(/Lot total/).length).toBeGreaterThan(0);
     expect(screen.queryByText("11131650")).not.toBeInTheDocument();

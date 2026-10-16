@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import PdfPagePreview from "./PdfPagePreview";
 import {
+  EvidenceWorkspace,
+  Overview,
+  ReleaseStatus,
+  ReviewQueue,
+  SnapshotComparison,
+} from "./WorkbenchPanels";
+import {
   ArrowDownToLine,
   ArrowRight,
   ArrowUpRight,
@@ -15,6 +22,8 @@ import {
   GitBranch,
   History,
   Layers3,
+  LayoutDashboard,
+  FileSearch,
   LoaderCircle,
   LockKeyhole,
   PanelRightClose,
@@ -32,59 +41,87 @@ import type {
   Decision,
   Health,
   PriceCorrection,
+  PackageAnalysis,
   Project,
   Requirement,
   SourceDocument,
 } from "./types";
 
-type Workspace = "requirements" | "comparison" | "acceptance" | "history";
+type Workspace =
+  | "overview"
+  | "evidence"
+  | "requirements"
+  | "comparison"
+  | "acceptance"
+  | "history";
 const workspaces = [
+  {
+    id: "overview" as const,
+    label: "Overview",
+    icon: LayoutDashboard,
+    number: "01",
+  },
+  {
+    id: "evidence" as const,
+    label: "Evidence",
+    icon: FileSearch,
+    number: "02",
+  },
   {
     id: "requirements" as const,
     label: "Requirements",
     icon: ClipboardCheck,
-    number: "01",
+    number: "03",
   },
   {
     id: "comparison" as const,
     label: "Supplier comparison",
     icon: SlidersHorizontal,
-    number: "02",
+    number: "04",
   },
   {
     id: "acceptance" as const,
     label: "Acceptance & release",
     icon: ShieldCheck,
-    number: "03",
+    number: "05",
   },
   {
     id: "history" as const,
     label: "Change history",
     icon: History,
-    number: "04",
+    number: "06",
   },
 ];
 const workspaceCopy: Record<Workspace, { title: string; description: string }> =
   {
+    overview: {
+      title: "Package overview",
+      description:
+        "See the review state, resolve blockers, and prepare the evidence handoff.",
+    },
+    evidence: {
+      title: "Evidence workspace",
+      description:
+        "Search source passages and trace the records that depend on each document.",
+    },
     requirements: {
       title: "Requirements review",
       description:
-        "Confirm what the tender asks. Keep every interpretation tied to its source.",
+        "Check each interpretation against its source before approval.",
     },
     comparison: {
       title: "Supplier comparison",
       description:
-        "Technical fit and documented costs, reviewed against the same approved requirements.",
+        "Review technical fit, price bases, and delivery conditions against approved requirements.",
     },
     acceptance: {
       title: "Acceptance & release",
       description:
-        "Check evidence applicability, collect the required approvals, and export an ERP simulator record.",
+        "Check evidence applicability and collect the approvals required for each release gate.",
     },
     history: {
       title: "Change history",
-      description:
-        "Trace every review, correction, and release to the snapshot that governed it.",
+      description: "Compare package revisions and trace each recorded action.",
     },
   };
 function readable(value: unknown): string {
@@ -207,13 +244,20 @@ function deliveryBasisLabel(basis?: string | null): string {
 }
 
 function priceBasisLabel(basis: unknown) {
-  return basis === "unit" ? "Per unit" : basis === "lot_total" ? "Lot total (combined)" : "Price basis not stated";
+  return basis === "unit"
+    ? "Per unit"
+    : basis === "lot_total"
+      ? "Lot total (combined)"
+      : "Price basis not stated";
 }
 
 export default function App() {
   const [project, setProject] = useState<Project | null>(null);
+  const [analysis, setAnalysis] = useState<PackageAnalysis | null>(null);
+  const [analysisError, setAnalysisError] = useState("");
+  const [showIssues, setShowIssues] = useState(false);
   const [health, setHealth] = useState<Health | null>(null);
-  const [workspace, setWorkspace] = useState<Workspace>("requirements");
+  const [workspace, setWorkspace] = useState<Workspace>("overview");
   useEffect(() => {
     if (window.scrollY > 0) window.scrollTo({ top: 0, behavior: "auto" });
   }, [workspace]);
@@ -243,7 +287,7 @@ export default function App() {
   const [filter, setFilter] = useState("all");
   const [sourceIds, setSourceIds] = useState<string[]>([]);
   const [sourceTitle, setSourceTitle] = useState("Source library");
-  const [inspectorOpen, setInspectorOpen] = useState(true);
+  const [inspectorOpen, setInspectorOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<string | null>(null);
   const [pagePreview, setPagePreview] = useState<{
     doc: SourceDocument;
@@ -355,6 +399,35 @@ export default function App() {
     void refresh(true);
   }, [token]); // Authentication changes reload the server-owned state.
   useEffect(() => {
+    let active = true;
+    setAnalysis(null);
+    setAnalysisError("");
+    if (!project) return;
+    void request("/api/projects/default/analysis")
+      .then((value: PackageAnalysis) => {
+        if (
+          !value.summary ||
+          !Array.isArray(value.issues) ||
+          !Array.isArray(value.documents) ||
+          !value.lineage
+        )
+          throw new Error(
+            "Package analysis is unavailable. Refresh to retry the review summary.",
+          );
+        if (value.snapshot_hash !== project.snapshot_hash)
+          throw new Error(
+            "The package changed. Refresh to load its current analysis.",
+          );
+        if (active) setAnalysis(value);
+      })
+      .catch((problem) => {
+        if (active) setAnalysisError((problem as Error).message);
+      });
+    return () => {
+      active = false;
+    };
+  }, [project?.snapshot_hash, token]);
+  useEffect(() => {
     if (!showMetadata && !credentials && !showDecision && proposal === null)
       return;
     modalOpener.current = document.activeElement as HTMLElement;
@@ -454,7 +527,7 @@ export default function App() {
       const inspector = document.getElementById("source-inspector");
       if (inspector) inspector.scrollTop = 0;
       if (window.innerWidth <= 980)
-        inspector?.scrollIntoView({
+        inspector?.scrollIntoView?.({
           behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)")
             .matches
             ? "auto"
@@ -525,9 +598,13 @@ export default function App() {
     p?.requirements.filter((r) => r.status === "approved").length || 0;
   const pending =
     p?.requirements.filter((r) => r.status === "pending").length || 0;
-  const incompleteRuns = (p?.extraction_runs || []).filter(run => run.status !== "recorded" || run.conditions.length > 0);
+  const incompleteRuns = (p?.extraction_runs || []).filter(
+    (run) => run.status !== "recorded" || run.conditions.length > 0,
+  );
   const requirementsReady =
-    !!p?.requirements.length && approved === p.requirements.length && incompleteRuns.length === 0;
+    !!p?.requirements.length &&
+    approved === p.requirements.length &&
+    incompleteRuns.length === 0;
   const current = workspaceCopy[workspace];
   const displayedRequirements =
     p?.requirements.filter(
@@ -615,7 +692,11 @@ export default function App() {
               e.kind === item.data.kind,
           );
           return (
-            <article className="proposal-row" key={item.id}>
+            <article
+              className="proposal-row"
+              key={item.id}
+              id={`proposal-${item.id}`}
+            >
               <div className="title-row">
                 <h3>
                   {readable(
@@ -627,8 +708,23 @@ export default function App() {
               <dl className="proposal-fields">
                 {Object.entries(item.data).map(([key, value]) => (
                   <div key={key}>
-                    <dt>{key === "price_cents" ? "Documented price" : key.replaceAll("_", " ")}</dt>
-                    <dd>{key === "price_cents" ? money(typeof value === "number" ? value : null, typeof item.data.currency === "string" ? item.data.currency : null) : key === "price_basis" ? priceBasisLabel(value) : readable(value)}</dd>
+                    <dt>
+                      {key === "price_cents"
+                        ? "Documented price"
+                        : key.replaceAll("_", " ")}
+                    </dt>
+                    <dd>
+                      {key === "price_cents"
+                        ? money(
+                            typeof value === "number" ? value : null,
+                            typeof item.data.currency === "string"
+                              ? item.data.currency
+                              : null,
+                          )
+                        : key === "price_basis"
+                          ? priceBasisLabel(value)
+                          : readable(value)}
+                    </dd>
                   </div>
                 ))}
               </dl>
@@ -984,6 +1080,48 @@ export default function App() {
       setBusy("");
     }
   }
+  function openDocument(id: string) {
+    const document = project?.documents.find((item) => item.id === id);
+    setSelectedDoc(id);
+    setSourceIds([]);
+    setSourceTitle(document?.name || "Source document");
+    setInspectorOpen(true);
+  }
+  function navigateRecord(
+    type: string,
+    id: string,
+    documentId: string | null,
+    ids: string[],
+  ) {
+    if (type === "requirements" || type === "requirement") {
+      setWorkspace("requirements");
+      setReview(id);
+      setAnswer(null);
+      requestAnimationFrame(() =>
+        document
+          .getElementById(`requirement-${id}`)
+          ?.scrollIntoView?.({ block: "center" }),
+      );
+    } else if (
+      ["suppliers", "supplier", "proposal", "correction"].includes(type)
+    ) {
+      const proposalKind = project?.proposals?.find(
+        (item) => item.id === id,
+      )?.kind;
+      setWorkspace(proposalKind === "evidence" ? "acceptance" : "comparison");
+      requestAnimationFrame(() =>
+        document
+          .getElementById(`proposal-${id}`)
+          ?.scrollIntoView?.({ block: "center" }),
+      );
+    } else if (type === "evidence") {
+      setWorkspace("acceptance");
+    } else {
+      setWorkspace("evidence");
+      if (ids.length) inspect(ids, "Linked source evidence");
+      else if (documentId) openDocument(documentId);
+    }
+  }
   function modalClose() {
     setShowMetadata(false);
     setCredentials(false);
@@ -998,7 +1136,7 @@ export default function App() {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            setWorkspace("requirements");
+            setWorkspace("overview");
           }}
           aria-label="TenderProof home"
         >
@@ -1007,10 +1145,10 @@ export default function App() {
           </span>
           <span>
             Tender<span className="brand-light">Proof</span>
-            <small>ENGINEERING ASSURANCE</small>
+            <small>Evidence workbench</small>
           </span>
         </a>
-        <div className="project-label">ACTIVE PROJECT</div>
+        <div className="project-label">Current package</div>
         <div className="side-project" aria-label="Active project">
           <span className="project-icon">
             <GitBranch size={18} />
@@ -1022,7 +1160,7 @@ export default function App() {
             <span>{p?.customer || "Connecting to project…"}</span>
           </div>
         </div>
-        <div className="nav-label">REVIEW WORKSPACE</div>
+        <div className="nav-label">Review workflow</div>
         <nav aria-label="Workspaces">
           {workspaces.map(({ id, label, icon: Icon, number }) => (
             <button
@@ -1090,11 +1228,16 @@ export default function App() {
         <div className="workspace-header">
           <div>
             <div className="eyebrow">
-              {p?.equipment || "ENGINEERING REVIEW"} <span>/</span>{" "}
+              Evidence workbench <span>/</span>{" "}
               {workspaces.find((w) => w.id === workspace)?.number}
             </div>
             <h1>{current.title}</h1>
             <p>{current.description}</p>
+            {workspace !== "overview" && p?.equipment && (
+              <p className="scope-line">
+                <span>Scope</span> {p.equipment}
+              </p>
+            )}
           </div>
           <div className="header-tool-buttons">
             <button
@@ -1142,6 +1285,13 @@ export default function App() {
           </button>
         </div>
 
+        {p && (
+          <ReleaseStatus
+            project={p}
+            analysis={analysis}
+            onReview={() => setShowIssues(true)}
+          />
+        )}
         {project && !scopeReady && (
           <div className="scope-banner">
             <CircleHelp size={16} />
@@ -1207,25 +1357,38 @@ export default function App() {
           </div>
         ) : (
           <div
-            className={`desk-layout ${inspectorOpen ? "" : "inspector-hidden"}`}
+            className={`desk-layout ${inspectorOpen ? "" : "inspector-hidden"} workspace-${workspace}`}
           >
             <section
               className="workspace-content"
               key={workspace}
               aria-label={current.title}
             >
-              {incompleteRuns.length > 0 && (
-                <section className="extraction-assurance" aria-label="Extraction assurance">
-                  <h2>Extraction assurance requires review</h2>
-                  <p>{incompleteRuns.length} extraction run(s) have unresolved coverage or validation conditions. Purchase and shipment release remain blocked. Reviewing individual rows does not resolve omitted obligations.</p>
-                  {incompleteRuns.map(run => (
-                    <details key={run.id}>
-                      <summary>{p.documents.find(doc => doc.id === run.document_id)?.name || "Unresolved source"} · {run.kind || "unknown purpose"}</summary>
-                      <ul>{run.conditions.map((reason,index) => <li key={index}>{reason}</li>)}</ul>
-                      <small>Run {run.id} · bound to this package snapshot</small>
-                    </details>
-                  ))}
-                </section>
+              {workspace === "overview" && (
+                <Overview
+                  project={p}
+                  analysis={analysis}
+                  analysisError={analysisError}
+                  read={request}
+                  onReview={() => setShowIssues(true)}
+                  onNavigate={navigateRecord}
+                  onEvidence={() => setWorkspace("evidence")}
+                  onRequirements={() => setWorkspace("requirements")}
+                  onOffers={() => setWorkspace("comparison")}
+                  onRelease={() => setWorkspace("acceptance")}
+                />
+              )}
+              {workspace === "evidence" && (
+                <EvidenceWorkspace
+                  key={p.snapshot_hash}
+                  project={p}
+                  analysis={analysis}
+                  analysisError={analysisError}
+                  read={request}
+                  onInspect={inspect}
+                  onNavigate={navigateRecord}
+                  onDocument={openDocument}
+                />
               )}
               {workspace === "requirements" && (
                 <>
@@ -1303,6 +1466,7 @@ export default function App() {
                       <article
                         className={`requirement-row ${review === req.id ? "reviewing" : ""}`}
                         key={req.id}
+                        id={`requirement-${req.id}`}
                       >
                         <div className="requirement-overview">
                           <span className="row-number">
@@ -1664,7 +1828,8 @@ export default function App() {
                           <th>Documented price</th>
                           {p.suppliers.map((s) => (
                             <td className="tabular" key={s.id}>
-                              {money(s.price_cents, s.currency)} <small>{priceBasisLabel(s.price_basis)}</small>
+                              {money(s.price_cents, s.currency)}{" "}
+                              <small>{priceBasisLabel(s.price_basis)}</small>
                               {priceHistory(s)}
                             </td>
                           ))}
@@ -2022,6 +2187,12 @@ export default function App() {
               )}
               {workspace === "history" && (
                 <>
+                  <SnapshotComparison
+                    key={p.snapshot_hash}
+                    project={p}
+                    read={request}
+                    onInspect={inspect}
+                  />
                   <div className="section-heading">
                     <div>
                       <h2>
@@ -2212,20 +2383,6 @@ export default function App() {
                           </figcaption>
                         </figure>
                       )}
-                      {selectedDocument.spans.map((span) => (
-                        <div className="source-passage" key={span.id}>
-                          <div className="source-page">
-                            <span>Page {span.page}</span>
-                            <code>{span.id}</code>
-                          </div>
-                          <SourceText text={span.text} />
-                        </div>
-                      ))}
-                      {!selectedDocument.spans.length && (
-                        <p className="inline-note">
-                          No extracted passages are available for this source.
-                        </p>
-                      )}
                       <div className="extraction-controls">
                         <label className="form-label">
                           Extraction purpose
@@ -2297,6 +2454,20 @@ export default function App() {
                           <ArrowUpRight size={13} />
                         </button>
                       </div>
+                      {selectedDocument.spans.map((span) => (
+                        <div className="source-passage" key={span.id}>
+                          <div className="source-page">
+                            <span>Page {span.page}</span>
+                            <code>{span.id}</code>
+                          </div>
+                          <SourceText text={span.text} />
+                        </div>
+                      ))}
+                      {!selectedDocument.spans.length && (
+                        <p className="inline-note">
+                          No extracted passages are available for this source.
+                        </p>
+                      )}
                     </>
                   ) : (
                     <>
@@ -2360,13 +2531,7 @@ export default function App() {
                     </small>
                   </div>
                   <div className="model-status">
-                    <span
-                      className={
-                        health?.model_configured
-                          ? "connection-dot connected"
-                          : "connection-dot"
-                      }
-                    />
+                    <span className="connection-dot configured" />
                     <div>
                       <strong>
                         {health?.model_configured
@@ -2375,7 +2540,7 @@ export default function App() {
                       </strong>
                       <p>
                         {health?.model_configured
-                          ? "Structured proposals require human approval."
+                          ? "New extraction requires the model server. Recorded proposals still require human approval."
                           : "Extraction is unavailable until real model credentials are configured."}
                       </p>
                     </div>
@@ -2402,6 +2567,16 @@ export default function App() {
           </span>
         </footer>
       </main>
+      {showIssues && p && (
+        <ReviewQueue
+          project={p}
+          analysis={analysis}
+          error={analysisError}
+          onClose={() => setShowIssues(false)}
+          onNavigate={navigateRecord}
+          onInspect={inspect}
+        />
+      )}
       {(showMetadata || credentials || showDecision) && (
         <div
           className="modal-backdrop"

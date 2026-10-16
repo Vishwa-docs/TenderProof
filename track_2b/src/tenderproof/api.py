@@ -13,6 +13,7 @@ from .service import Service, Conflict, Forbidden, find
 from .models import SnapshotRequest, ReviewRequest, DecisionRequest, ReleaseRequest, ExtractRequest, ProposalApprovalRequest, SupplierPriceCorrectionRequest, ScheduleRequest, ProjectMetadataRequest
 from .integrations import Apertus, ModelUnavailable, parse_document
 from .page_preview import PDF_ACCESS_LOCK, MAX_ORIGINAL_BYTES, PreviewProblem, read_original_bytes, verify_original_bytes, render_original_pdf_page
+from .evidence_workbench import ViewProblem
 
 def create_app(database_url=None,mode=None,principals=None):
     mode=mode or os.getenv('APP_MODE','live')
@@ -41,6 +42,8 @@ def create_app(database_url=None,mode=None,principals=None):
     async def missing(request,exc):return JSONResponse({'detail':'Project or record not found.'},status_code=404)
     @app.exception_handler(ModelUnavailable)
     async def unavailable(request,exc):return JSONResponse({'detail':str(exc)},status_code=503)
+    @app.exception_handler(ViewProblem)
+    async def evidence_view_problem(request,exc):return JSONResponse({'detail':str(exc)},status_code=exc.status)
 
     def identity(request:Request):
         pid=request.path_params.get('pid')
@@ -75,6 +78,31 @@ def create_app(database_url=None,mode=None,principals=None):
         p=service.get(pid)
         for doc in p['documents']:doc.pop('image_data_url',None)
         return p
+
+    @app.get('/api/projects/{pid}/analysis')
+    def analysis(pid:str,who=Depends(identity)):
+        return JSONResponse(service.evidence_analysis(pid),headers={'Cache-Control':'private, no-store'})
+
+    @app.get('/api/projects/{pid}/search')
+    def source_search(pid:str,q:str=Query(min_length=1,max_length=300),
+                      document_id:str|None=Query(None,min_length=1,max_length=200),
+                      limit:int=Query(12,ge=1,le=50),who=Depends(identity)):
+        return JSONResponse(service.search_evidence(pid,q,document_id,limit),headers={'Cache-Control':'private, no-store'})
+
+    @app.get('/api/projects/{pid}/snapshots')
+    def snapshots(pid:str,who=Depends(identity)):
+        return JSONResponse(service.list_snapshots(pid),headers={'Cache-Control':'private, no-store'})
+
+    @app.get('/api/projects/{pid}/diff')
+    def snapshot_diff(pid:str,from_hash:str=Query(pattern=r'^[0-9a-f]{64}$'),
+                      to_hash:str=Query(pattern=r'^[0-9a-f]{64}$'),who=Depends(identity)):
+        return JSONResponse(service.diff_snapshots(pid,from_hash,to_hash),headers={'Cache-Control':'private, no-store'})
+
+    @app.get('/api/projects/{pid}/dossier')
+    def review_dossier(pid:str,who=Depends(identity)):
+        packet=service.review_dossier(pid)
+        return JSONResponse(packet,headers={'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff',
+            'Content-Disposition':'attachment; filename="tenderproof-review-'+packet['snapshot_hash'][:12]+'.json"'})
 
     @app.patch('/api/projects/{pid}')
     def metadata(pid:str,body:ProjectMetadataRequest,who=Depends(identity)):
